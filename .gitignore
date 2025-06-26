@@ -11,7 +11,20 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 
 # Eclipse m2e generated files
+
 # Eclipse Core
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# NetBeans
+nbproject/private/
+build/
+dist/
+*.class
+*.jar
+*.war
+
+# Otros archivos innecesarios
+.DS_Store (macOS)
+*.log
