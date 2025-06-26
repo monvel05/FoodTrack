@@ -15,6 +15,7 @@ public class AddComida extends javax.swing.JFrame {
      */
     public AddComida() {
         initComponents();
+        System.out.println("");
     }
 
     /**
