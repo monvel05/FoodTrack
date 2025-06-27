@@ -15,6 +15,7 @@ public class Configuracion extends javax.swing.JFrame {
      */
     public Configuracion() {
         initComponents();
+        System.out.println("Hola");
     }
 
     /**
