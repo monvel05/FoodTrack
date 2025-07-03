@@ -1,8 +1,8 @@
+package com.mycompany.foodtrack;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
-package com.mycompany.foodtrack.logic;
 
 /**
  *
@@ -11,6 +11,8 @@ package com.mycompany.foodtrack.logic;
 public class FoodTrack {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        java.awt.EventQueue.invokeLater(() -> {
+            new Login().setVisible(true);
+        });
     }
 }
