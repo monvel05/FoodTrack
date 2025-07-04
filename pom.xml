@@ -10,4 +10,11 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>com.mycompany.foodtrack.FoodTrack</exec.mainClass>
     </properties>
+    <build>
+    <resources>
+        <resource>
+            <directory>src/main/java</directory>
+        </resource>
+     </resources>
+    </build>
 </project>
