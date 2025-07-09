@@ -49,12 +49,10 @@ public class Configuracion extends javax.swing.JFrame {
         menu.setPreferredSize(new java.awt.Dimension(130, 25));
 
         configuracion.setBackground(new java.awt.Color(246, 226, 155));
-        configuracion.setForeground(new java.awt.Color(0, 0, 0));
         configuracion.setText("Configuración");
         configuracion.setPreferredSize(new java.awt.Dimension(80, 30));
 
         addComida.setBackground(new java.awt.Color(246, 226, 155));
-        addComida.setForeground(new java.awt.Color(0, 0, 0));
         addComida.setText("Añadir comida");
         addComida.setPreferredSize(new java.awt.Dimension(80, 30));
         addComida.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +62,6 @@ public class Configuracion extends javax.swing.JFrame {
         });
 
         meta.setBackground(new java.awt.Color(246, 226, 155));
-        meta.setForeground(new java.awt.Color(0, 0, 0));
         meta.setText("Meta");
         meta.setMaximumSize(new java.awt.Dimension(112, 27));
         meta.setMinimumSize(new java.awt.Dimension(112, 27));
@@ -76,17 +73,14 @@ public class Configuracion extends javax.swing.JFrame {
         });
 
         listaCompras.setBackground(new java.awt.Color(246, 226, 155));
-        listaCompras.setForeground(new java.awt.Color(0, 0, 0));
         listaCompras.setText("Lista de Compras");
         listaCompras.setPreferredSize(new java.awt.Dimension(80, 30));
 
         estadisticas.setBackground(new java.awt.Color(246, 226, 155));
-        estadisticas.setForeground(new java.awt.Color(0, 0, 0));
         estadisticas.setText("Estadísiticas");
         estadisticas.setPreferredSize(new java.awt.Dimension(80, 30));
 
         perfil.setBackground(new java.awt.Color(246, 226, 155));
-        perfil.setForeground(new java.awt.Color(0, 0, 0));
         perfil.setText("Perfil");
         perfil.setPreferredSize(new java.awt.Dimension(80, 30));
 
@@ -94,7 +88,6 @@ public class Configuracion extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
 
         salir.setBackground(new java.awt.Color(246, 226, 155));
-        salir.setForeground(new java.awt.Color(0, 0, 0));
         salir.setText("Salir");
         salir.setMaximumSize(new java.awt.Dimension(50, 30));
         salir.setPreferredSize(new java.awt.Dimension(50, 30));
