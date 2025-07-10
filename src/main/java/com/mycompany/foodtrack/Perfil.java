@@ -15,7 +15,7 @@ public class Perfil extends javax.swing.JFrame {
      */
     public Perfil() {
         initComponents();
-        System.out.println("Funciona");
+        System.out.println("Funciona  ");
     }
 
     /**
@@ -127,6 +127,11 @@ public class Perfil extends javax.swing.JFrame {
         addComidaBtn.setBackground(new java.awt.Color(246, 226, 155));
         addComidaBtn.setText("Añadir comida");
         addComidaBtn.setPreferredSize(new java.awt.Dimension(80, 30));
+        addComidaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addComidaBtnMouseClicked(evt);
+            }
+        });
         addComidaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addComidaBtnActionPerformed(evt);
@@ -151,6 +156,11 @@ public class Perfil extends javax.swing.JFrame {
         estadisticasBtn.setBackground(new java.awt.Color(246, 226, 155));
         estadisticasBtn.setText("Estadísiticas");
         estadisticasBtn.setPreferredSize(new java.awt.Dimension(80, 30));
+        estadisticasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                estadisticasBtnMouseClicked(evt);
+            }
+        });
 
         perfilBtn.setBackground(new java.awt.Color(246, 226, 155));
         perfilBtn.setText("Perfil");
@@ -263,6 +273,21 @@ public class Perfil extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_metaBtnActionPerformed
+
+    private void addComidaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addComidaBtnMouseClicked
+        // TODO add your handling code here:
+        
+        AddComida miaddcomida= new AddComida();
+        miaddcomida.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_addComidaBtnMouseClicked
+
+    private void estadisticasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estadisticasBtnMouseClicked
+        // TODO add your handling code here:
+        Estadisticas miestadisticas= new Estadisticas();
+        miestadisticas.setVisible(true);
+        dispose(); 
+    }//GEN-LAST:event_estadisticasBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
