@@ -258,6 +258,10 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
     private void registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarseActionPerformed
         // TODO add your handling code here:
+        
+        Login miLogin = new Login();
+        miLogin.setVisible(true);
+        dispose();
     }//GEN-LAST:event_registrarseActionPerformed
 
 
