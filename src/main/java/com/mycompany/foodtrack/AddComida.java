@@ -29,7 +29,9 @@ public class AddComida extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
+        configuracion = new javax.swing.JButton();
         addComida = new javax.swing.JButton();
+        meta = new javax.swing.JButton();
         listaCompras = new javax.swing.JButton();
         estadisticas = new javax.swing.JButton();
         perfil = new javax.swing.JButton();
@@ -53,6 +55,10 @@ public class AddComida extends javax.swing.JFrame {
         menu.setMinimumSize(new java.awt.Dimension(4, 4));
         menu.setPreferredSize(new java.awt.Dimension(130, 25));
 
+        configuracion.setBackground(new java.awt.Color(246, 226, 155));
+        configuracion.setText("Configuración");
+        configuracion.setPreferredSize(new java.awt.Dimension(80, 30));
+
         addComida.setBackground(new java.awt.Color(246, 226, 155));
         addComida.setText("Añadir comida");
         addComida.setPreferredSize(new java.awt.Dimension(80, 30));
@@ -62,42 +68,33 @@ public class AddComida extends javax.swing.JFrame {
             }
         });
 
+        meta.setBackground(new java.awt.Color(246, 226, 155));
+        meta.setText("Meta");
+        meta.setMaximumSize(new java.awt.Dimension(112, 27));
+        meta.setMinimumSize(new java.awt.Dimension(112, 27));
+        meta.setPreferredSize(new java.awt.Dimension(80, 30));
+        meta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                metaActionPerformed(evt);
+            }
+        });
+
         listaCompras.setBackground(new java.awt.Color(246, 226, 155));
         listaCompras.setText("Lista de Compras");
         listaCompras.setPreferredSize(new java.awt.Dimension(80, 30));
-        listaCompras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaComprasActionPerformed(evt);
-            }
-        });
 
         estadisticas.setBackground(new java.awt.Color(246, 226, 155));
         estadisticas.setText("Estadísiticas");
         estadisticas.setPreferredSize(new java.awt.Dimension(80, 30));
-        estadisticas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                estadisticasActionPerformed(evt);
-            }
-        });
 
         perfil.setBackground(new java.awt.Color(246, 226, 155));
         perfil.setText("Perfil");
         perfil.setPreferredSize(new java.awt.Dimension(80, 30));
-        perfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilActionPerformed(evt);
-            }
-        });
 
         salir.setBackground(new java.awt.Color(246, 226, 155));
         salir.setText("Salir");
         salir.setMaximumSize(new java.awt.Dimension(50, 30));
         salir.setPreferredSize(new java.awt.Dimension(50, 30));
-        salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salirActionPerformed(evt);
-            }
-        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/logo_blanco.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -109,20 +106,21 @@ public class AddComida extends javax.swing.JFrame {
             .addGroup(menuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(configuracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(perfil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(menuLayout.createSequentialGroup()
-                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addComida, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addComida, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(meta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(listaCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(menuLayout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(estadisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(salir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(listaCompras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(estadisticas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         menuLayout.setVerticalGroup(
@@ -133,11 +131,15 @@ public class AddComida extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(addComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(meta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(listaCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(estadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(configuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
@@ -236,11 +238,12 @@ public class AddComida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void metaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_metaActionPerformed
+
     private void addComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComidaActionPerformed
         // TODO add your handling code here:
-        AddComida miAddComida = new AddComida();
-        miAddComida.setVisible(true);
-        dispose();
     }//GEN-LAST:event_addComidaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -251,32 +254,6 @@ public class AddComida extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void estadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadisticasActionPerformed
-        // TODO add your handling code here:
-        Estadisticas miEstadisticas= new Estadisticas();
-        miEstadisticas.setVisible(true);
-        dispose(); 
-    }//GEN-LAST:event_estadisticasActionPerformed
-
-    private void listaComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaComprasActionPerformed
-        // TODO add your handling code here:
-        ListaCompras miListaCompras = new ListaCompras();
-        miListaCompras.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_listaComprasActionPerformed
-
-    private void perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilActionPerformed
-        // TODO add your handling code here:
-        Perfil miPerfil = new Perfil();
-        miPerfil.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_perfilActionPerformed
-
-    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_salirActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -286,6 +263,7 @@ public class AddComida extends javax.swing.JFrame {
     private javax.swing.JButton addComida;
     private javax.swing.JButton botobBusqueda;
     private javax.swing.JTextField busqueda;
+    private javax.swing.JButton configuracion;
     private javax.swing.JButton estadisticas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -293,6 +271,7 @@ public class AddComida extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton listaCompras;
     private javax.swing.JPanel menu;
+    private javax.swing.JButton meta;
     private javax.swing.JButton perfil;
     private javax.swing.JButton salir;
     private javax.swing.JPanel tablaAlimentos;
