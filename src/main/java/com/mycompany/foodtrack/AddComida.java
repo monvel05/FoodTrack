@@ -254,6 +254,34 @@ public class AddComida extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void estadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadisticasActionPerformed
+        // TODO add your handling code here:
+        Estadisticas miEstadisticas= new Estadisticas();
+        miEstadisticas.setVisible(true);
+        dispose(); 
+    }//GEN-LAST:event_estadisticasActionPerformed
+
+    private void listaComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaComprasActionPerformed
+        // TODO add your handling code here:
+        ListaCompras miListaCompras = new ListaCompras();
+        miListaCompras.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_listaComprasActionPerformed
+
+    private void perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilActionPerformed
+        // TODO add your handling code here:
+        Perfil miPerfil = new Perfil();
+        miPerfil.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_perfilActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        DataBase db = new DataBase();
+        db.disconnect();
+    }//GEN-LAST:event_salirActionPerformed
+
     /**
      * @param args the command line arguments
      */

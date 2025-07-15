@@ -1,4 +1,5 @@
 target/
+.env
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -28,3 +29,4 @@ dist/
 # Otros archivos innecesarios
 .DS_Store (macOS)
 *.log
+.env
