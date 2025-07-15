@@ -28,3 +28,4 @@ dist/
 # Otros archivos innecesarios
 .DS_Store (macOS)
 *.log
+.env
