@@ -40,51 +40,58 @@ public class ListaCompras extends javax.swing.JFrame {
         CARBOHIDRATOSjLabel = new javax.swing.JLabel();
         VERDURASjLabel = new javax.swing.JLabel();
         GRASASjLabel = new javax.swing.JLabel();
-        HuevojRadioButton = new javax.swing.JRadioButton();
-        AtúnLatajRadioButton = new javax.swing.JRadioButton();
-        SardinajRadioButton = new javax.swing.JRadioButton();
-        LentejasjRadioButton = new javax.swing.JRadioButton();
-        EspinacasjRadioButton = new javax.swing.JRadioButton();
-        GuisantesjRadioButton = new javax.swing.JRadioButton();
-        GarbanzosjRadioButton = new javax.swing.JRadioButton();
-        PescadojRadioButton = new javax.swing.JRadioButton();
-        PechugaPollojRadioButton = new javax.swing.JRadioButton();
-        OtroProtejLabel = new javax.swing.JLabel();
-        AgregarProteinasTextField = new javax.swing.JTextField();
         SiguientejButton = new javax.swing.JButton();
-        PanIntegraljRadioButton = new javax.swing.JRadioButton();
-        ArrozCocidojRadioButton = new javax.swing.JRadioButton();
-        AvenajRadioButton = new javax.swing.JRadioButton();
-        PastajRadioButton = new javax.swing.JRadioButton();
-        HarinaTrigojRadioButton = new javax.swing.JRadioButton();
-        ManzanajRadioButton = new javax.swing.JRadioButton();
-        PapayajRadioButton = new javax.swing.JRadioButton();
-        PlatanoMadurojRadioButton = new javax.swing.JRadioButton();
-        YucaCocidajRadioButton = new javax.swing.JRadioButton();
-        OtroCarbojLabel = new javax.swing.JLabel();
-        AgregarCarbohidratosjTextField = new javax.swing.JTextField();
-        LechugajRadioButton = new javax.swing.JRadioButton();
-        FrutosSecosjRadioButton = new javax.swing.JRadioButton();
-        BrocolijRadioButton = new javax.swing.JRadioButton();
-        SemillasjRadioButton = new javax.swing.JRadioButton();
-        ColiflorjRadioButton = new javax.swing.JRadioButton();
-        AceitunasjRadioButton = new javax.swing.JRadioButton();
-        ApiojRadioButton = new javax.swing.JRadioButton();
-        EdamamejRadioButton = new javax.swing.JRadioButton();
-        PepinojRadioButton = new javax.swing.JRadioButton();
-        TahinijRadioButton = new javax.swing.JRadioButton();
-        ZanahoriajRadioButton = new javax.swing.JRadioButton();
-        AceiteCocojRadioButton = new javax.swing.JRadioButton();
-        RemolachajRadioButton = new javax.swing.JRadioButton();
-        HummusjRadioButton = new javax.swing.JRadioButton();
-        HabaFrescajRadioButton = new javax.swing.JRadioButton();
-        TofujRadioButton = new javax.swing.JRadioButton();
-        PapasjRadioButton = new javax.swing.JRadioButton();
-        AceiteOlivajRadioButton = new javax.swing.JRadioButton();
-        OtroVerdurasjLabel = new javax.swing.JLabel();
-        OtroGrasasjLabel = new javax.swing.JLabel();
-        AgregarVerdurasjTextField = new javax.swing.JTextField();
-        AgregarGrasasjTextField = new javax.swing.JTextField();
+        HuevojCheckBox = new javax.swing.JCheckBox();
+        AtúnjCheckBox = new javax.swing.JCheckBox();
+        SardinajCheckBox = new javax.swing.JCheckBox();
+        LentejasjCheckBox = new javax.swing.JCheckBox();
+        EspinacasjCheckBox = new javax.swing.JCheckBox();
+        GuisantesjCheckBox = new javax.swing.JCheckBox();
+        GarbanzosjCheckBox = new javax.swing.JCheckBox();
+        PescadojCheckBox = new javax.swing.JCheckBox();
+        PechugaPollojCheckBox = new javax.swing.JCheckBox();
+        CamaronesjCheckBox = new javax.swing.JCheckBox();
+        QuesoPanelajCheckBox = new javax.swing.JCheckBox();
+        PavojCheckBox = new javax.swing.JCheckBox();
+        CarneResjCheckBox = new javax.swing.JCheckBox();
+        PanIntegraljCheckBox = new javax.swing.JCheckBox();
+        ArrozCocidojCheckBox = new javax.swing.JCheckBox();
+        AvenajCheckBox = new javax.swing.JCheckBox();
+        PastajCheckBox = new javax.swing.JCheckBox();
+        HarinaTrigojCheckBox = new javax.swing.JCheckBox();
+        ManzanajCheckBox = new javax.swing.JCheckBox();
+        PapayajCheckBox = new javax.swing.JCheckBox();
+        PlátanoMadurojCheckBox = new javax.swing.JCheckBox();
+        YucaCocidajCheckBox = new javax.swing.JCheckBox();
+        CamotejCheckBox = new javax.swing.JCheckBox();
+        TortillaTrigojCheckBox = new javax.swing.JCheckBox();
+        GalletaIntegraljCheckBox = new javax.swing.JCheckBox();
+        PanAvenajCheckBox = new javax.swing.JCheckBox();
+        LechugajCheckBox = new javax.swing.JCheckBox();
+        BrócolijCheckBox = new javax.swing.JCheckBox();
+        ColiflorjCheckBox = new javax.swing.JCheckBox();
+        ApiojCheckBox = new javax.swing.JCheckBox();
+        PepinojCheckBox = new javax.swing.JCheckBox();
+        ZanahoriajCheckBox = new javax.swing.JCheckBox();
+        RemolachajCheckBox = new javax.swing.JCheckBox();
+        HabaFrescajCheckBox = new javax.swing.JCheckBox();
+        PapasjCheckBox = new javax.swing.JCheckBox();
+        AcelgasjCheckBox = new javax.swing.JCheckBox();
+        BerengenajCheckBox = new javax.swing.JCheckBox();
+        AlcachofajCheckBox = new javax.swing.JCheckBox();
+        NopalesjCheckBox = new javax.swing.JCheckBox();
+        FrutosSecosjCheckBox = new javax.swing.JCheckBox();
+        SemillasjCheckBox = new javax.swing.JCheckBox();
+        AceitunasjCheckBox = new javax.swing.JCheckBox();
+        EdamamejCheckBox = new javax.swing.JCheckBox();
+        TahinijCheckBox = new javax.swing.JCheckBox();
+        AceiteCocojCheckBox = new javax.swing.JCheckBox();
+        HummusjCheckBox = new javax.swing.JCheckBox();
+        TofujCheckBox = new javax.swing.JCheckBox();
+        AceiteOlivajCheckBox = new javax.swing.JCheckBox();
+        SalmónjCheckBox = new javax.swing.JCheckBox();
+        SemillaChíajCheckBox = new javax.swing.JCheckBox();
+        LecheEnterajCheckBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -161,7 +168,7 @@ public class ListaCompras extends javax.swing.JFrame {
                 .addComponent(ConfiguracionjButton)
                 .addGap(18, 18, 18)
                 .addComponent(SalirjButton)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PROTEINASjLabel.setForeground(new java.awt.Color(255, 51, 0));
@@ -176,104 +183,120 @@ public class ListaCompras extends javax.swing.JFrame {
         GRASASjLabel.setForeground(new java.awt.Color(255, 51, 0));
         GRASASjLabel.setText("GRASAS SALUDABLES");
 
-        HuevojRadioButton.setText("HUEVO");
-        HuevojRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HuevojRadioButtonActionPerformed(evt);
-            }
-        });
-
-        AtúnLatajRadioButton.setText("ATÚN EN LATA");
-
-        SardinajRadioButton.setText("SARDINA");
-
-        LentejasjRadioButton.setText("LENTEJAS");
-
-        EspinacasjRadioButton.setText("ESPINACAS");
-
-        GuisantesjRadioButton.setText("GUISANTES");
-
-        GarbanzosjRadioButton.setText("GARBANZOS");
-
-        PescadojRadioButton.setText("PESCADO");
-
-        PechugaPollojRadioButton.setText("PECHUGA DE POLLO");
-
-        OtroProtejLabel.setText("OTRO:");
-
         SiguientejButton.setBackground(new java.awt.Color(255, 102, 0));
         SiguientejButton.setText("SIGUIENTE>");
-
-        PanIntegraljRadioButton.setText("PAN INTEGRAL");
-
-        ArrozCocidojRadioButton.setText("ARROZ COCIDO");
-
-        AvenajRadioButton.setText("AVENA");
-
-        PastajRadioButton.setText("PASTA");
-        PastajRadioButton.addActionListener(new java.awt.event.ActionListener() {
+        SiguientejButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PastajRadioButtonActionPerformed(evt);
+                SiguientejButtonActionPerformed(evt);
             }
         });
 
-        HarinaTrigojRadioButton.setText("HARINA DE TRIGO");
+        HuevojCheckBox.setText("HUEVO");
 
-        ManzanajRadioButton.setText("MANZANA");
-
-        PapayajRadioButton.setText("PAPAYA");
-
-        PlatanoMadurojRadioButton.setText("PLÁTANO MADURO");
-
-        YucaCocidajRadioButton.setText("YUCA COCIDA");
-
-        OtroCarbojLabel.setText("OTRO:");
-
-        LechugajRadioButton.setText("LECHUGA");
-
-        FrutosSecosjRadioButton.setText("FRUTOS SECOS");
-
-        BrocolijRadioButton.setText("BRÓCOLI");
-
-        SemillasjRadioButton.setText("SEMILLAS");
-
-        ColiflorjRadioButton.setText("COLIFLOR");
-
-        AceitunasjRadioButton.setText("ACEITUNAS");
-
-        ApiojRadioButton.setText("APIO");
-
-        EdamamejRadioButton.setText("EDAMAME");
-
-        PepinojRadioButton.setText("PEPINO");
-
-        TahinijRadioButton.setText("TAHINI");
-
-        ZanahoriajRadioButton.setText("ZANAHORIA");
-
-        AceiteCocojRadioButton.setText("ACEITE DE COCO");
-
-        RemolachajRadioButton.setText("REMOLACHA");
-
-        HummusjRadioButton.setText("HUMMUS");
-
-        HabaFrescajRadioButton.setText("HABA FRESCA");
-
-        TofujRadioButton.setText("TOFU");
-
-        PapasjRadioButton.setText("PAPAS");
-
-        AceiteOlivajRadioButton.setText("ACEITE DE OLIVA");
-
-        OtroVerdurasjLabel.setText("OTRO:");
-
-        OtroGrasasjLabel.setText("OTRO:");
-
-        AgregarVerdurasjTextField.addActionListener(new java.awt.event.ActionListener() {
+        AtúnjCheckBox.setText("LATA DE ATÚN");
+        AtúnjCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarVerdurasjTextFieldActionPerformed(evt);
+                AtúnjCheckBoxActionPerformed(evt);
             }
         });
+
+        SardinajCheckBox.setText("SARDINA");
+
+        LentejasjCheckBox.setText("LENTEJAS");
+
+        EspinacasjCheckBox.setText("ESPINACAS");
+
+        GuisantesjCheckBox.setText("GUISANTES");
+
+        GarbanzosjCheckBox.setText("GARBANZOS ");
+
+        PescadojCheckBox.setText("PESCADO");
+
+        PechugaPollojCheckBox.setText("PECHUGA DE POLLO");
+
+        CamaronesjCheckBox.setText("CAMARONES");
+
+        QuesoPanelajCheckBox.setText("QUESO PANELA");
+
+        PavojCheckBox.setText("PAVO");
+
+        CarneResjCheckBox.setText("CARNE DE RES");
+
+        PanIntegraljCheckBox.setText("PAN INTEGRAL");
+
+        ArrozCocidojCheckBox.setText("ARROZ COCIDO");
+
+        AvenajCheckBox.setText("AVENA");
+
+        PastajCheckBox.setText("PASTA");
+
+        HarinaTrigojCheckBox.setText("HARINA DE TRIGO");
+
+        ManzanajCheckBox.setText("MANZANA");
+
+        PapayajCheckBox.setText("PAPAYA");
+
+        PlátanoMadurojCheckBox.setText("PLÁTANO MADURO");
+
+        YucaCocidajCheckBox.setText("YUCA COCIDA");
+
+        CamotejCheckBox.setText("CAMOTE");
+
+        TortillaTrigojCheckBox.setText("TORTILLA DE TRIGO");
+
+        GalletaIntegraljCheckBox.setText("GALLETA INTEGRAL");
+
+        PanAvenajCheckBox.setText("PAN DE AVENA");
+
+        LechugajCheckBox.setText("LECHUGA");
+
+        BrócolijCheckBox.setText("BRÓCOLI");
+
+        ColiflorjCheckBox.setText("COLIFLOR");
+
+        ApiojCheckBox.setText("APIO");
+
+        PepinojCheckBox.setText("PEPINO");
+
+        ZanahoriajCheckBox.setText("ZANAHORIA");
+
+        RemolachajCheckBox.setText("REMOLACHA");
+
+        HabaFrescajCheckBox.setText("HABA FRESCA");
+
+        PapasjCheckBox.setText("PAPAS");
+
+        AcelgasjCheckBox.setText("ACELGAS");
+
+        BerengenajCheckBox.setText("BERENGENA");
+
+        AlcachofajCheckBox.setText("ALCACHOFA");
+
+        NopalesjCheckBox.setText("NOPALES");
+
+        FrutosSecosjCheckBox.setText("FRUTOS SECOS");
+
+        SemillasjCheckBox.setText("SEMILLAS");
+
+        AceitunasjCheckBox.setText("ACEITUNAS");
+
+        EdamamejCheckBox.setText("EDAMAME");
+
+        TahinijCheckBox.setText("TAHINI");
+
+        AceiteCocojCheckBox.setText("ACEITE DE COCO");
+
+        HummusjCheckBox.setText("HUMMUS");
+
+        TofujCheckBox.setText("TOFU");
+
+        AceiteOlivajCheckBox.setText("ACEITE DE OLIVA");
+
+        SalmónjCheckBox.setText("SALMÓN");
+
+        SemillaChíajCheckBox.setText("SEMILLAS DE CHÍA");
+
+        LecheEnterajCheckBox.setText("LECHE ENTERA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -281,82 +304,97 @@ public class ListaCompras extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(CarneResjCheckBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(QuesoPanelajCheckBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(PavojCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(PanAvenajCheckBox)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(NopalesjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71)
+                                .addComponent(SiguientejButton))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(GalletaIntegraljCheckBox)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(AlcachofajCheckBox))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(TortillaTrigojCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(BerengenajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(24, 24, 24))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PROTEINASjLabel)
+                            .addComponent(HuevojCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AtúnjCheckBox)
+                            .addComponent(SardinajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LentejasjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EspinacasjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GuisantesjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GarbanzosjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PescadojCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PechugaPollojCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CamaronesjCheckBox))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(HuevojRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SardinajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LentejasjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EspinacasjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GuisantesjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GarbanzosjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PescadojRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(OtroProtejLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AgregarProteinasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(PROTEINASjLabel)
-                            .addComponent(AtúnLatajRadioButton)
-                            .addComponent(PechugaPollojRadioButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CARBOHIDRATOSjLabel)
+                                    .addComponent(PanIntegraljCheckBox)
+                                    .addComponent(ArrozCocidojCheckBox)
+                                    .addComponent(AvenajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PastajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(HarinaTrigojCheckBox)
+                                    .addComponent(ManzanajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PapayajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PlátanoMadurojCheckBox)
+                                    .addComponent(YucaCocidajCheckBox))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(VERDURASjLabel)
+                                            .addComponent(LechugajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(BrócolijCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ColiflorjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ApiojCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(PepinojCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ZanahoriajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(RemolachajCheckBox)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(PapasjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(HabaFrescajCheckBox)
+                                            .addComponent(AcelgasjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(CamotejCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(PanIntegraljRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(AvenajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(PastajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ManzanajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(PapayajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(YucaCocidajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(OtroCarbojLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(AgregarCarbohidratosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(CARBOHIDRATOSjLabel)
-                                .addComponent(ArrozCocidojRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(HarinaTrigojRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PlatanoMadurojRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LechugajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BrocolijRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ColiflorjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ApiojRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PepinojRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ZanahoriajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RemolachajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(HabaFrescajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PapasjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(OtroVerdurasjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AgregarVerdurasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(VERDURASjLabel))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(OtroGrasasjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AgregarGrasasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(23, 23, 23))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(FrutosSecosjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SemillasjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(AceitunasjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(EdamamejRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TahinijRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(HummusjRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TofujRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(GRASASjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(AceiteCocojRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(AceiteOlivajRadioButton))
-                                .addContainerGap(24, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SiguientejButton)
-                        .addGap(26, 26, 26))))
+                                .addComponent(GRASASjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(FrutosSecosjCheckBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(SemillasjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AceitunasjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EdamamejCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TahinijCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AceiteCocojCheckBox)
+                                .addComponent(HummusjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TofujCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AceiteOlivajCheckBox)
+                                .addComponent(SalmónjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LecheEnterajCheckBox))
+                            .addComponent(SemillaChíajCheckBox))
+                        .addGap(18, 18, 18))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,79 +408,95 @@ public class ListaCompras extends javax.swing.JFrame {
                     .addComponent(GRASASjLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HuevojRadioButton)
-                    .addComponent(PanIntegraljRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LechugajRadioButton)
-                    .addComponent(FrutosSecosjRadioButton))
+                    .addComponent(HuevojCheckBox)
+                    .addComponent(PanIntegraljCheckBox)
+                    .addComponent(LechugajCheckBox)
+                    .addComponent(FrutosSecosjCheckBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AtúnLatajRadioButton)
-                    .addComponent(ArrozCocidojRadioButton)
-                    .addComponent(BrocolijRadioButton)
-                    .addComponent(SemillasjRadioButton))
+                    .addComponent(AtúnjCheckBox)
+                    .addComponent(ArrozCocidojCheckBox)
+                    .addComponent(BrócolijCheckBox)
+                    .addComponent(SemillasjCheckBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SardinajRadioButton)
-                    .addComponent(AvenajRadioButton)
-                    .addComponent(ColiflorjRadioButton)
-                    .addComponent(AceitunasjRadioButton))
+                    .addComponent(SardinajCheckBox)
+                    .addComponent(AvenajCheckBox)
+                    .addComponent(ColiflorjCheckBox)
+                    .addComponent(AceitunasjCheckBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LentejasjRadioButton)
-                    .addComponent(PastajRadioButton)
-                    .addComponent(ApiojRadioButton)
-                    .addComponent(EdamamejRadioButton))
+                    .addComponent(LentejasjCheckBox)
+                    .addComponent(PastajCheckBox)
+                    .addComponent(ApiojCheckBox)
+                    .addComponent(EdamamejCheckBox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EspinacasjCheckBox)
+                    .addComponent(HarinaTrigojCheckBox)
+                    .addComponent(PepinojCheckBox)
+                    .addComponent(TahinijCheckBox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GuisantesjCheckBox)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ManzanajCheckBox)
+                        .addComponent(ZanahoriajCheckBox)
+                        .addComponent(AceiteCocojCheckBox)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(EspinacasjRadioButton)
-                            .addComponent(HarinaTrigojRadioButton)
-                            .addComponent(PepinojRadioButton)
-                            .addComponent(TahinijRadioButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GuisantesjRadioButton)
-                            .addComponent(ManzanajRadioButton)
-                            .addComponent(ZanahoriajRadioButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GarbanzosjRadioButton)
-                            .addComponent(PapayajRadioButton)
-                            .addComponent(RemolachajRadioButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PescadojRadioButton)
-                            .addComponent(PlatanoMadurojRadioButton)
-                            .addComponent(HabaFrescajRadioButton))
+                            .addComponent(GarbanzosjCheckBox)
+                            .addComponent(PapayajCheckBox)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(YucaCocidajRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(PechugaPollojRadioButton)
-                                .addComponent(PapasjRadioButton)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(OtroProtejLabel)
-                            .addComponent(AgregarProteinasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(OtroCarbojLabel)
-                            .addComponent(AgregarCarbohidratosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(OtroVerdurasjLabel)
-                            .addComponent(AgregarVerdurasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(HummusjCheckBox)
+                            .addComponent(RemolachajCheckBox))))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(PlátanoMadurojCheckBox)
+                        .addComponent(HabaFrescajCheckBox)
+                        .addComponent(TofujCheckBox))
+                    .addComponent(PescadojCheckBox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AceiteOlivajCheckBox)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(PechugaPollojCheckBox)
+                        .addComponent(YucaCocidajCheckBox))
+                    .addComponent(PapasjCheckBox))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(AceiteCocojRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(HummusjRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TofujRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AceiteOlivajRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(OtroGrasasjLabel)
-                            .addComponent(AgregarGrasasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SiguientejButton)
+                            .addComponent(CamaronesjCheckBox)
+                            .addComponent(CamotejCheckBox)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SalmónjCheckBox)
+                            .addComponent(AcelgasjCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(QuesoPanelajCheckBox)
+                    .addComponent(TortillaTrigojCheckBox)
+                    .addComponent(BerengenajCheckBox)
+                    .addComponent(SemillaChíajCheckBox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PavojCheckBox)
+                    .addComponent(AlcachofajCheckBox)
+                    .addComponent(LecheEnterajCheckBox)
+                    .addComponent(GalletaIntegraljCheckBox))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SiguientejButton)
+                    .addComponent(CarneResjCheckBox)
+                    .addComponent(PanAvenajCheckBox)
+                    .addComponent(NopalesjCheckBox))
                 .addGap(26, 26, 26))
         );
 
@@ -460,22 +514,17 @@ public class ListaCompras extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarVerdurasjTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarVerdurasjTextFieldActionPerformed
-       
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AgregarVerdurasjTextFieldActionPerformed
-
-    private void PastajRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PastajRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PastajRadioButtonActionPerformed
-
     private void AñadirComidajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirComidajButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AñadirComidajButtonActionPerformed
 
-    private void HuevojRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HuevojRadioButtonActionPerformed
+    private void AtúnjCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtúnjCheckBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_HuevojRadioButtonActionPerformed
+    }//GEN-LAST:event_AtúnjCheckBoxActionPerformed
+
+    private void SiguientejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguientejButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SiguientejButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -513,63 +562,70 @@ public class ListaCompras extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton AceiteCocojRadioButton;
-    private javax.swing.JRadioButton AceiteOlivajRadioButton;
-    private javax.swing.JRadioButton AceitunasjRadioButton;
-    private javax.swing.JTextField AgregarCarbohidratosjTextField;
-    private javax.swing.JTextField AgregarGrasasjTextField;
-    private javax.swing.JTextField AgregarProteinasTextField;
-    private javax.swing.JTextField AgregarVerdurasjTextField;
-    private javax.swing.JRadioButton ApiojRadioButton;
-    private javax.swing.JRadioButton ArrozCocidojRadioButton;
-    private javax.swing.JRadioButton AtúnLatajRadioButton;
-    private javax.swing.JRadioButton AvenajRadioButton;
+    private javax.swing.JCheckBox AceiteCocojCheckBox;
+    private javax.swing.JCheckBox AceiteOlivajCheckBox;
+    private javax.swing.JCheckBox AceitunasjCheckBox;
+    private javax.swing.JCheckBox AcelgasjCheckBox;
+    private javax.swing.JCheckBox AlcachofajCheckBox;
+    private javax.swing.JCheckBox ApiojCheckBox;
+    private javax.swing.JCheckBox ArrozCocidojCheckBox;
+    private javax.swing.JCheckBox AtúnjCheckBox;
+    private javax.swing.JCheckBox AvenajCheckBox;
     private javax.swing.JButton AñadirComidajButton;
-    private javax.swing.JRadioButton BrocolijRadioButton;
+    private javax.swing.JCheckBox BerengenajCheckBox;
+    private javax.swing.JCheckBox BrócolijCheckBox;
     private javax.swing.JLabel CARBOHIDRATOSjLabel;
-    private javax.swing.JRadioButton ColiflorjRadioButton;
+    private javax.swing.JCheckBox CamaronesjCheckBox;
+    private javax.swing.JCheckBox CamotejCheckBox;
+    private javax.swing.JCheckBox CarneResjCheckBox;
+    private javax.swing.JCheckBox ColiflorjCheckBox;
     private javax.swing.JButton ConfiguracionjButton;
-    private javax.swing.JRadioButton EdamamejRadioButton;
-    private javax.swing.JRadioButton EspinacasjRadioButton;
+    private javax.swing.JCheckBox EdamamejCheckBox;
+    private javax.swing.JCheckBox EspinacasjCheckBox;
     private javax.swing.JButton EstadisticasjButton;
-    private javax.swing.JRadioButton FrutosSecosjRadioButton;
+    private javax.swing.JCheckBox FrutosSecosjCheckBox;
     private javax.swing.JLabel GRASASjLabel;
-    private javax.swing.JRadioButton GarbanzosjRadioButton;
-    private javax.swing.JRadioButton GuisantesjRadioButton;
-    private javax.swing.JRadioButton HabaFrescajRadioButton;
-    private javax.swing.JRadioButton HarinaTrigojRadioButton;
-    private javax.swing.JRadioButton HuevojRadioButton;
-    private javax.swing.JRadioButton HummusjRadioButton;
-    private javax.swing.JRadioButton LechugajRadioButton;
-    private javax.swing.JRadioButton LentejasjRadioButton;
+    private javax.swing.JCheckBox GalletaIntegraljCheckBox;
+    private javax.swing.JCheckBox GarbanzosjCheckBox;
+    private javax.swing.JCheckBox GuisantesjCheckBox;
+    private javax.swing.JCheckBox HabaFrescajCheckBox;
+    private javax.swing.JCheckBox HarinaTrigojCheckBox;
+    private javax.swing.JCheckBox HuevojCheckBox;
+    private javax.swing.JCheckBox HummusjCheckBox;
+    private javax.swing.JCheckBox LecheEnterajCheckBox;
+    private javax.swing.JCheckBox LechugajCheckBox;
+    private javax.swing.JCheckBox LentejasjCheckBox;
     private javax.swing.JButton ListaDeComprasjButton;
     private javax.swing.JLabel LogojLabel;
-    private javax.swing.JRadioButton ManzanajRadioButton;
+    private javax.swing.JCheckBox ManzanajCheckBox;
     private javax.swing.JButton MetajButton;
-    private javax.swing.JLabel OtroCarbojLabel;
-    private javax.swing.JLabel OtroGrasasjLabel;
-    private javax.swing.JLabel OtroProtejLabel;
-    private javax.swing.JLabel OtroVerdurasjLabel;
+    private javax.swing.JCheckBox NopalesjCheckBox;
     private javax.swing.JLabel PROTEINASjLabel;
-    private javax.swing.JRadioButton PanIntegraljRadioButton;
-    private javax.swing.JRadioButton PapasjRadioButton;
-    private javax.swing.JRadioButton PapayajRadioButton;
-    private javax.swing.JRadioButton PastajRadioButton;
-    private javax.swing.JRadioButton PechugaPollojRadioButton;
-    private javax.swing.JRadioButton PepinojRadioButton;
+    private javax.swing.JCheckBox PanAvenajCheckBox;
+    private javax.swing.JCheckBox PanIntegraljCheckBox;
+    private javax.swing.JCheckBox PapasjCheckBox;
+    private javax.swing.JCheckBox PapayajCheckBox;
+    private javax.swing.JCheckBox PastajCheckBox;
+    private javax.swing.JCheckBox PavojCheckBox;
+    private javax.swing.JCheckBox PechugaPollojCheckBox;
+    private javax.swing.JCheckBox PepinojCheckBox;
     private javax.swing.JButton PerfiljButton;
-    private javax.swing.JRadioButton PescadojRadioButton;
-    private javax.swing.JRadioButton PlatanoMadurojRadioButton;
-    private javax.swing.JRadioButton RemolachajRadioButton;
+    private javax.swing.JCheckBox PescadojCheckBox;
+    private javax.swing.JCheckBox PlátanoMadurojCheckBox;
+    private javax.swing.JCheckBox QuesoPanelajCheckBox;
+    private javax.swing.JCheckBox RemolachajCheckBox;
     private javax.swing.JButton SalirjButton;
-    private javax.swing.JRadioButton SardinajRadioButton;
-    private javax.swing.JRadioButton SemillasjRadioButton;
+    private javax.swing.JCheckBox SalmónjCheckBox;
+    private javax.swing.JCheckBox SardinajCheckBox;
+    private javax.swing.JCheckBox SemillaChíajCheckBox;
+    private javax.swing.JCheckBox SemillasjCheckBox;
     private javax.swing.JButton SiguientejButton;
-    private javax.swing.JRadioButton TahinijRadioButton;
-    private javax.swing.JRadioButton TofujRadioButton;
+    private javax.swing.JCheckBox TahinijCheckBox;
+    private javax.swing.JCheckBox TofujCheckBox;
+    private javax.swing.JCheckBox TortillaTrigojCheckBox;
     private javax.swing.JLabel VERDURASjLabel;
-    private javax.swing.JRadioButton YucaCocidajRadioButton;
-    private javax.swing.JRadioButton ZanahoriajRadioButton;
+    private javax.swing.JCheckBox YucaCocidajCheckBox;
+    private javax.swing.JCheckBox ZanahoriajCheckBox;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

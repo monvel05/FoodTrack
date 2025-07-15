@@ -45,94 +45,117 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="HuevojRadioButton" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="SardinajRadioButton" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="LentejasjRadioButton" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="EspinacasjRadioButton" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="GuisantesjRadioButton" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="GarbanzosjRadioButton" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="PescadojRadioButton" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="OtroProtejLabel" min="-2" pref="37" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="AgregarProteinasTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="CarneResjCheckBox" max="32767" attributes="0"/>
+                                  <Component id="QuesoPanelajCheckBox" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="PavojCheckBox" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="PanAvenajCheckBox" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="NopalesjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="SiguientejButton" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="GalletaIntegraljCheckBox" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="AlcachofajCheckBox" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="TortillaTrigojCheckBox" min="-2" pref="129" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="BerengenajCheckBox" min="-2" pref="99" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="PROTEINASjLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="AtúnLatajRadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="PechugaPollojRadioButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="HuevojCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="AtúnjCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="SardinajCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="LentejasjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="EspinacasjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="GuisantesjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="GarbanzosjCheckBox" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="PescadojCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="PechugaPollojCheckBox" min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="CamaronesjCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="CARBOHIDRATOSjLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="PanIntegraljCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ArrozCocidojCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="AvenajCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="PastajCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="HarinaTrigojCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ManzanajCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="PapayajCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="PlátanoMadurojCheckBox" min="-2" max="-2" attributes="0"/>
+                                      <Component id="YucaCocidajCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="VERDURASjLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="LechugajCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <Component id="BrócolijCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <Component id="ColiflorjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <Component id="ApiojCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <Component id="PepinojCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <Component id="ZanahoriajCheckBox" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
+                                              <Component id="RemolachajCheckBox" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="PapasjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <Component id="HabaFrescajCheckBox" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AcelgasjCheckBox" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Component id="CamotejCheckBox" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="PanIntegraljRadioButton" min="-2" pref="104" max="-2" attributes="0"/>
-                                  <Component id="AvenajRadioButton" min="-2" pref="104" max="-2" attributes="0"/>
-                                  <Component id="PastajRadioButton" min="-2" pref="104" max="-2" attributes="0"/>
-                                  <Component id="ManzanajRadioButton" min="-2" pref="104" max="-2" attributes="0"/>
-                                  <Component id="PapayajRadioButton" min="-2" pref="104" max="-2" attributes="0"/>
-                                  <Component id="YucaCocidajRadioButton" min="-2" pref="104" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="OtroCarbojLabel" min="-2" pref="37" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="AgregarCarbohidratosjTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="CARBOHIDRATOSjLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ArrozCocidojRadioButton" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="GRASASjLabel" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="FrutosSecosjCheckBox" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="SemillasjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="AceitunasjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="EdamamejCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="TahinijCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="AceiteCocojCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HummusjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="TofujCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="AceiteOlivajCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SalmónjCheckBox" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="LecheEnterajCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="HarinaTrigojRadioButton" min="-2" pref="122" max="-2" attributes="0"/>
-                              <Component id="PlatanoMadurojRadioButton" min="-2" pref="134" max="-2" attributes="0"/>
+                              <Component id="SemillaChíajCheckBox" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="LechugajRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="BrocolijRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="ColiflorjRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="ApiojRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="PepinojRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="ZanahoriajRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="RemolachajRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="HabaFrescajRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Component id="PapasjRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="OtroVerdurasjLabel" min="-2" pref="37" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="AgregarVerdurasjTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="VERDURASjLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="OtroGrasasjLabel" min="-2" pref="37" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="AgregarGrasasjTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="FrutosSecosjRadioButton" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Component id="SemillasjRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Component id="AceitunasjRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Component id="EdamamejRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Component id="TahinijRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Component id="HummusjRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Component id="TofujRadioButton" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Component id="GRASASjLabel" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="AceiteCocojRadioButton" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="AceiteOlivajRadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="24" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="SiguientejButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -151,94 +174,119 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="HuevojRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PanIntegraljRadioButton" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="LechugajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FrutosSecosjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="HuevojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PanIntegraljCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LechugajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="FrutosSecosjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AtúnLatajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ArrozCocidojRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BrocolijRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="SemillasjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="AtúnjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ArrozCocidojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BrócolijCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SemillasjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="SardinajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AvenajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ColiflorjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AceitunasjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SardinajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="AvenajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ColiflorjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="AceitunasjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LentejasjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PastajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ApiojRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EdamamejRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LentejasjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PastajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ApiojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="EdamamejCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="EspinacasjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="HarinaTrigojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PepinojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TahinijCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="GuisantesjCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ManzanajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ZanahoriajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AceiteCocojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="EspinacasjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="HarinaTrigojRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="PepinojRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="TahinijRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="GuisantesjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ManzanajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ZanahoriajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="GarbanzosjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="PapayajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="RemolachajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="PescadojRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="PlatanoMadurojRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="HabaFrescajRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="YucaCocidajRadioButton" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="PechugaPollojRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PapasjRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="OtroProtejLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="AgregarProteinasTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="OtroCarbojLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="AgregarCarbohidratosjTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="OtroVerdurasjLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="AgregarVerdurasjTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="GarbanzosjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PapayajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="AceiteCocojRadioButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="HummusjRadioButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="TofujRadioButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="AceiteOlivajRadioButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="OtroGrasasjLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="AgregarGrasasjTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="HummusjCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="RemolachajCheckBox" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="SiguientejButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="PlátanoMadurojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HabaFrescajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TofujCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="PescadojCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="AceiteOlivajCheckBox" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="PechugaPollojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="YucaCocidajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="PapasjCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="CamaronesjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CamotejCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="SalmónjCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="AcelgasjCheckBox" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="QuesoPanelajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TortillaTrigojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BerengenajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SemillaChíajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="PavojCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="AlcachofajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LecheEnterajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="GalletaIntegraljCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="SiguientejButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CarneResjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PanAvenajCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NopalesjCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -299,7 +347,7 @@
                       <Component id="ConfiguracionjButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="SalirjButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -405,61 +453,6 @@
             <Property name="text" type="java.lang.String" value="GRASAS SALUDABLES"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="HuevojRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="HUEVO"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HuevojRadioButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="At&#xfa;nLatajRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="AT&#xda;N EN LATA"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="SardinajRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="SARDINA"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="LentejasjRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="LENTEJAS"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="EspinacasjRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ESPINACAS"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="GuisantesjRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="GUISANTES"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="GarbanzosjRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="GARBANZOS"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="PescadojRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="PESCADO"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="PechugaPollojRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="PECHUGA DE POLLO"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="OtroProtejLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="OTRO:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="AgregarProteinasTextField">
-        </Component>
         <Component class="javax.swing.JButton" name="SiguientejButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -467,168 +460,267 @@
             </Property>
             <Property name="text" type="java.lang.String" value="SIGUIENTE&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SiguientejButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="PanIntegraljRadioButton">
+        <Component class="javax.swing.JCheckBox" name="HuevojCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="HUEVO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="At&#xfa;njCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="LATA DE AT&#xda;N"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="At&#xfa;njCheckBoxActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="SardinajCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SARDINA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="LentejasjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="LENTEJAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="EspinacasjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ESPINACAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="GuisantesjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="GUISANTES"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="GarbanzosjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="GARBANZOS "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="PescadojCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PESCADO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="PechugaPollojCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PECHUGA DE POLLO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="CamaronesjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CAMARONES"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="QuesoPanelajCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="QUESO PANELA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="PavojCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PAVO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="CarneResjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CARNE DE RES"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="PanIntegraljCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="PAN INTEGRAL"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="ArrozCocidojRadioButton">
+        <Component class="javax.swing.JCheckBox" name="ArrozCocidojCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="ARROZ COCIDO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="AvenajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="AvenajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="AVENA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="PastajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="PastajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="PASTA"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PastajRadioButtonActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="HarinaTrigojRadioButton">
+        <Component class="javax.swing.JCheckBox" name="HarinaTrigojCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="HARINA DE TRIGO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="ManzanajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="ManzanajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="MANZANA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="PapayajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="PapayajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="PAPAYA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="PlatanoMadurojRadioButton">
+        <Component class="javax.swing.JCheckBox" name="Pl&#xe1;tanoMadurojCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="PL&#xc1;TANO MADURO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="YucaCocidajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="YucaCocidajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="YUCA COCIDA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="OtroCarbojLabel">
+        <Component class="javax.swing.JCheckBox" name="CamotejCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="OTRO:"/>
+            <Property name="text" type="java.lang.String" value="CAMOTE"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="AgregarCarbohidratosjTextField">
+        <Component class="javax.swing.JCheckBox" name="TortillaTrigojCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TORTILLA DE TRIGO"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="LechugajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="GalletaIntegraljCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="GALLETA INTEGRAL"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="PanAvenajCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PAN DE AVENA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="LechugajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="LECHUGA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="FrutosSecosjRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="FRUTOS SECOS"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="BrocolijRadioButton">
+        <Component class="javax.swing.JCheckBox" name="Br&#xf3;colijCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="BR&#xd3;COLI"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="SemillasjRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="SEMILLAS"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="ColiflorjRadioButton">
+        <Component class="javax.swing.JCheckBox" name="ColiflorjCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="COLIFLOR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="AceitunasjRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ACEITUNAS"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="ApiojRadioButton">
+        <Component class="javax.swing.JCheckBox" name="ApiojCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="APIO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="EdamamejRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="EDAMAME"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="PepinojRadioButton">
+        <Component class="javax.swing.JCheckBox" name="PepinojCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="PEPINO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="TahinijRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="TAHINI"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="ZanahoriajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="ZanahoriajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="ZANAHORIA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="AceiteCocojRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ACEITE DE COCO"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="RemolachajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="RemolachajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="REMOLACHA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="HummusjRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="HUMMUS"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="HabaFrescajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="HabaFrescajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="HABA FRESCA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="TofujRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="TOFU"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="PapasjRadioButton">
+        <Component class="javax.swing.JCheckBox" name="PapasjCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="PAPAS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="AceiteOlivajRadioButton">
+        <Component class="javax.swing.JCheckBox" name="AcelgasjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ACELGAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="BerengenajCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="BERENGENA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="AlcachofajCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ALCACHOFA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="NopalesjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="NOPALES"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="FrutosSecosjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="FRUTOS SECOS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="SemillasjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SEMILLAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="AceitunasjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ACEITUNAS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="EdamamejCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="EDAMAME"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="TahinijCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TAHINI"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="AceiteCocojCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ACEITE DE COCO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="HummusjCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="HUMMUS"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="TofujCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TOFU"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="AceiteOlivajCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="ACEITE DE OLIVA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="OtroVerdurasjLabel">
+        <Component class="javax.swing.JCheckBox" name="Salm&#xf3;njCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="OTRO:"/>
+            <Property name="text" type="java.lang.String" value="SALM&#xd3;N"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="OtroGrasasjLabel">
+        <Component class="javax.swing.JCheckBox" name="SemillaCh&#xed;ajCheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="OTRO:"/>
+            <Property name="text" type="java.lang.String" value="SEMILLAS DE CH&#xcd;A"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="AgregarVerdurasjTextField">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgregarVerdurasjTextFieldActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="AgregarGrasasjTextField">
+        <Component class="javax.swing.JCheckBox" name="LecheEnterajCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="LECHE ENTERA"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
