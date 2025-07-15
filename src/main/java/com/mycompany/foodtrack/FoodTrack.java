@@ -11,6 +11,8 @@ package com.mycompany.foodtrack;
 public class FoodTrack {
 
     public static void main(String[] args) {
+        DataBase db = new DataBase();
+        db.connection();
         java.awt.EventQueue.invokeLater(() -> {
             new Login().setVisible(true);
         });

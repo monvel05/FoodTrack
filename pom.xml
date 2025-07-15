@@ -17,4 +17,18 @@
         </resource>
      </resources>
     </build>
+    <dependencies>
+        <!--Agregando dependencia para MySQL JDBC Connector-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version> <!--Cambiar la versión de ser necesario-->
+        </dependency>
+        <!--Dependencia para ocultar los datos de conexión de la base de datos-->
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>dotenv-java</artifactId>
+            <version>3.0.0</version> <!-- Verifica la última versión -->
+        </dependency>
+    </dependencies>
 </project>
