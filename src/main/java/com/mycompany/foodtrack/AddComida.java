@@ -29,9 +29,7 @@ public class AddComida extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
-        configuracion = new javax.swing.JButton();
         addComida = new javax.swing.JButton();
-        meta = new javax.swing.JButton();
         listaCompras = new javax.swing.JButton();
         estadisticas = new javax.swing.JButton();
         perfil = new javax.swing.JButton();
@@ -55,27 +53,12 @@ public class AddComida extends javax.swing.JFrame {
         menu.setMinimumSize(new java.awt.Dimension(4, 4));
         menu.setPreferredSize(new java.awt.Dimension(130, 25));
 
-        configuracion.setBackground(new java.awt.Color(246, 226, 155));
-        configuracion.setText("Configuración");
-        configuracion.setPreferredSize(new java.awt.Dimension(80, 30));
-
         addComida.setBackground(new java.awt.Color(246, 226, 155));
         addComida.setText("Añadir comida");
         addComida.setPreferredSize(new java.awt.Dimension(80, 30));
         addComida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addComidaActionPerformed(evt);
-            }
-        });
-
-        meta.setBackground(new java.awt.Color(246, 226, 155));
-        meta.setText("Meta");
-        meta.setMaximumSize(new java.awt.Dimension(112, 27));
-        meta.setMinimumSize(new java.awt.Dimension(112, 27));
-        meta.setPreferredSize(new java.awt.Dimension(80, 30));
-        meta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                metaActionPerformed(evt);
             }
         });
 
@@ -86,6 +69,11 @@ public class AddComida extends javax.swing.JFrame {
         estadisticas.setBackground(new java.awt.Color(246, 226, 155));
         estadisticas.setText("Estadísiticas");
         estadisticas.setPreferredSize(new java.awt.Dimension(80, 30));
+        estadisticas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estadisticasActionPerformed(evt);
+            }
+        });
 
         perfil.setBackground(new java.awt.Color(246, 226, 155));
         perfil.setText("Perfil");
@@ -106,12 +94,10 @@ public class AddComida extends javax.swing.JFrame {
             .addGroup(menuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(configuracion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(perfil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(menuLayout.createSequentialGroup()
                         .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(addComida, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(meta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(listaCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(menuLayout.createSequentialGroup()
                                 .addGap(9, 9, 9)
@@ -128,18 +114,14 @@ public class AddComida extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(66, 66, 66)
                 .addComponent(addComida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(meta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(listaCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(estadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(configuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
@@ -238,10 +220,6 @@ public class AddComida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void metaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_metaActionPerformed
-
     private void addComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComidaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addComidaActionPerformed
@@ -291,7 +269,6 @@ public class AddComida extends javax.swing.JFrame {
     private javax.swing.JButton addComida;
     private javax.swing.JButton botobBusqueda;
     private javax.swing.JTextField busqueda;
-    private javax.swing.JButton configuracion;
     private javax.swing.JButton estadisticas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -299,7 +276,6 @@ public class AddComida extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton listaCompras;
     private javax.swing.JPanel menu;
-    private javax.swing.JButton meta;
     private javax.swing.JButton perfil;
     private javax.swing.JButton salir;
     private javax.swing.JPanel tablaAlimentos;
