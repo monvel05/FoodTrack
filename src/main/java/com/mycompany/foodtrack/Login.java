@@ -4,8 +4,6 @@
  */
 package com.mycompany.foodtrack;
 
-import java.util.Arrays;
-
 /**
  *
  * @author monyv
