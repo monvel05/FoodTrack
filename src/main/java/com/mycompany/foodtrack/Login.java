@@ -4,6 +4,7 @@
  */
 package com.mycompany.foodtrack;
 
+import javax.swing.JOptionPane;
 /**
  *
  * @author monyv
@@ -46,6 +47,7 @@ public class Login extends javax.swing.JFrame {
 
         userInput.setBackground(new java.awt.Color(253, 140, 13));
         userInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        userInput.setToolTipText("ingresa el nombre de usuario");
         userInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userInputActionPerformed(evt);
@@ -54,6 +56,7 @@ public class Login extends javax.swing.JFrame {
 
         passwordInput.setBackground(new java.awt.Color(253, 140, 13));
         passwordInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passwordInput.setToolTipText("ingresa tu contraseña");
 
         passwordUsuario.setText("Contraseña:");
 
@@ -156,10 +159,25 @@ public class Login extends javax.swing.JFrame {
 
     private void logInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInBtnActionPerformed
         // TODO add your handling code here:
+    if (userInput.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "️ El campo de usuario está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // Validar si el campo de contraseña está vacío
+    if (new String(passwordInput.getPassword()).trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "️ El campo de contraseña está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+        
         if ("admin@correo.com".equals(userInput.getText()) && "12345".equals(new String (passwordInput.getPassword()))){
+            JOptionPane.showMessageDialog(null, "Accediste correctamente a tu cuenta ", "Información", JOptionPane.INFORMATION_MESSAGE);
             AddComida miaddcomida = new AddComida();
             miaddcomida.setVisible(true);
             dispose();
+        }
+        else{
+        JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_logInBtnActionPerformed
 

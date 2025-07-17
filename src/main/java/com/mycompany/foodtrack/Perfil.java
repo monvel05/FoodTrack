@@ -31,14 +31,14 @@ public class Perfil extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nombrePerfil = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        pesoPerfil = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        alturaPerfil = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        imcPerfil = new javax.swing.JTextField();
+        barraImc = new javax.swing.JProgressBar();
         actualizarDatosBtn = new javax.swing.JButton();
         menu = new javax.swing.JPanel();
         addComidaBtn = new javax.swing.JButton();
@@ -58,31 +58,34 @@ public class Perfil extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(254, 244, 192));
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Nombre");
 
-        jTextField1.setBackground(new java.awt.Color(253, 140, 13));
+        nombrePerfil.setBackground(new java.awt.Color(253, 140, 13));
 
         jLabel2.setText("Peso");
 
-        jTextField2.setBackground(new java.awt.Color(253, 140, 13));
+        pesoPerfil.setBackground(new java.awt.Color(253, 140, 13));
 
-        jLabel3.setText("Estatura");
+        jLabel3.setText("Altura");
 
-        jTextField3.setBackground(new java.awt.Color(253, 140, 13));
+        alturaPerfil.setBackground(new java.awt.Color(253, 140, 13));
 
         jLabel4.setText("IMC");
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(253, 140, 13));
+        imcPerfil.setEditable(false);
+        imcPerfil.setBackground(new java.awt.Color(253, 140, 13));
 
-        jProgressBar1.setForeground(new java.awt.Color(255, 204, 51));
-        jProgressBar1.setValue(40);
+        barraImc.setForeground(new java.awt.Color(255, 204, 51));
+        barraImc.setToolTipText("porcentaje de IMC");
+        barraImc.setValue(40);
 
         actualizarDatosBtn.setBackground(new java.awt.Color(253, 140, 13));
         actualizarDatosBtn.setText("Actualizar Datos");
+        actualizarDatosBtn.setToolTipText("Actualizar datos");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -93,16 +96,16 @@ public class Perfil extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(barraImc, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)
                         .addComponent(jLabel3)
                         .addComponent(jLabel2)
                         .addComponent(jLabel1)
-                        .addComponent(jTextField1)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                        .addComponent(jTextField3)))
+                        .addComponent(nombrePerfil)
+                        .addComponent(pesoPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                        .addComponent(alturaPerfil)
+                        .addComponent(imcPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -115,21 +118,21 @@ public class Perfil extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nombrePerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pesoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(alturaPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imcPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(barraImc, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(actualizarDatosBtn)
                 .addContainerGap(14, Short.MAX_VALUE))
@@ -142,6 +145,7 @@ public class Perfil extends javax.swing.JFrame {
 
         addComidaBtn.setBackground(new java.awt.Color(246, 226, 155));
         addComidaBtn.setText("Añadir comida");
+        addComidaBtn.setToolTipText("Añadir comida");
         addComidaBtn.setPreferredSize(new java.awt.Dimension(80, 30));
         addComidaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -156,6 +160,7 @@ public class Perfil extends javax.swing.JFrame {
 
         listaComprasBtn.setBackground(new java.awt.Color(246, 226, 155));
         listaComprasBtn.setText("Lista de Compras");
+        listaComprasBtn.setToolTipText("Lista de compras");
         listaComprasBtn.setPreferredSize(new java.awt.Dimension(80, 30));
         listaComprasBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +170,7 @@ public class Perfil extends javax.swing.JFrame {
 
         estadisticasBtn.setBackground(new java.awt.Color(246, 226, 155));
         estadisticasBtn.setText("Estadísiticas");
+        estadisticasBtn.setToolTipText("Estadísticas");
         estadisticasBtn.setPreferredSize(new java.awt.Dimension(80, 30));
         estadisticasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -174,6 +180,7 @@ public class Perfil extends javax.swing.JFrame {
 
         perfilBtn.setBackground(new java.awt.Color(246, 226, 155));
         perfilBtn.setText("Perfil");
+        perfilBtn.setToolTipText("Perfil");
         perfilBtn.setPreferredSize(new java.awt.Dimension(80, 30));
         perfilBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,6 +190,7 @@ public class Perfil extends javax.swing.JFrame {
 
         salirBtn.setBackground(new java.awt.Color(246, 226, 155));
         salirBtn.setText("Salir");
+        salirBtn.setToolTipText("Salir");
         salirBtn.setMaximumSize(new java.awt.Dimension(50, 30));
         salirBtn.setPreferredSize(new java.awt.Dimension(50, 30));
         salirBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -202,19 +210,17 @@ public class Perfil extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(perfilBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(menuLayout.createSequentialGroup()
-                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(addComidaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(listaComprasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(menuLayout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 4, Short.MAX_VALUE))
                     .addComponent(estadisticasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(salirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(salirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(listaComprasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addComidaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,6 +241,8 @@ public class Perfil extends javax.swing.JFrame {
         );
 
         jLabel6.setText("Perfil");
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         grupo.add(claroRadioBtn);
         claroRadioBtn.setSelected(true);
@@ -270,20 +278,21 @@ public class Perfil extends javax.swing.JFrame {
 
         eliminarCuentaBtn.setBackground(new java.awt.Color(253, 140, 13));
         eliminarCuentaBtn.setText("Eliminar");
+        eliminarCuentaBtn.setToolTipText("Eliminar cuenta");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
+                        .addGap(83, 83, 83)
                         .addComponent(jLabel6)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(1, 1, 1)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -329,7 +338,7 @@ public class Perfil extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,10 +390,13 @@ public class Perfil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizarDatosBtn;
     private javax.swing.JButton addComidaBtn;
+    private javax.swing.JTextField alturaPerfil;
+    private javax.swing.JProgressBar barraImc;
     private javax.swing.JRadioButton claroRadioBtn;
     private javax.swing.JButton eliminarCuentaBtn;
     private javax.swing.JButton estadisticasBtn;
     private javax.swing.ButtonGroup grupo;
+    private javax.swing.JTextField imcPerfil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -396,15 +408,12 @@ public class Perfil extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton listaComprasBtn;
     private javax.swing.JPanel menu;
+    private javax.swing.JTextField nombrePerfil;
     private javax.swing.JRadioButton oscuroRadioBtn;
     private javax.swing.JButton perfilBtn;
+    private javax.swing.JTextField pesoPerfil;
     private javax.swing.JButton salirBtn;
     // End of variables declaration//GEN-END:variables
 }
