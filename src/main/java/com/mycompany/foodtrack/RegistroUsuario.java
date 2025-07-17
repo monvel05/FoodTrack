@@ -26,6 +26,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupoS = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         imgSiluetas = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -33,8 +34,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        RadioHombre = new javax.swing.JRadioButton();
+        RadioMujer = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         peso = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -67,16 +68,18 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
         jLabel3.setText("Sexo:");
 
-        jRadioButton1.setBackground(new java.awt.Color(253, 140, 13));
-        jRadioButton1.setText("Hombre");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        RadioHombre.setBackground(new java.awt.Color(253, 140, 13));
+        grupoS.add(RadioHombre);
+        RadioHombre.setText("Hombre");
+        RadioHombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                RadioHombreActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setBackground(new java.awt.Color(253, 140, 13));
-        jRadioButton2.setText("Mujer");
+        RadioMujer.setBackground(new java.awt.Color(253, 140, 13));
+        grupoS.add(RadioMujer);
+        RadioMujer.setText("Mujer");
 
         jLabel4.setText("Peso (Kg):");
 
@@ -155,9 +158,9 @@ public class RegistroUsuario extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton1)
+                                .addComponent(RadioHombre)
                                 .addGap(53, 53, 53)
-                                .addComponent(jRadioButton2))
+                                .addComponent(RadioMujer))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -205,8 +208,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
+                            .addComponent(RadioHombre)
+                            .addComponent(RadioMujer))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
@@ -252,9 +255,9 @@ public class RegistroUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_correoUsuarioActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void RadioHombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioHombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_RadioHombreActionPerformed
 
     private void registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarseActionPerformed
         // TODO add your handling code here:
@@ -267,10 +270,13 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton RadioHombre;
+    private javax.swing.JRadioButton RadioMujer;
     private javax.swing.JTextField altura;
     private javax.swing.JTextField apellido;
     private javax.swing.JLabel apellidoLabel;
     private javax.swing.JTextField correoUsuario;
+    private javax.swing.ButtonGroup grupoS;
     private javax.swing.JLabel imgSiluetas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -281,8 +287,6 @@ public class RegistroUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nombreUsuario;

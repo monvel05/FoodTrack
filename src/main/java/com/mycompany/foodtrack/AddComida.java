@@ -65,6 +65,11 @@ public class AddComida extends javax.swing.JFrame {
         listaCompras.setBackground(new java.awt.Color(246, 226, 155));
         listaCompras.setText("Lista de Compras");
         listaCompras.setPreferredSize(new java.awt.Dimension(80, 30));
+        listaCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaComprasActionPerformed(evt);
+            }
+        });
 
         estadisticas.setBackground(new java.awt.Color(246, 226, 155));
         estadisticas.setText("Estadísiticas");
@@ -78,11 +83,21 @@ public class AddComida extends javax.swing.JFrame {
         perfil.setBackground(new java.awt.Color(246, 226, 155));
         perfil.setText("Perfil");
         perfil.setPreferredSize(new java.awt.Dimension(80, 30));
+        perfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfilActionPerformed(evt);
+            }
+        });
 
         salir.setBackground(new java.awt.Color(246, 226, 155));
         salir.setText("Salir");
         salir.setMaximumSize(new java.awt.Dimension(50, 30));
         salir.setPreferredSize(new java.awt.Dimension(50, 30));
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/logo_blanco.png"))); // NOI18N
         jLabel1.setText("jLabel1");
