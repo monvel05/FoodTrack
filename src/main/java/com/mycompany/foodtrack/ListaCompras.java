@@ -4,6 +4,10 @@
  */
 package com.mycompany.foodtrack;
 
+import javax.swing.JOptionPane;
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  *
  * @author hilar
@@ -16,6 +20,72 @@ public class ListaCompras extends javax.swing.JFrame {
     public ListaCompras() {
         initComponents();
     }
+    private List<String> obtenerAlimentosSeleccionados() {
+    List<String> seleccionados = new ArrayList<>();
+
+    // Proteínas
+    if (AtúnjCheckBox.isSelected()) seleccionados.add("Atún");
+    if (HuevojCheckBox.isSelected()) seleccionados.add("Huevo");
+    if (PechugaPollojCheckBox.isSelected()) seleccionados.add("Pechuga de pollo");
+    if (TofujCheckBox.isSelected()) seleccionados.add("Tofu");
+    if (QuesoPanelajCheckBox.isSelected()) seleccionados.add("Queso panela");
+    if (SardinajCheckBox.isSelected()) seleccionados.add("Sardina");
+    if (PescadojCheckBox.isSelected()) seleccionados.add("Pescado");
+    if (CamaronesjCheckBox.isSelected()) seleccionados.add("Camarones");
+    if (PavojCheckBox.isSelected()) seleccionados.add("Pavo");
+    if (LentejasjCheckBox.isSelected()) seleccionados.add("Lentejas");
+    if (EspinacasjCheckBox.isSelected()) seleccionados.add("Espinacas");
+    if(GuisantesjCheckBox.isSelected()) seleccionados.add("Guisantes");
+    if(CarneResjCheckBox.isSelected()) seleccionados.add("Carne de Res");
+
+    // Carbohidratos
+    if (PanIntegraljCheckBox.isSelected()) seleccionados.add("Pan integral");
+    if (PanAvenajCheckBox.isSelected()) seleccionados.add("Pan de avena");
+    if (PastajCheckBox.isSelected()) seleccionados.add("Pasta");
+    if (PlátanoMadurojCheckBox.isSelected()) seleccionados.add("Plátano maduro");
+    if (TortillaTrigojCheckBox.isSelected()) seleccionados.add("Tortilla de trigo");
+    if (YucaCocidajCheckBox.isSelected()) seleccionados.add("Yuca cocida");
+    if (ArrozCocidojCheckBox.isSelected()) seleccionados.add("Arroz cocido");
+    if (AvenajCheckBox.isSelected()) seleccionados.add("Avena");
+    if (HarinaTrigojCheckBox.isSelected()) seleccionados.add("Harina de trigo");
+    if (ManzanajCheckBox.isSelected()) seleccionados.add("Manzana");
+    if (PapayajCheckBox.isSelected()) seleccionados.add("Papaya");
+    if (CamotejCheckBox.isSelected()) seleccionados.add("Camote");
+    if (GalletaIntegraljCheckBox.isSelected()) seleccionados.add("Galleta integral");
+
+    // Grasas saludables
+    if (AceitunasjCheckBox.isSelected()) seleccionados.add("Aceitunas");
+    if (SemillasjCheckBox.isSelected()) seleccionados.add("Semillas");
+    if (SemillaChíajCheckBox.isSelected()) seleccionados.add("Chía");
+    if (TahinijCheckBox.isSelected()) seleccionados.add("Tahini");
+    if (FrutosSecosjCheckBox.isSelected()) seleccionados.add("Frutos secos");
+    if (EdamamejCheckBox.isSelected()) seleccionados.add("Edamame");
+    if (AceiteCocojCheckBox.isSelected()) seleccionados.add("Aceite de coco");
+    if (HummusjCheckBox.isSelected()) seleccionados.add("Hummus");
+    if (TofujCheckBox.isSelected()) seleccionados.add("Tofu");
+    if (AceiteOlivajCheckBox.isSelected()) seleccionados.add("Aceite de oliva");
+    if (SalmónjCheckBox.isSelected()) seleccionados.add("Salmón");
+    if (LecheEnterajCheckBox.isSelected()) seleccionados.add("Leche entera");
+
+    // Verduras
+    if (BrócolijCheckBox.isSelected()) seleccionados.add("Brócoli");
+    if (ZanahoriajCheckBox.isSelected()) seleccionados.add("Zanahoria");
+    if (RemolachajCheckBox.isSelected()) seleccionados.add("Remolacha");
+    if (PepinojCheckBox.isSelected()) seleccionados.add("Pepino");
+    if (NopalesjCheckBox.isSelected()) seleccionados.add("Nopales");
+    if (LechugajCheckBox.isSelected()) seleccionados.add("Lechuga");
+    if (AlcachofajCheckBox.isSelected()) seleccionados.add("Alcachofa");
+    if (ColiflorjCheckBox.isSelected()) seleccionados.add("Coliflor");
+    if (ApiojCheckBox.isSelected()) seleccionados.add("Apio");
+    if (HabaFrescajCheckBox.isSelected()) seleccionados.add("Haba fresca");
+    if (PapasjCheckBox.isSelected()) seleccionados.add("Papas");
+    if (AcelgasjCheckBox.isSelected()) seleccionados.add("Acelgas");
+    if (BerengenajCheckBox.isSelected()) seleccionados.add("Berengena");
+    
+
+    return seleccionados;
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,11 +100,9 @@ public class ListaCompras extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         LogojLabel = new javax.swing.JLabel();
         AñadirComidajButton = new javax.swing.JButton();
-        MetajButton = new javax.swing.JButton();
         ListaDeComprasjButton = new javax.swing.JButton();
         EstadisticasjButton = new javax.swing.JButton();
         PerfiljButton = new javax.swing.JButton();
-        ConfiguracionjButton = new javax.swing.JButton();
         SalirjButton = new javax.swing.JButton();
         PROTEINASjLabel = new javax.swing.JLabel();
         CARBOHIDRATOSjLabel = new javax.swing.JLabel();
@@ -109,23 +177,37 @@ public class ListaCompras extends javax.swing.JFrame {
             }
         });
 
-        MetajButton.setBackground(new java.awt.Color(255, 255, 204));
-        MetajButton.setText("Meta");
-
         ListaDeComprasjButton.setBackground(new java.awt.Color(255, 255, 204));
         ListaDeComprasjButton.setText("Lista de compras");
+        ListaDeComprasjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListaDeComprasjButtonActionPerformed(evt);
+            }
+        });
 
         EstadisticasjButton.setBackground(new java.awt.Color(255, 255, 204));
         EstadisticasjButton.setText("Estadísticas");
+        EstadisticasjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadisticasjButtonActionPerformed(evt);
+            }
+        });
 
         PerfiljButton.setBackground(new java.awt.Color(255, 255, 204));
         PerfiljButton.setText("Perfil");
-
-        ConfiguracionjButton.setBackground(new java.awt.Color(255, 255, 204));
-        ConfiguracionjButton.setText("Configuración");
+        PerfiljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PerfiljButtonActionPerformed(evt);
+            }
+        });
 
         SalirjButton.setBackground(new java.awt.Color(255, 255, 204));
         SalirjButton.setText("Salir");
+        SalirjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirjButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -137,11 +219,9 @@ public class ListaCompras extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AñadirComidajButton)
-                            .addComponent(MetajButton)
                             .addComponent(ListaDeComprasjButton)
                             .addComponent(EstadisticasjButton)
-                            .addComponent(PerfiljButton)
-                            .addComponent(ConfiguracionjButton))
+                            .addComponent(PerfiljButton))
                         .addGap(0, 1, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -154,19 +234,15 @@ public class ListaCompras extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(LogojLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(AñadirComidajButton)
-                .addGap(18, 18, 18)
-                .addComponent(MetajButton)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addComponent(ListaDeComprasjButton)
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
                 .addComponent(EstadisticasjButton)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(PerfiljButton)
-                .addGap(18, 18, 18)
-                .addComponent(ConfiguracionjButton)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(SalirjButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -513,9 +589,29 @@ public class ListaCompras extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//BUTTON AÑADIR COMIDA
     private void AñadirComidajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirComidajButtonActionPerformed
+       AddComida miaddcomida= new AddComida();
+        miaddcomida.setVisible(true);
+       this.dispose();
+
+    //Logica de checkboxes
+        List<String> seleccionados = obtenerAlimentosSeleccionados();
+     if(seleccionados.isEmpty()) {
+         JOptionPane.showMessageDialog(this, "Selecciona al menos un alimento");
+     } else{
+      JOptionPane.showMessageDialog(this, "has añadido: " + String.join(",", seleccionados));
+     }
+     
+     //Mostrar en consola para depurar
+     List<String> lista = obtenerAlimentosSeleccionados();
+     System.out.println("Seleccionaste:");
+for (String alimento : lista) {
+    System.out.println("- " + alimento);
+}
+    
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_AñadirComidajButtonActionPerformed
 
     private void AtúnjCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtúnjCheckBoxActionPerformed
@@ -523,8 +619,41 @@ public class ListaCompras extends javax.swing.JFrame {
     }//GEN-LAST:event_AtúnjCheckBoxActionPerformed
 
     private void SiguientejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguientejButtonActionPerformed
+       List<String> seleccionados = obtenerAlimentosSeleccionados();
         // TODO add your handling code here:
+        
+        SeleccionListaCompras nuevaPantalla = new SeleccionListaCompras(seleccionados);
+        nuevaPantalla.setVisible(true);
+        this.dispose();
+        
+        
     }//GEN-LAST:event_SiguientejButtonActionPerformed
+
+    private void ListaDeComprasjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaDeComprasjButtonActionPerformed
+        // TODO add your handling code here:
+        ListaCompras listaPantalla = new ListaCompras();
+        listaPantalla.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ListaDeComprasjButtonActionPerformed
+
+    private void EstadisticasjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadisticasjButtonActionPerformed
+        // TODO add your handling code here:
+        Estadisticas estadisticasPantalla = new Estadisticas();
+        estadisticasPantalla.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EstadisticasjButtonActionPerformed
+
+    private void PerfiljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfiljButtonActionPerformed
+        // TODO add your handling code here:
+        Perfil perfilPantalla = new Perfil();
+        perfilPantalla.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PerfiljButtonActionPerformed
+
+    private void SalirjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirjButtonActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_SalirjButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -549,7 +678,6 @@ public class ListaCompras extends javax.swing.JFrame {
     private javax.swing.JCheckBox CamotejCheckBox;
     private javax.swing.JCheckBox CarneResjCheckBox;
     private javax.swing.JCheckBox ColiflorjCheckBox;
-    private javax.swing.JButton ConfiguracionjButton;
     private javax.swing.JCheckBox EdamamejCheckBox;
     private javax.swing.JCheckBox EspinacasjCheckBox;
     private javax.swing.JButton EstadisticasjButton;
@@ -568,7 +696,6 @@ public class ListaCompras extends javax.swing.JFrame {
     private javax.swing.JButton ListaDeComprasjButton;
     private javax.swing.JLabel LogojLabel;
     private javax.swing.JCheckBox ManzanajCheckBox;
-    private javax.swing.JButton MetajButton;
     private javax.swing.JCheckBox NopalesjCheckBox;
     private javax.swing.JLabel PROTEINASjLabel;
     private javax.swing.JCheckBox PanAvenajCheckBox;
