@@ -61,8 +61,7 @@
                                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <EmptySpace min="0" pref="42" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
@@ -70,9 +69,10 @@
                                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField1ConsumoCalorico" alignment="0" pref="122" max="32767" attributes="0"/>
+                                              <Component id="consumoCalorico" alignment="0" pref="122" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <Component id="comboMeta" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Component id="barraProgreso" alignment="1" max="32767" attributes="0"/>
@@ -91,7 +91,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                          <Component id="comboMeta" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -103,7 +103,7 @@
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextField1ConsumoCalorico" min="-2" max="-2" attributes="0"/>
+                          <Component id="consumoCalorico" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPanel2" max="32767" attributes="0"/>
@@ -123,19 +123,19 @@
             <Property name="text" type="java.lang.String" value="Nivel de progreso"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="comboMeta">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="9d" green="e2" red="f6" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="3">
+                <StringItem index="0" value="Ganar calorias"/>
+                <StringItem index="1" value="Perder calorias"/>
+                <StringItem index="2" value=" "/>
               </StringArray>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Elige la opcion de tu meta"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -340,6 +340,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="toolTipText" type="java.lang.String" value="Agrega unicamente numeros"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -362,6 +363,7 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="campoProgreso">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
@@ -388,7 +390,7 @@
             <Property name="text" type="java.lang.String" value="Consumo Calorico"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1ConsumoCalorico">
+        <Component class="javax.swing.JTextField" name="consumoCalorico">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>

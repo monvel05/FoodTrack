@@ -28,7 +28,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboMeta = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
         addComida = new javax.swing.JButton();
@@ -45,7 +45,7 @@ public class Estadisticas extends javax.swing.JFrame {
         campoProgreso = new javax.swing.JTextArea();
         barraProgreso = new javax.swing.JProgressBar();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1ConsumoCalorico = new javax.swing.JTextField();
+        consumoCalorico = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,8 +54,9 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel1.setText("Nivel de progreso");
 
-        jComboBox1.setBackground(new java.awt.Color(246, 226, 157));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboMeta.setBackground(new java.awt.Color(246, 226, 157));
+        comboMeta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ganar calorias", "Perder calorias", " " }));
+        comboMeta.setToolTipText("Elige la opcion de tu meta");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -177,12 +178,14 @@ public class Estadisticas extends javax.swing.JFrame {
 
         campoMetaActual.setColumns(20);
         campoMetaActual.setRows(5);
+        campoMetaActual.setToolTipText("Agrega unicamente numeros");
         jScrollPane2.setViewportView(campoMetaActual);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        campoProgreso.setEditable(false);
         campoProgreso.setColumns(20);
         campoProgreso.setRows(5);
         jScrollPane1.setViewportView(campoProgreso);
@@ -195,7 +198,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel2.setText("Consumo Calorico");
 
-        jTextField1ConsumoCalorico.setEditable(false);
+        consumoCalorico.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -215,8 +218,7 @@ public class Estadisticas extends javax.swing.JFrame {
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(0, 42, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -224,7 +226,8 @@ public class Estadisticas extends javax.swing.JFrame {
                                             .addComponent(jLabel2)
                                             .addComponent(jLabel4)
                                             .addComponent(jLabel3)
-                                            .addComponent(jTextField1ConsumoCalorico, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)))))
+                                            .addComponent(consumoCalorico, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)))
+                                    .addComponent(comboMeta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(barraProgreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(47, 47, 47))))
         );
@@ -236,7 +239,7 @@ public class Estadisticas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboMeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -248,7 +251,7 @@ public class Estadisticas extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1ConsumoCalorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(consumoCalorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 37, Short.MAX_VALUE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24)
@@ -315,8 +318,9 @@ public class Estadisticas extends javax.swing.JFrame {
     private javax.swing.JProgressBar barraProgreso;
     private javax.swing.JTextArea campoMetaActual;
     private javax.swing.JTextArea campoProgreso;
+    private javax.swing.JComboBox<String> comboMeta;
+    private javax.swing.JTextField consumoCalorico;
     private javax.swing.JButton estadisticas;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -326,7 +330,6 @@ public class Estadisticas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1ConsumoCalorico;
     private javax.swing.JButton listaCompras;
     private javax.swing.JPanel menu;
     private javax.swing.JButton perfil;
