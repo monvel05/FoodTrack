@@ -15,6 +15,7 @@ public class AddComida extends javax.swing.JFrame {
      */
     public AddComida() {
         initComponents();
+        DataBase.conectar();
         
     }
 
@@ -269,8 +270,7 @@ public class AddComida extends javax.swing.JFrame {
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         // TODO add your handling code here:
         dispose();
-        DataBase db = new DataBase();
-        db.disconnect();
+        DataBase.desconectar();
     }//GEN-LAST:event_salirActionPerformed
 
     /**
