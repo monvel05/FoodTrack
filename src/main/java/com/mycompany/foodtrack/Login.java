@@ -17,7 +17,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         setSize(740, 800);
         setLocationRelativeTo(null); // Centrar en pantalla
-        initComponents();
+        initComponents();    
     }
 
     /**
@@ -172,6 +172,7 @@ public class Login extends javax.swing.JFrame {
         
         if (userInput != null && passwordInput != null){
             if (PeticionesDB.verificarUsuario(userInput.getText(), new String(passwordInput.getPassword()))){
+                
                 JOptionPane.showMessageDialog(null, "Accediste correctamente a tu cuenta ", "Información", JOptionPane.INFORMATION_MESSAGE);
                 AddComida miaddcomida = new AddComida();
                 miaddcomida.setVisible(true);
