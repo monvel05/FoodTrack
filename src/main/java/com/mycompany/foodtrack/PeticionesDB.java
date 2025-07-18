@@ -6,7 +6,6 @@ package com.mycompany.foodtrack;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 
@@ -90,6 +89,23 @@ public class PeticionesDB {
         return false;
     }
     
-    
+    public static int obtenerIdUsuario(String nombreUsuario) {
+        String query = "SELECT idUsuarios FROM usuarios WHERE nom_usuario = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setString(1, nombreUsuario);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("idUsuarios"); // Retorna el ID si encuentra el usuario
+                }
+                return -1; // Mejor usar -1 para indicar que no se encontró
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener ID de usuario: " + e.getMessage());
+            return -1; // Retorna -1 en caso de error
+        }
+    }
     
 }

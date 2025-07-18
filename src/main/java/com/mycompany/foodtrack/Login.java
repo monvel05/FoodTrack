@@ -17,7 +17,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         setSize(740, 800);
         setLocationRelativeTo(null); // Centrar en pantalla
-        initComponents();
+        initComponents();    
     }
 
     /**
@@ -159,25 +159,27 @@ public class Login extends javax.swing.JFrame {
 
     private void logInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInBtnActionPerformed
         // TODO add your handling code here:
-    if (userInput.getText().trim().isEmpty()) {
-        JOptionPane.showMessageDialog(this, "️ El campo de usuario está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-
-    // Validar si el campo de contraseña está vacío
-    if (new String(passwordInput.getPassword()).trim().isEmpty()) {
-        JOptionPane.showMessageDialog(this, "️ El campo de contraseña está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-        
-        if ("admin@correo.com".equals(userInput.getText()) && "12345".equals(new String (passwordInput.getPassword()))){
-            JOptionPane.showMessageDialog(null, "Accediste correctamente a tu cuenta ", "Información", JOptionPane.INFORMATION_MESSAGE);
-            AddComida miaddcomida = new AddComida();
-            miaddcomida.setVisible(true);
-            dispose();
+        if (userInput.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "️ El campo de usuario está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
         }
-        else{
-        JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+
+        // Validar si el campo de contraseña está vacío
+        if (new String(passwordInput.getPassword()).trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "️ El campo de contraseña está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        if (userInput != null && passwordInput != null){
+            if (PeticionesDB.verificarUsuario(userInput.getText(), new String(passwordInput.getPassword()))){
+                
+                JOptionPane.showMessageDialog(null, "Accediste correctamente a tu cuenta ", "Información", JOptionPane.INFORMATION_MESSAGE);
+                AddComida miaddcomida = new AddComida();
+                miaddcomida.setVisible(true);
+                dispose();
+            } else{
+                JOptionPane.showMessageDialog(null, "El usuario o la contraseña son incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_logInBtnActionPerformed
 

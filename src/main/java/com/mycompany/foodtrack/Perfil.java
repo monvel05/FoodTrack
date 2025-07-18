@@ -15,7 +15,7 @@ public class Perfil extends javax.swing.JFrame {
      */
     public Perfil() {
         initComponents();
-        System.out.println("Funciona  ");
+        
     }
 
     /**
