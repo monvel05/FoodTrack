@@ -4,17 +4,29 @@
  */
 package com.mycompany.foodtrack;
 
+import java.awt.Color;
+import java.awt.PopupMenu;
+import java.util.HashMap;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author monyv
  */
 public class Perfil extends javax.swing.JFrame {
 
+    private PopupMenu EliminarCuenta;
+
     /**
      * Creates new form Perfil
      */
     public Perfil() {
         initComponents();
+        SwingUtilities.invokeLater(() -> {
+            agregarInformacion(); // Carga los datos después de mostrar la interfaz
+        });
         
     }
 
@@ -76,7 +88,6 @@ public class Perfil extends javax.swing.JFrame {
 
         jLabel4.setText("IMC");
 
-        imcPerfil.setEditable(false);
         imcPerfil.setBackground(new java.awt.Color(253, 140, 13));
 
         barraImc.setForeground(new java.awt.Color(255, 204, 51));
@@ -86,6 +97,11 @@ public class Perfil extends javax.swing.JFrame {
         actualizarDatosBtn.setBackground(new java.awt.Color(253, 140, 13));
         actualizarDatosBtn.setText("Actualizar Datos");
         actualizarDatosBtn.setToolTipText("Actualizar datos");
+        actualizarDatosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarDatosBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -135,7 +151,7 @@ public class Perfil extends javax.swing.JFrame {
                 .addComponent(barraImc, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(actualizarDatosBtn)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         menu.setBackground(new java.awt.Color(253, 140, 13));
@@ -279,6 +295,11 @@ public class Perfil extends javax.swing.JFrame {
         eliminarCuentaBtn.setBackground(new java.awt.Color(253, 140, 13));
         eliminarCuentaBtn.setText("Eliminar");
         eliminarCuentaBtn.setToolTipText("Eliminar cuenta");
+        eliminarCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarCuentaBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -316,7 +337,7 @@ public class Perfil extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
@@ -330,7 +351,7 @@ public class Perfil extends javax.swing.JFrame {
                         .addGap(38, 38, 38))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(84, Short.MAX_VALUE))))
+                        .addContainerGap(78, Short.MAX_VALUE))))
             .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
@@ -386,6 +407,69 @@ public class Perfil extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_salirBtnActionPerformed
 
+    private void actualizarDatosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosBtnActionPerformed
+        // TODO add your handling code here:
+        int idUsuario = UsuarioId.getInstance().getValor();
+        String nombre = nombrePerfil.getText();
+        double peso = Double.parseDouble(pesoPerfil.getText());
+        double altura = Double.parseDouble(alturaPerfil.getText());
+        double imc = calcularImc(peso, altura);
+        boolean actualizacion = PeticionesDB.actualizarInfo(idUsuario, nombre, peso, altura, imc);
+        if (actualizacion) {
+            JOptionPane.showMessageDialog(null, "Informacion actualizada correctamente ", "Información", JOptionPane.INFORMATION_MESSAGE);
+            agregarInformacion();
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al actualizar la informacion", "Error", JOptionPane.ERROR_MESSAGE);
+        }  
+    }//GEN-LAST:event_actualizarDatosBtnActionPerformed
+
+    private void eliminarCuentaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarCuentaBtnActionPerformed
+        // TODO add your handling code here:
+        EliminarCuenta eliminar = new EliminarCuenta();
+        eliminar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_eliminarCuentaBtnActionPerformed
+    
+    private void agregarInformacion (){
+        int idUsuario = UsuarioId.getInstance().getValor();
+        HashMap<String, Object> datosUsuario = PeticionesDB.traerDatosUsuario(idUsuario);
+        nombrePerfil.setText(datosUsuario.get("nombre") + " " + datosUsuario.get("apellido"));
+        String peso = String.valueOf((datosUsuario.get("peso")));
+        String altura = String.valueOf(datosUsuario.get("altura"));
+        pesoPerfil.setText(peso);
+        alturaPerfil.setText(altura);
+        actualizarImc (Double.parseDouble(peso), Double.parseDouble(altura));
+    }
+    
+    private double calcularImc (double peso, double altura) {
+        double imc = peso / (altura * altura);
+        return Double.parseDouble(String.format("%.2f", imc));
+    }
+    
+    private void tablaImc (double imc) {
+        if (imc < 18.5) {
+            barraImc.setForeground(Color.BLUE);
+            barraImc.setValue(20);
+        } else if (imc >= 18.5 && imc <= 24.9) {
+            barraImc.setForeground(Color.GREEN);
+            barraImc.setValue(40);
+        } else if (imc >= 25.0 && imc <= 29.9) {
+            barraImc.setForeground(Color.YELLOW);
+            barraImc.setValue(60);
+        } else if (imc >= 30.0 && imc <= 39.9) {
+            barraImc.setForeground(Color.ORANGE);
+            barraImc.setValue(80);
+        } else {
+            barraImc.setForeground(Color.RED);
+            barraImc.setValue(100);
+        }        
+    }
+    
+    private void actualizarImc (double peso, double altura) {
+        double imc = calcularImc(peso, altura);
+        imcPerfil.setText(String.valueOf(imc));
+        tablaImc (imc);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizarDatosBtn;

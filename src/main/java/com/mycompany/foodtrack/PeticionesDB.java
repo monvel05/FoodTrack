@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.util.HashMap;
 
 /**
  *
@@ -108,4 +109,170 @@ public class PeticionesDB {
         }
     }
     
+    public static String obtenerContrasena (int idUsuario) {
+        String query = "SELECT contrasena FROM usuarios WHERE idUsuarios = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, idUsuario);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("contrasena"); // Retorna la contraseña
+                }
+                return null; 
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener la contrasena: " + e.getMessage());
+            return null; 
+        }
+    }
+    
+    public static HashMap<String, Object> traerDatosUsuario(int idUsuario){
+        HashMap<String, Object> datosUsuario = new HashMap<>();
+        String query = "SELECT nombre, apellido, edad, peso, altura FROM usuarios WHERE idUsuarios = ?";
+        
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, idUsuario);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    datosUsuario.put("nombre",rs.getObject("nombre"));
+                    datosUsuario.put("apellido",rs.getObject("apellido"));
+                    datosUsuario.put("edad",rs.getObject("edad"));
+                    datosUsuario.put("peso",rs.getObject("peso"));
+                    datosUsuario.put("altura",rs.getObject("altura"));
+                    return datosUsuario;
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener la informacion del usuario: " + e.getMessage());
+        }
+        return null;
+    }
+    
+    public static double traerCaloriasAlimento(String nombreAlimento){
+        String query = "SELECT caloriasAlimento FROM alimentos WHERE nombreAlimento = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setString(1, nombreAlimento);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getDouble("caloriasAlimento"); // Retorna las calorias si encuentra el alimento
+                }
+                return -1; // Mejor usar -1 para indicar que no se encontró el alimento
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener ID de usuario: " + e.getMessage());
+            return -1; // Retorna -1 en caso de error
+        }
+    }
+    
+    public static boolean agregarAlimento (String nombre, int calorias, int porcion, String unidad, String tipo ){
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "INSERT INTO alimentos (nombreAlimento, caloriasAlimento, tamanoPorcion, unidadMedida, tipoAlimento) VALUES (?, ?, ?, ?, ?)";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setString(1, nombre);
+                stmt.setInt(2, calorias);
+                stmt.setInt(3, porcion);
+                stmt.setString(4, unidad);
+                stmt.setString(5, tipo);               
+
+                int filasAfectadas = stmt.executeUpdate();
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al insertar el usuario: " + e.getMessage());
+            }
+        }
+
+        return false;
+    }
+    
+    public static boolean actualizarMeta (int idUsuario, String tipo, double metaActual) {
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "UPDATE meta SET tipo_meta = ?, meta_actual = ? WHERE idUsuarios = ?";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setString(1, tipo);
+                stmt.setDouble(2, metaActual);
+                stmt.setInt(3, idUsuario);             
+
+                int filasAfectadas = stmt.executeUpdate();
+                System.out.println("Filas actualizadas: " + filasAfectadas);
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al insertar el usuario: " + e.getMessage());
+            }
+        }
+
+        return false;
+    }
+    
+    public static boolean actualizarInfo (int idUsuario, String nombreUsuario, double peso, double altura, double imc) {
+        String[] nombreCompleto = nombreUsuario.split(" ");
+        String nombre = nombreCompleto[0]; 
+        String apellido = nombreCompleto[1]; 
+        
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "UPDATE usuarios SET nombre = ?, apellido = ?, peso = ?, altura = ?, imc = ? WHERE idUsuarios = ?";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setString(1, nombre);
+                stmt.setString(2, apellido);
+                stmt.setDouble(3, peso);
+                stmt.setDouble(4, altura);
+                stmt.setDouble(5, imc);
+                stmt.setInt(6, idUsuario);             
+
+                int filasAfectadas = stmt.executeUpdate();
+                System.out.println("Filas actualizadas: " + filasAfectadas);
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al insertar el usuario: " + e.getMessage());
+            }
+        }
+        return false;
+    }
+    
+    public static boolean eliminarCuenta (int idUsuario){
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "DELETE FROM usuarios WHERE idUsuarios = ?";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setInt(1, idUsuario);
+
+                int filasAfectadas = stmt.executeUpdate();
+                System.out.println("Filas borradas: " + filasAfectadas);
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al borrar el usuario: " + e.getMessage());
+            }
+        }
+
+        return false;
+    }
 }

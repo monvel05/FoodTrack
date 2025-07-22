@@ -174,6 +174,8 @@ public class Login extends javax.swing.JFrame {
             if (PeticionesDB.verificarUsuario(userInput.getText(), new String(passwordInput.getPassword()))){
                 
                 JOptionPane.showMessageDialog(null, "Accediste correctamente a tu cuenta ", "Información", JOptionPane.INFORMATION_MESSAGE);
+                int idUsuario = PeticionesDB.obtenerIdUsuario(userInput.getText());
+                UsuarioId.getInstance().setValor(idUsuario);
                 AddComida miaddcomida = new AddComida();
                 miaddcomida.setVisible(true);
                 dispose();
