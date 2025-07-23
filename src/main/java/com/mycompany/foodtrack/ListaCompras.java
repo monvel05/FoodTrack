@@ -7,6 +7,7 @@ package com.mycompany.foodtrack;
 import javax.swing.JOptionPane;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -86,7 +87,158 @@ public class ListaCompras extends javax.swing.JFrame {
     return seleccionados;
 }
 
-
+    private void proteinaAleatoria(){
+        reiniciarProteinas();
+        int num = new Random().nextInt(13) + 1;
+        
+        switch(num){
+            case 1: HuevojCheckBox.setSelected(true); break;
+            case 2: AtúnjCheckBox.setSelected(true); break;
+            case 3: SardinajCheckBox.setSelected(true); break;
+            case 4: LentejasjCheckBox.setSelected(true); break;
+            case 5: EspinacasjCheckBox.setSelected(true); break;
+            case 6: GuisantesjCheckBox.setSelected(true); break;
+            case 7: GarbanzosjCheckBox.setSelected(true); break;
+            case 8: PescadojCheckBox.setSelected(true); break;
+            case 9: PechugaPollojCheckBox.setSelected(true); break;
+            case 10: CamaronesjCheckBox.setSelected(true); break;
+            case 11: QuesoPanelajCheckBox.setSelected(true); break;
+            case 12: PavojCheckBox.setSelected(true); break;
+            case 13: CarneResjCheckBox.setSelected(true); break;
+            default:
+                System.out.println("Numero invalido:"+ num);
+                break;
+        }
+        
+    }
+    private void  carbohidratoAleatoria(){
+        reiniciarCarbohidratos();
+        int num = new Random().nextInt(13) + 1;
+        
+        switch (num){
+            case 1: PanIntegraljCheckBox.setSelected(true); break;
+            case 2: ArrozCocidojCheckBox.setSelected(true); break;
+            case 3: AvenajCheckBox.setSelected(true); break;
+            case 4: PastajCheckBox.setSelected(true); break;
+            case 5: HarinaTrigojCheckBox.setSelected(true); break;
+            case 6: ManzanajCheckBox.setSelected(true); break;
+            case 7: PapayajCheckBox.setSelected(true); break;
+            case 8: PlátanoMadurojCheckBox.setSelected(true); break;
+            case 9: YucaCocidajCheckBox.setSelected(true); break;
+            case 10: CamotejCheckBox.setSelected(true); break;
+            case 11: TortillaTrigojCheckBox.setSelected(true); break;
+            case 12: GalletaIntegraljCheckBox.setSelected(true); break;
+            case 13: PanAvenajCheckBox.setSelected(true); break;
+            default:
+            System.out.println("Numero invalido:"+ num);
+                break;
+        }
+    }
+    
+    private void verduraAleatoria(){
+        reiniciarVerduras();
+        int num = new Random().nextInt(13) + 1;
+        
+        switch(num){
+            case 1: LechugajCheckBox.setSelected(true); break;
+            case 2: BrócolijCheckBox.setSelected(true); break;
+            case 3: ColiflorjCheckBox.setSelected(true); break;
+            case 4: ApiojCheckBox.setSelected(true); break;
+            case 5: PepinojCheckBox.setSelected(true); break;
+            case 6: ZanahoriajCheckBox.setSelected(true); break;
+            case 7: RemolachajCheckBox.setSelected(true); break;
+            case 8: HabaFrescajCheckBox.setSelected(true); break;
+            case 9: PapasjCheckBox.setSelected(true); break;
+            case 10: AcelgasjCheckBox.setSelected(true); break;
+            case 11: BerengenajCheckBox.setSelected(true); break;
+            case 12: AlcachofajCheckBox.setSelected(true); break;
+            case 13: NopalesjCheckBox.setSelected(true); break;
+            default:
+            System.out.println("Numero invalido:"+ num);
+                break;
+        }
+    }
+    private void grasaAleatoria(){
+        reiniciarGrasas();
+        int num = new Random().nextInt(13) + 1;
+        switch(num){
+            case 1: FrutosSecosjCheckBox.setSelected(true); break;
+            case 2: SemillasjCheckBox.setSelected(true); break;
+            case 3: AceitunasjCheckBox.setSelected(true); break;
+            case 4: EdamamejCheckBox.setSelected(true); break;
+            case 5: TahinijCheckBox.setSelected(true); break;
+            case 6: AceiteCocojCheckBox.setSelected(true); break;
+            case 7: HummusjCheckBox.setSelected(true); break;
+            case 8: TofujCheckBox.setSelected(true); break;
+            case 9: AceiteOlivajCheckBox.setSelected(true); break;
+            case 10: SalmónjCheckBox.setSelected(true); break;
+            case 11: SemillaChíajCheckBox.setSelected(true); break;
+            case 12: LecheEnterajCheckBox.setSelected(true); break;        
+            default:System.out.println("Numero invalido:"+ num); break;
+            
+        }
+    }
+    private void reiniciarProteinas(){
+        HuevojCheckBox.setSelected(false);
+        AtúnjCheckBox.setSelected(false);
+        SardinajCheckBox.setSelected(false);
+        LentejasjCheckBox.setSelected(false);
+        EspinacasjCheckBox.setSelected(false);
+        GuisantesjCheckBox.setSelected(false);
+        GarbanzosjCheckBox.setSelected(false);
+        PescadojCheckBox.setSelected(false);
+        PechugaPollojCheckBox.setSelected(false);
+        CamaronesjCheckBox.setSelected(false);
+        QuesoPanelajCheckBox.setSelected(false);
+        PavojCheckBox.setSelected(false);
+        CarneResjCheckBox.setSelected(false);
+    }
+    private void reiniciarCarbohidratos(){
+        PanIntegraljCheckBox.setSelected(false);
+        ArrozCocidojCheckBox.setSelected(false);
+        AvenajCheckBox.setSelected(false);
+        PastajCheckBox.setSelected(false);
+        HarinaTrigojCheckBox.setSelected(false);
+        ManzanajCheckBox.setSelected(false);
+        PapayajCheckBox.setSelected(false);
+        PlátanoMadurojCheckBox.setSelected(false);
+        YucaCocidajCheckBox.setSelected(false);
+        CamotejCheckBox.setSelected(false);
+        TortillaTrigojCheckBox.setSelected(false);
+        GalletaIntegraljCheckBox.setSelected(false);
+        PanAvenajCheckBox.setSelected(false);
+    }
+    private void reiniciarVerduras(){
+        LechugajCheckBox.setSelected(false);
+        BrócolijCheckBox.setSelected(false);
+        ColiflorjCheckBox.setSelected(false);
+        ApiojCheckBox.setSelected(false);
+        PepinojCheckBox.setSelected(false);
+        ZanahoriajCheckBox.setSelected(false);
+        RemolachajCheckBox.setSelected(false);
+        HabaFrescajCheckBox.setSelected(false); 
+        PapasjCheckBox.setSelected(false); 
+        AcelgasjCheckBox.setSelected(false); 
+        BerengenajCheckBox.setSelected(false);
+        AlcachofajCheckBox.setSelected(false); 
+        NopalesjCheckBox.setSelected(false); 
+    }
+    private void reiniciarGrasas(){
+        LechugajCheckBox.setSelected(false); 
+        BrócolijCheckBox.setSelected(false); 
+        ColiflorjCheckBox.setSelected(false); 
+        ApiojCheckBox.setSelected(false); 
+        PepinojCheckBox.setSelected(false); 
+        ZanahoriajCheckBox.setSelected(false); 
+        RemolachajCheckBox.setSelected(false); 
+        HabaFrescajCheckBox.setSelected(false); 
+        PapasjCheckBox.setSelected(false); 
+        AcelgasjCheckBox.setSelected(false); 
+        BerengenajCheckBox.setSelected(false);
+        AlcachofajCheckBox.setSelected(false); 
+        NopalesjCheckBox.setSelected(false); 
+    }
+                       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -165,7 +317,7 @@ public class ListaCompras extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 222, 175));
 
-        jPanel2.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel2.setBackground(new java.awt.Color(253, 140, 13));
 
         LogojLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/logo_blanco.png"))); // NOI18N
 
@@ -222,7 +374,7 @@ public class ListaCompras extends javax.swing.JFrame {
                             .addComponent(ListaDeComprasjButton)
                             .addComponent(EstadisticasjButton)
                             .addComponent(PerfiljButton))
-                        .addGap(0, 1, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,6 +461,11 @@ public class ListaCompras extends javax.swing.JFrame {
         HarinaTrigojCheckBox.setText("HARINA DE TRIGO");
 
         ManzanajCheckBox.setText("MANZANA");
+        ManzanajCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManzanajCheckBoxActionPerformed(evt);
+            }
+        });
 
         PapayajCheckBox.setText("PAPAYA");
 
@@ -380,7 +537,7 @@ public class ListaCompras extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -654,6 +811,10 @@ for (String alimento : lista) {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_SalirjButtonActionPerformed
+
+    private void ManzanajCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManzanajCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ManzanajCheckBoxActionPerformed
 
     /**
      * @param args the command line arguments
