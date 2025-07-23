@@ -15,7 +15,6 @@ public class AddComida extends javax.swing.JFrame {
      */
     public AddComida() {
         initComponents();
-        setLocationRelativeTo(null); // Centrar en pantalla
         DataBase.conectar();
         
     }
@@ -39,10 +38,10 @@ public class AddComida extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
         busqueda = new javax.swing.JTextField();
-        botobBusqueda = new javax.swing.JButton();
+        botonBusqueda = new javax.swing.JButton();
         tablaAlimentos = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        AñadirAlimentoButton = new javax.swing.JButton();
+        AñadiralRegistroButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(254, 244, 192));
@@ -145,7 +144,8 @@ public class AddComida extends javax.swing.JFrame {
         titulo.setText("Buscar comida / alimento");
         titulo.setPreferredSize(new java.awt.Dimension(150, 30));
 
-        botobBusqueda.setText("Buscar");
+        botonBusqueda.setBackground(new java.awt.Color(255, 153, 0));
+        botonBusqueda.setText("Buscar");
 
         javax.swing.GroupLayout tablaAlimentosLayout = new javax.swing.GroupLayout(tablaAlimentos);
         tablaAlimentos.setLayout(tablaAlimentosLayout);
@@ -158,19 +158,19 @@ public class AddComida extends javax.swing.JFrame {
             .addGap(0, 306, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(253, 140, 13));
-        jButton1.setText("Añadir nuevo alimento");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AñadirAlimentoButton.setBackground(new java.awt.Color(253, 140, 13));
+        AñadirAlimentoButton.setText("Añadir nuevo alimento");
+        AñadirAlimentoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AñadirAlimentoButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(253, 140, 13));
-        jButton2.setText("Añadir al registro");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        AñadiralRegistroButton.setBackground(new java.awt.Color(253, 140, 13));
+        AñadiralRegistroButton.setText("Añadir al registro");
+        AñadiralRegistroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AñadiralRegistroButtonActionPerformed(evt);
             }
         });
 
@@ -186,17 +186,17 @@ public class AddComida extends javax.swing.JFrame {
                         .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(jButton1))
+                        .addComponent(AñadirAlimentoButton))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botobBusqueda)))
+                        .addComponent(botonBusqueda)))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tablaAlimentos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(AñadiralRegistroButton, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(33, 33, 33))
         );
         jPanel2Layout.setVerticalGroup(
@@ -209,15 +209,15 @@ public class AddComida extends javax.swing.JFrame {
                         .addComponent(tablaAlimentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(AñadirAlimentoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AñadiralRegistroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botobBusqueda)))
+                        .addComponent(botonBusqueda)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -236,16 +236,20 @@ public class AddComida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComidaActionPerformed
-        // TODO add your handling code here:
+       AddComida miAddComida = new AddComida();
+        miAddComida.setVisible(true);
+        dispose();
+        
+// TODO add your handling code here:
     }//GEN-LAST:event_addComidaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AñadirAlimentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirAlimentoButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_AñadirAlimentoButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AñadiralRegistroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadiralRegistroButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_AñadiralRegistroButtonActionPerformed
 
     private void estadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadisticasActionPerformed
         // TODO add your handling code here:
@@ -280,12 +284,12 @@ public class AddComida extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AñadirAlimentoButton;
+    private javax.swing.JButton AñadiralRegistroButton;
     private javax.swing.JButton addComida;
-    private javax.swing.JButton botobBusqueda;
+    private javax.swing.JButton botonBusqueda;
     private javax.swing.JTextField busqueda;
     private javax.swing.JButton estadisticas;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton listaCompras;
