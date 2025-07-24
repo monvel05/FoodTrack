@@ -295,9 +295,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
        String nom_usuario=usuarioInput.getText().trim();
        String correo= correoInput.getText().trim();
        String contrasena =new String(passwordInput.getPassword()).trim();
-       double imc=peso/(altura*altura);
        //*Lllamar a la BD*//
-       boolean registrado = PeticionesDB.registrarUsuario(idSexo, nombre, apellido, edad, peso, altura, nom_usuario, correo, contrasena, imc);
+       boolean registrado = PeticionesDB.registrarUsuario(idSexo, nombre, apellido, edad, peso, altura, nom_usuario, correo, contrasena);
        //*verificar si se registro correctamente*//
        if(registrado){
            JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);

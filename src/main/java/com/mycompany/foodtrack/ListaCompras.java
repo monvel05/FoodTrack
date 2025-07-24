@@ -761,8 +761,8 @@ public class ListaCompras extends javax.swing.JFrame {
      //Mostrar en consola para depurar
      List<String> lista = obtenerAlimentosSeleccionados();
      System.out.println("Seleccionaste:");
-for (String alimento : lista) {
-    System.out.println("- " + alimento);
+    for (String alimento : lista) {
+        System.out.println("- " + alimento);
 }
     
         // TODO add your handling code here:

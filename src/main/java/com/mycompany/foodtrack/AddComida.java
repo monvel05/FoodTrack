@@ -39,9 +39,10 @@ public class AddComida extends javax.swing.JFrame {
         titulo = new javax.swing.JLabel();
         busqueda = new javax.swing.JTextField();
         botonBusqueda = new javax.swing.JButton();
-        tablaAlimentos = new javax.swing.JPanel();
         AñadirAlimentoButton = new javax.swing.JButton();
         AñadiralRegistroButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(254, 244, 192));
@@ -147,17 +148,6 @@ public class AddComida extends javax.swing.JFrame {
         botonBusqueda.setBackground(new java.awt.Color(255, 153, 0));
         botonBusqueda.setText("Buscar");
 
-        javax.swing.GroupLayout tablaAlimentosLayout = new javax.swing.GroupLayout(tablaAlimentos);
-        tablaAlimentos.setLayout(tablaAlimentosLayout);
-        tablaAlimentosLayout.setHorizontalGroup(
-            tablaAlimentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 271, Short.MAX_VALUE)
-        );
-        tablaAlimentosLayout.setVerticalGroup(
-            tablaAlimentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 306, Short.MAX_VALUE)
-        );
-
         AñadirAlimentoButton.setBackground(new java.awt.Color(253, 140, 13));
         AñadirAlimentoButton.setText("Añadir nuevo alimento");
         AñadirAlimentoButton.addActionListener(new java.awt.event.ActionListener() {
@@ -173,6 +163,19 @@ public class AddComida extends javax.swing.JFrame {
                 AñadiralRegistroButtonActionPerformed(evt);
             }
         });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -193,22 +196,26 @@ public class AddComida extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonBusqueda)))
-                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tablaAlimentos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AñadiralRegistroButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(33, 33, 33))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(30, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AñadiralRegistroButton)
+                        .addGap(41, 41, 41))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(tablaAlimentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AñadirAlimentoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AñadiralRegistroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -218,7 +225,7 @@ public class AddComida extends javax.swing.JFrame {
                         .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonBusqueda)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -245,6 +252,9 @@ public class AddComida extends javax.swing.JFrame {
 
     private void AñadirAlimentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirAlimentoButtonActionPerformed
         // TODO add your handling code here:
+        AgregarAlimento agregar = new AgregarAlimento();
+        agregar.setVisible(true);
+        
     }//GEN-LAST:event_AñadirAlimentoButtonActionPerformed
 
     private void AñadiralRegistroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadiralRegistroButtonActionPerformed
@@ -292,11 +302,12 @@ public class AddComida extends javax.swing.JFrame {
     private javax.swing.JButton estadisticas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton listaCompras;
     private javax.swing.JPanel menu;
     private javax.swing.JButton perfil;
     private javax.swing.JButton salir;
-    private javax.swing.JPanel tablaAlimentos;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }
