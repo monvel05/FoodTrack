@@ -65,7 +65,7 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 222, 175));
 
-        jPanel2.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel2.setBackground(new java.awt.Color(253, 140, 13));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/logo_blanco.png"))); // NOI18N
 
@@ -258,6 +258,7 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
     }//GEN-LAST:event_GuardarListaButtonActionPerformed
 
     /**
+     * @param alimentosSeleccionados
      * @param args the command line arguments
      */
 
@@ -266,7 +267,7 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
         //Mostrar los alimentos en el JTextArea
         StringBuilder texto = new StringBuilder();
         for (String alimento : alimentosSeleccionados){
-            texto.append("-").append(alimento).append("/n");
+            texto.append("- ").append(alimento).append("\n");
         }
         seleccionadosTextArea.setText(texto.toString());
     }
