@@ -30,5 +30,16 @@
             <artifactId>dotenv-java</artifactId>
             <version>3.0.0</version> <!-- Verifica la última versión -->
         </dependency>
+         <dependency>
+          <groupId>org.jfree</groupId>
+          <artifactId>jfreechart</artifactId>
+          <version>1.5.6</version> <!-- Verifica la última versión -->   
+        </dependency>  
+    
+        <dependency>
+            <groupId>org.jfree </groupId>
+            <artifactId>jcommon</artifactId>
+            <version>1.0.24</version>
+        </dependency>
     </dependencies>
 </project>
