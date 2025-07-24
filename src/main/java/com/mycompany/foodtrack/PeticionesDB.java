@@ -12,6 +12,8 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.util.HashMap;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -172,6 +174,27 @@ public class PeticionesDB {
         }
     }
     
+    public static List<AlimentoTabla> buscarAlimentos(String criterio) {
+        List<AlimentoTabla> alimentos = new ArrayList<>();
+        String query = "SELECT nombreAlimento, caloriasAlimento FROM alimentos WHERE nombreAlimento LIKE ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, "%" + criterio + "%");
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String nombre = rs.getString("nombreAlimento");
+                int calorias = rs.getInt("caloriasAlimento");
+                alimentos.add(new AlimentoTabla(nombre, calorias));
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al buscar alimentos: " + e.getMessage());
+        }
+
+        return alimentos;
+    }
+    
     public static boolean agregarAlimento (String nombre, int calorias, int porcion, String unidad, String tipo ){
         Connection conn = DataBase.conectar();
 
@@ -198,16 +221,16 @@ public class PeticionesDB {
         return false;
     }
     
-    public static boolean actualizarMeta (int idUsuario, String tipo, double metaActual) {
+    public static boolean actualizarMeta (int idUsuario, String tipo, int metaActual) {
         Connection conn = DataBase.conectar();
 
         if (conn != null) {
 
-            String query = "UPDATE meta SET tipo_meta = ?, meta_actual = ? WHERE idUsuarios = ?";
+            String query = "UPDATE meta SET tipo_meta = ?, metaActual = ? WHERE idUsuarios = ?";
 
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setString(1, tipo);
-                stmt.setDouble(2, metaActual);
+                stmt.setInt(2, metaActual);
                 stmt.setInt(3, idUsuario);             
 
                 int filasAfectadas = stmt.executeUpdate();
@@ -343,24 +366,21 @@ public class PeticionesDB {
         return false;
     }
     
-    public static HashMap<String, Integer> obtenerAlimentosConCalorias() {
-        HashMap<String, Integer> alimentosLista = new HashMap<>();
+    public static List<AlimentoTabla> obtenerAlimentosParaTabla() {
+        List<AlimentoTabla> alimentos = new ArrayList<>();
         String query = "SELECT nombreAlimento, caloriasAlimento FROM alimentos";
 
-        try (Connection conn = DataBase.conectar(); 
-                Statement stmt = conn.createStatement(); 
-                ResultSet rs = stmt.executeQuery(query)) {
-            
-            
+        try (Connection conn = DataBase.conectar(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+
             while (rs.next()) {
-                String nombre = rs.getString("nombreaAlimento");
+                String nombre = rs.getString("nombreAlimento");
                 int calorias = rs.getInt("caloriasAlimento");
-                alimentosLista.put(nombre, calorias);
+                alimentos.add(new AlimentoTabla(nombre, calorias));
             }
         } catch (SQLException e) {
             System.err.println("Error al obtener alimentos: " + e.getMessage());
         }
 
-        return alimentosLista;
+        return alimentos;
     }
 }

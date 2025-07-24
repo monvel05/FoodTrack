@@ -427,6 +427,7 @@ public class Perfil extends javax.swing.JFrame {
         // TODO add your handling code here:
         EliminarCuenta eliminar = new EliminarCuenta();
         eliminar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_eliminarCuentaBtnActionPerformed
     
     private void agregarInformacion (){

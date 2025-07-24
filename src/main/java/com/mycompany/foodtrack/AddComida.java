@@ -4,6 +4,11 @@
  */
 package com.mycompany.foodtrack;
 
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author monyv
@@ -15,7 +20,16 @@ public class AddComida extends javax.swing.JFrame {
      */
     public AddComida() {
         initComponents();
-        DataBase.conectar();
+        SwingUtilities.invokeLater(() -> {
+            llenarTabla(); // Carga los datos después de mostrar la interfaz
+            botonBusqueda.addActionListener((java.awt.event.ActionEvent evt1) -> {
+                botonBusquedaActionPerformed(evt1);
+            });
+            //Listener para el botón de borrar y que elimine el contenido del jtextfield
+            borrarBusqueda.addActionListener((java.awt.event.ActionEvent evt) -> {
+                borrarBusquedaActionPerformed(evt);
+            });
+        });
         
     }
 
@@ -42,7 +56,8 @@ public class AddComida extends javax.swing.JFrame {
         AñadirAlimentoButton = new javax.swing.JButton();
         AñadiralRegistroButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaAlimentos = new javax.swing.JTable();
+        borrarBusqueda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(254, 244, 192));
@@ -147,6 +162,11 @@ public class AddComida extends javax.swing.JFrame {
 
         botonBusqueda.setBackground(new java.awt.Color(255, 153, 0));
         botonBusqueda.setText("Buscar");
+        botonBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBusquedaActionPerformed(evt);
+            }
+        });
 
         AñadirAlimentoButton.setBackground(new java.awt.Color(253, 140, 13));
         AñadirAlimentoButton.setText("Añadir nuevo alimento");
@@ -164,18 +184,40 @@ public class AddComida extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAlimentos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "", "Nombre", "Calorías"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Boolean.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaAlimentos.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        tablaAlimentos.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        jScrollPane1.setViewportView(tablaAlimentos);
+
+        borrarBusqueda.setBackground(new java.awt.Color(255, 153, 0));
+        borrarBusqueda.setText("Borrar");
+        borrarBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarBusquedaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -195,16 +237,18 @@ public class AddComida extends javax.swing.JFrame {
                         .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(borrarBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonBusqueda)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(30, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                         .addComponent(AñadiralRegistroButton)
-                        .addGap(41, 41, 41))))
+                        .addGap(41, 41, 41))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,9 +256,9 @@ public class AddComida extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                        .addGap(33, 33, 33)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AñadirAlimentoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AñadiralRegistroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -224,7 +268,9 @@ public class AddComida extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonBusqueda)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botonBusqueda)
+                            .addComponent(borrarBusqueda))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -288,6 +334,110 @@ public class AddComida extends javax.swing.JFrame {
         DataBase.desconectar();
     }//GEN-LAST:event_salirActionPerformed
 
+    private void botonBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBusquedaActionPerformed
+        // TODO add your handling code here:
+        String textoBusqueda = busqueda.getText().trim();
+
+        if (textoBusqueda.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese un término de búsqueda",
+                    "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            // Obtener alimentos filtrados
+            List<AlimentoTabla> alimentosFiltrados = PeticionesDB.buscarAlimentos(textoBusqueda);
+
+            // Crear modelo de tabla
+            DefaultTableModel model = new DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{"Seleccionar", "Nombre", "Calorías"}
+            ) {
+                @Override
+                public Class<?> getColumnClass(int columnIndex) {
+                    return columnIndex == 0 ? Boolean.class : String.class;
+                }
+
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return column == 0;
+                }
+            };
+
+            // Llenar la tabla con los resultados existentes
+            for (AlimentoTabla alimento : alimentosFiltrados) {
+                model.addRow(new Object[]{
+                    false,
+                    alimento.getNombre(),
+                    alimento.getCalorias()
+                });
+            }
+
+            // Asignar modelo a la tabla
+            tablaAlimentos.setModel(model);
+
+            // Configurar renderizado de checkboxes
+            tablaAlimentos.getColumn("Seleccionar").setCellRenderer(
+                    tablaAlimentos.getDefaultRenderer(Boolean.class));
+            tablaAlimentos.getColumn("Seleccionar").setCellEditor(
+                    tablaAlimentos.getDefaultEditor(Boolean.class));
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al buscar alimentos: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            e.getMessage();
+        }
+    }//GEN-LAST:event_botonBusquedaActionPerformed
+
+    private void borrarBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarBusquedaActionPerformed
+        // TODO add your handling code here:
+        busqueda.setText("");
+        llenarTabla();
+    }//GEN-LAST:event_borrarBusquedaActionPerformed
+
+    public void llenarTabla() {
+        try {
+            // 1. Obtener los datos
+            List<AlimentoTabla> alimentos = PeticionesDB.obtenerAlimentosParaTabla();
+
+            // 2. Crear el modelo de tabla con las columnas primero
+            DefaultTableModel model = new DefaultTableModel(
+                    new Object[][]{}, // Datos vacíos inicialmente
+                    new String[]{"Seleccionar", "Nombre", "Calorías"} // Nombres de columnas
+            ) {
+                @Override
+                public Class<?> getColumnClass(int columnIndex) {
+                    return columnIndex == 0 ? Boolean.class : String.class;
+                }
+
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return column == 0;
+                }
+            };
+
+            // 3. Llenar el modelo con los datos
+            for (AlimentoTabla alimento : alimentos) {
+                model.addRow(new Object[]{
+                    false, // Checkbox inicial desmarcado
+                    alimento.getNombre(),
+                    alimento.getCalorias()
+                });
+            }
+
+            // 4. Asignar el modelo a la JTable
+            tablaAlimentos.setModel(model);
+
+            // 5. Configurar el renderizado de checkboxes
+            tablaAlimentos.getColumn("Seleccionar").setCellRenderer(tablaAlimentos.getDefaultRenderer(Boolean.class));
+            tablaAlimentos.getColumn("Seleccionar").setCellEditor(tablaAlimentos.getDefaultEditor(Boolean.class));
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al llenar la tabla: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            e.getMessage();
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -297,17 +447,18 @@ public class AddComida extends javax.swing.JFrame {
     private javax.swing.JButton AñadirAlimentoButton;
     private javax.swing.JButton AñadiralRegistroButton;
     private javax.swing.JButton addComida;
+    private javax.swing.JButton borrarBusqueda;
     private javax.swing.JButton botonBusqueda;
     private javax.swing.JTextField busqueda;
     private javax.swing.JButton estadisticas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton listaCompras;
     private javax.swing.JPanel menu;
     private javax.swing.JButton perfil;
     private javax.swing.JButton salir;
+    private javax.swing.JTable tablaAlimentos;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }

@@ -344,10 +344,6 @@ public class RegistroUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "️ El campo de contraseña está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
         return;
     }
-    
-        Login miLogin = new Login();
-        miLogin.setVisible(true);
-        dispose();
     }//GEN-LAST:event_registrarseActionPerformed
 
     private void RegresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarBtnActionPerformed
