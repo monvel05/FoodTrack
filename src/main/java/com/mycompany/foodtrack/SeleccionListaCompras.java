@@ -264,12 +264,16 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
 
     public SeleccionListaCompras(List<String> alimentosSeleccionados){
         initComponents();
+        seleccionadosTextArea.setLineWrap(true);
+        seleccionadosTextArea.setWrapStyleWord(true);
+        
         //Mostrar los alimentos en el JTextArea
         StringBuilder texto = new StringBuilder();
         for (String alimento : alimentosSeleccionados){
             texto.append("- ").append(alimento).append("\n");
         }
         seleccionadosTextArea.setText(texto.toString());
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
