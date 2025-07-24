@@ -4,6 +4,17 @@
  */
 package com.mycompany.foodtrack;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import javax.swing.JOptionPane;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.data.general.DefaultPieDataset;
+
+
 /**
  *
  * @author monyv
@@ -28,8 +39,8 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        comboMeta = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
+        comboTipoMeta = new javax.swing.JComboBox<>();
+        panelGrafica = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
         addComida = new javax.swing.JButton();
         listaCompras = new javax.swing.JButton();
@@ -39,13 +50,12 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        campoMetaActual = new javax.swing.JTextArea();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        campoProgreso = new javax.swing.JTextArea();
         barraProgreso = new javax.swing.JProgressBar();
         jLabel2 = new javax.swing.JLabel();
-        consumoCalorico = new javax.swing.JTextField();
+        consumo_caloricoInput = new javax.swing.JTextField();
+        meta_actualInput = new javax.swing.JTextField();
+        progresoInput = new javax.swing.JTextField();
+        graficaBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,20 +64,21 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel1.setText("Nivel de progreso");
 
-        comboMeta.setBackground(new java.awt.Color(246, 226, 157));
-        comboMeta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ganar calorias", "Perder calorias", " " }));
-        comboMeta.setToolTipText("Elige la opcion de tu meta");
+        comboTipoMeta.setBackground(new java.awt.Color(246, 226, 157));
+        comboTipoMeta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de meta", "Ganar calorias", "Disminuir calorias", " " }));
+        comboTipoMeta.setToolTipText("Elige la opcion de tu meta");
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        panelGrafica.setBackground(new java.awt.Color(255, 255, 255));
+        panelGrafica.setPreferredSize(new java.awt.Dimension(450, 360));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelGraficaLayout = new javax.swing.GroupLayout(panelGrafica);
+        panelGrafica.setLayout(panelGraficaLayout);
+        panelGraficaLayout.setHorizontalGroup(
+            panelGraficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelGraficaLayout.setVerticalGroup(
+            panelGraficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -172,24 +183,6 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel4.setText("Progreso");
 
-        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        campoMetaActual.setColumns(20);
-        campoMetaActual.setRows(5);
-        campoMetaActual.setToolTipText("Agrega unicamente numeros");
-        jScrollPane2.setViewportView(campoMetaActual);
-
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        campoProgreso.setEditable(false);
-        campoProgreso.setColumns(20);
-        campoProgreso.setRows(5);
-        jScrollPane1.setViewportView(campoProgreso);
-
         barraProgreso.setBackground(new java.awt.Color(153, 153, 153));
         barraProgreso.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
         barraProgreso.setForeground(new java.awt.Color(253, 140, 13));
@@ -198,7 +191,12 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel2.setText("Consumo Calorico");
 
-        consumoCalorico.setEditable(false);
+        graficaBtn.setText("Gráficar");
+        graficaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graficaBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -206,57 +204,66 @@ public class Estadisticas extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(427, 427, 427)
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addComponent(barraProgreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(47, 47, 47))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(panelGrafica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(16, 16, 16)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(comboTipoMeta, 0, 152, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 42, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel2)
                                             .addComponent(jLabel4)
                                             .addComponent(jLabel3)
-                                            .addComponent(consumoCalorico, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)))
-                                    .addComponent(comboMeta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(barraProgreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(47, 47, 47))))
+                                            .addComponent(jLabel2)
+                                            .addComponent(consumo_caloricoInput, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                                            .addComponent(meta_actualInput)
+                                            .addComponent(progresoInput))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(graficaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(75, 75, 75))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(comboMeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
+                        .addGap(57, 57, 57)
+                        .addComponent(graficaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(comboTipoMeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
+                        .addComponent(meta_actualInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(progresoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(consumoCalorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 37, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(consumo_caloricoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(panelGrafica, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+                        .addGap(34, 34, 34)))
                 .addComponent(barraProgreso, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
@@ -308,6 +315,183 @@ public class Estadisticas extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_salirActionPerformed
 
+    private void graficaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficaBtnActionPerformed
+        // TODO add your handling code here:
+        
+        System.out.println("entro a estadisticas");  
+        
+        System.out.println("marcooo"); //verificar si funciona el evento
+   
+    
+    String metaInput = meta_actualInput.getText().trim();     
+    String totalCaloriasInput = consumo_caloricoInput.getText().trim();
+      
+    //valida si los campos estan completos y si estan vacios no permitira continuar
+    if (metaInput.isEmpty()) {  //verificar si el campo meta actual esta vacio y manda una alerta
+       JOptionPane.showMessageDialog(this, "El campo para agregar las calorias de tu meta no puede estar vacío", "Error",JOptionPane.ERROR_MESSAGE);
+       return;
+    }
+    try { double numero = Double.parseDouble(metaInput);//verifica si el campo esta completo solo con números 
+        JOptionPane.showMessageDialog(this, "Valor válido: " + numero,  "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    }
+    catch(NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Solo se permiten valores numéricos en el campo Meta actual", "Error", JOptionPane.ERROR_MESSAGE);
+       //tambien tenia un return  
+    }
+
+    if (totalCaloriasInput.isEmpty()) {  //verifica si el campo consumo calorico esta vacio y manda una alerta
+        JOptionPane.showMessageDialog(this, "️ El campo consumo calorico no puede estar vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    try { double numero = Double.parseDouble(totalCaloriasInput);//verifica si el campo esta completo solo con números 
+        JOptionPane.showMessageDialog(this, "Valor válido: " + numero,  "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    }
+    catch(NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Solo se permiten valores numéricos en el campo Consumo calorico", "Error", JOptionPane.ERROR_MESSAGE);
+        //primero no tenia un return y dspues le puse y despues lo quite para comprobar 
+    }
+       
+    
+    if (comboTipoMeta.getSelectedIndex() <=0){//verifica que se selecciono una opcion del combobox 
+        JOptionPane.showMessageDialog(this, "️No se a seleccionado el tipo de meta", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return; 
+    }
+    //panelGrafica es el nombre del panel donde se colocara la grafica 
+     panelGrafica.removeAll(); // nos ayuda para eliminar la grafica que se encontraba anteriormente 
+    //nos ayuda para actualizar la grafica si se cambian los valores sin tener que cerrar la ventana 
+  
+    // es una condicion se se selecciona de garar calorias se ejecutara una grafica 
+    if (comboTipoMeta.getSelectedIndex()==1){ 
+        System.out.println("se seleccionar GANAR PESO");
+        System.out.println("marcooo");
+
+        //definir las variables
+       double metaG = Double.parseDouble(metaInput); //los datos obtenidos se convierten a tipo double 
+        //int metaG = Integer.parseInt(meta_actualInput.getText());
+       double caloriasTotales = Double.parseDouble(totalCaloriasInput);
+        //int caloriasTotales = Integer.parseInt(consumo_caloricoInput.getText()); 
+    
+        DefaultPieDataset datos = new DefaultPieDataset(); //nos ayuda para definir los datos que se van a ocupar para la grafica
+        double porcentajeCompleto =Math.min(100, (caloriasTotales/metaG)*100);
+        //datos.setValue("Tu meta "  ,metaG);         //se definen las categorias
+        //datos.setValue("Calorias consumidas",caloriasTotales);
+        datos.setValue("Progreso calorias consumidas (" + porcentajeCompleto + "%)", porcentajeCompleto);
+        
+        if (porcentajeCompleto < 100) {
+            datos.setValue("Restante (" + (100 - porcentajeCompleto) + "%)", 
+                         100 - porcentajeCompleto);
+        } 
+        
+        //crear grafico y asignar argumentos
+        JFreeChart grafico_circular = ChartFactory.createPieChart( //se utiliza para crear la grafica con JFreeChart
+        "Meta de Aumento de Calorias: Meta"+metaG +"cal",  //nombre de la grafica 
+        datos, //datos que se necesitan  
+        true,// nombre de categorias
+        true,//herramientas 
+        false //no ocupamos URL
+        );
+        
+        PiePlot plot = (PiePlot) grafico_circular.getPlot();  //Asignar colores a la grafica  
+        //plot.setSectionPaint("Tu meta", new Color(253, 140,13)); //a la meta color naranja
+        //plot.setSectionPaint("Calorias consumidas", Color.GREEN); //a las calorias consumisas amarillo
+        plot.setSectionPaint("Progreso calorias consumidas("+porcentajeCompleto + "%)", Color.BLUE);
+        
+         if (porcentajeCompleto < 100) {
+            plot.setSectionPaint("Restante de meta (" + (100 - porcentajeCompleto) + "%)", 
+                               new Color(240, 240, 240)); // Gris claro
+        }
+        
+        ChartPanel panel = new ChartPanel(grafico_circular);//se crea el panel en donde estara la grafica 
+        panel.setMouseWheelEnabled(true);//se puede mover el grafico 
+        panel.setPreferredSize(new Dimension(450,360));//dimensiones 
+        
+        panelGrafica.setLayout(new BorderLayout());     //para la creasion del la parte del panel
+        panelGrafica.add(panel,BorderLayout.NORTH);  
+        
+        //ultimamente agrege esos dos 
+        panelGrafica.revalidate();
+        panelGrafica.repaint();
+        
+       
+        pack(); //ejecutar grafico
+        repaint(); // mostrar el grafico 
+        
+        
+         if (caloriasTotales >= metaG ){
+        JOptionPane.showMessageDialog(this, "️Alcansaste tu meta, y sobrepasaste la meta con: "+(caloriasTotales-metaG)+"cal", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return; 
+        }
+    } 
+    else{// de lo contrario si se selecciona la opcion de perder calorias se ejecutara otra grafica 
+        System.out.println("se selecciono la opcion de perder peso ");
+    
+     double metaP = Double.parseDouble(metaInput);//los datos obtenidos se convierten a tipo double 
+     //int metaP = Integer.parseInt(meta_actualInput.getText());
+     double caloriasTotales = Double.parseDouble(totalCaloriasInput);
+     //int caloriasTotales = Integer.parseInt(consumo_caloricoInput.getText()); 
+    
+        DefaultPieDataset datos = new DefaultPieDataset();//nos ayuda para definir los datos que se van a ocupar para la grafica
+        double porcentajeCompleto =Math.min(100, (caloriasTotales/metaP)*100);
+        //datos.setValue("Tu meta "  ,metaP);      //se definen las categorias
+        //datos.setValue("Total de calorias consumidas",caloriasTotales);
+        datos.setValue("Progreso Calorias consumidas (" + porcentajeCompleto + "%)", porcentajeCompleto);
+      
+         
+        //crear grafico y asignar argumentos
+        JFreeChart grafico_circular = ChartFactory.createPieChart(//se utiliza para crear la grafica con JFreeChart
+        "Meta de Disminuir de Calorias: Meta"+ metaP+"cal", //nombre de la grafica 
+        datos,//datos que se necesitan  
+        true,// nombre de categorias
+        true,//herramientas 
+        false//no ocupamos URL
+        );
+        
+        PiePlot plot = (PiePlot) grafico_circular.getPlot();//asignar colores a la grafica 
+       // plot.setSectionPaint("Tu meta", Color.PINK); // a la meta rosa
+        //plot.setSectionPaint("Calorias consumidas", Color.BLUE); //a las calorias amarillo
+        plot.setSectionPaint("Progreso calorias consumidas("+porcentajeCompleto + "%)", Color.BLUE);
+        plot.setSimpleLabels(true);
+        
+         if (porcentajeCompleto < 100) {
+            datos.setValue("Restante de meta (" + (100 - porcentajeCompleto) + "%)", 
+                         100 - porcentajeCompleto);
+        }
+         
+        ChartPanel panel = new ChartPanel(grafico_circular);//se crea el panel en donde estara la grafica 
+        panel.setMouseWheelEnabled(true);//se puede mover el grafico 
+        panel.setPreferredSize(new Dimension(450,360));//dimensiones 
+        
+        panelGrafica.setLayout(new BorderLayout());//para la creasion del la parte del panel
+        panelGrafica.add(panel,BorderLayout.NORTH);
+        
+        panelGrafica.revalidate();//ultimamente agrege esos dos
+        panelGrafica.repaint();
+        
+        
+        //para ejecutar y mostrar grafico 
+        pack();
+        repaint();
+        
+        if (caloriasTotales >= metaP ){
+        JOptionPane.showMessageDialog(this, "️Alcansaste tu meta, y sobrepasaste la meta con: "+(metaP-caloriasTotales), "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return; 
+        
+        }
+    
+    }
+    
+        JOptionPane.showMessageDialog(this, "️Todos los campos estan completo, ¿Estas seguro?", "Advertencia", JOptionPane.QUESTION_MESSAGE);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_graficaBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -316,23 +500,22 @@ public class Estadisticas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addComida;
     private javax.swing.JProgressBar barraProgreso;
-    private javax.swing.JTextArea campoMetaActual;
-    private javax.swing.JTextArea campoProgreso;
-    private javax.swing.JComboBox<String> comboMeta;
-    private javax.swing.JTextField consumoCalorico;
+    private javax.swing.JComboBox<String> comboTipoMeta;
+    private javax.swing.JTextField consumo_caloricoInput;
     private javax.swing.JButton estadisticas;
+    private javax.swing.JButton graficaBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton listaCompras;
     private javax.swing.JPanel menu;
+    private javax.swing.JTextField meta_actualInput;
+    private javax.swing.JPanel panelGrafica;
     private javax.swing.JButton perfil;
+    private javax.swing.JTextField progresoInput;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }
