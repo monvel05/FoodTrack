@@ -20,6 +20,11 @@ public class ListaCompras extends javax.swing.JFrame {
      */
     public ListaCompras() {
         initComponents();
+        proteinaAleatoria();
+        carbohidratoAleatoria();
+        verduraAleatoria();
+        grasaAleatoria();
+        
     }
     private List<String> obtenerAlimentosSeleccionados() {
     List<String> seleccionados = new ArrayList<>();
@@ -92,22 +97,20 @@ public class ListaCompras extends javax.swing.JFrame {
         int num = new Random().nextInt(13) + 1;
         
         switch(num){
-            case 1: HuevojCheckBox.setSelected(true); break;
-            case 2: AtúnjCheckBox.setSelected(true); break;
-            case 3: SardinajCheckBox.setSelected(true); break;
-            case 4: LentejasjCheckBox.setSelected(true); break;
-            case 5: EspinacasjCheckBox.setSelected(true); break;
-            case 6: GuisantesjCheckBox.setSelected(true); break;
-            case 7: GarbanzosjCheckBox.setSelected(true); break;
-            case 8: PescadojCheckBox.setSelected(true); break;
-            case 9: PechugaPollojCheckBox.setSelected(true); break;
-            case 10: CamaronesjCheckBox.setSelected(true); break;
-            case 11: QuesoPanelajCheckBox.setSelected(true); break;
-            case 12: PavojCheckBox.setSelected(true); break;
-            case 13: CarneResjCheckBox.setSelected(true); break;
-            default:
-                System.out.println("Numero invalido:"+ num);
-                break;
+            case 1 -> HuevojCheckBox.setSelected(true);
+            case 2 -> AtúnjCheckBox.setSelected(true);
+            case 3 -> SardinajCheckBox.setSelected(true);
+            case 4 -> LentejasjCheckBox.setSelected(true);
+            case 5 -> EspinacasjCheckBox.setSelected(true);
+            case 6 -> GuisantesjCheckBox.setSelected(true);
+            case 7 -> GarbanzosjCheckBox.setSelected(true);
+            case 8 -> PescadojCheckBox.setSelected(true);
+            case 9 -> PechugaPollojCheckBox.setSelected(true);
+            case 10 -> CamaronesjCheckBox.setSelected(true);
+            case 11 -> QuesoPanelajCheckBox.setSelected(true);
+            case 12 -> PavojCheckBox.setSelected(true);
+            case 13 -> CarneResjCheckBox.setSelected(true);
+            default -> System.out.println("Numero invalido:"+ num);
         }
         
     }
@@ -116,22 +119,20 @@ public class ListaCompras extends javax.swing.JFrame {
         int num = new Random().nextInt(13) + 1;
         
         switch (num){
-            case 1: PanIntegraljCheckBox.setSelected(true); break;
-            case 2: ArrozCocidojCheckBox.setSelected(true); break;
-            case 3: AvenajCheckBox.setSelected(true); break;
-            case 4: PastajCheckBox.setSelected(true); break;
-            case 5: HarinaTrigojCheckBox.setSelected(true); break;
-            case 6: ManzanajCheckBox.setSelected(true); break;
-            case 7: PapayajCheckBox.setSelected(true); break;
-            case 8: PlátanoMadurojCheckBox.setSelected(true); break;
-            case 9: YucaCocidajCheckBox.setSelected(true); break;
-            case 10: CamotejCheckBox.setSelected(true); break;
-            case 11: TortillaTrigojCheckBox.setSelected(true); break;
-            case 12: GalletaIntegraljCheckBox.setSelected(true); break;
-            case 13: PanAvenajCheckBox.setSelected(true); break;
-            default:
-            System.out.println("Numero invalido:"+ num);
-                break;
+            case 1 -> PanIntegraljCheckBox.setSelected(true);
+            case 2 -> ArrozCocidojCheckBox.setSelected(true);
+            case 3 -> AvenajCheckBox.setSelected(true);
+            case 4 -> PastajCheckBox.setSelected(true);
+            case 5 -> HarinaTrigojCheckBox.setSelected(true);
+            case 6 -> ManzanajCheckBox.setSelected(true);
+            case 7 -> PapayajCheckBox.setSelected(true);
+            case 8 -> PlátanoMadurojCheckBox.setSelected(true);
+            case 9 -> YucaCocidajCheckBox.setSelected(true);
+            case 10 -> CamotejCheckBox.setSelected(true);
+            case 11 -> TortillaTrigojCheckBox.setSelected(true);
+            case 12 -> GalletaIntegraljCheckBox.setSelected(true);
+            case 13 -> PanAvenajCheckBox.setSelected(true);
+            default -> System.out.println("Numero invalido:"+ num);
         }
     }
     
@@ -140,27 +141,25 @@ public class ListaCompras extends javax.swing.JFrame {
         int num = new Random().nextInt(13) + 1;
         
         switch(num){
-            case 1: LechugajCheckBox.setSelected(true); break;
-            case 2: BrócolijCheckBox.setSelected(true); break;
-            case 3: ColiflorjCheckBox.setSelected(true); break;
-            case 4: ApiojCheckBox.setSelected(true); break;
-            case 5: PepinojCheckBox.setSelected(true); break;
-            case 6: ZanahoriajCheckBox.setSelected(true); break;
-            case 7: RemolachajCheckBox.setSelected(true); break;
-            case 8: HabaFrescajCheckBox.setSelected(true); break;
-            case 9: PapasjCheckBox.setSelected(true); break;
-            case 10: AcelgasjCheckBox.setSelected(true); break;
-            case 11: BerengenajCheckBox.setSelected(true); break;
-            case 12: AlcachofajCheckBox.setSelected(true); break;
-            case 13: NopalesjCheckBox.setSelected(true); break;
-            default:
-            System.out.println("Numero invalido:"+ num);
-                break;
+            case 1 -> LechugajCheckBox.setSelected(true);
+            case 2 -> BrócolijCheckBox.setSelected(true);
+            case 3 -> ColiflorjCheckBox.setSelected(true);
+            case 4 -> ApiojCheckBox.setSelected(true);
+            case 5 -> PepinojCheckBox.setSelected(true);
+            case 6 -> ZanahoriajCheckBox.setSelected(true);
+            case 7 -> RemolachajCheckBox.setSelected(true);
+            case 8 -> HabaFrescajCheckBox.setSelected(true);
+            case 9 -> PapasjCheckBox.setSelected(true);
+            case 10 -> AcelgasjCheckBox.setSelected(true);
+            case 11 -> BerengenajCheckBox.setSelected(true);
+            case 12 -> AlcachofajCheckBox.setSelected(true);
+            case 13 -> NopalesjCheckBox.setSelected(true);
+            default -> System.out.println("Numero invalido:"+ num);
         }
     }
     private void grasaAleatoria(){
         reiniciarGrasas();
-        int num = new Random().nextInt(13) + 1;
+        int num = new Random().nextInt(12) + 1;
         switch(num){
             case 1: FrutosSecosjCheckBox.setSelected(true); break;
             case 2: SemillasjCheckBox.setSelected(true); break;
@@ -224,19 +223,18 @@ public class ListaCompras extends javax.swing.JFrame {
         NopalesjCheckBox.setSelected(false); 
     }
     private void reiniciarGrasas(){
-        LechugajCheckBox.setSelected(false); 
-        BrócolijCheckBox.setSelected(false); 
-        ColiflorjCheckBox.setSelected(false); 
-        ApiojCheckBox.setSelected(false); 
-        PepinojCheckBox.setSelected(false); 
-        ZanahoriajCheckBox.setSelected(false); 
-        RemolachajCheckBox.setSelected(false); 
-        HabaFrescajCheckBox.setSelected(false); 
-        PapasjCheckBox.setSelected(false); 
-        AcelgasjCheckBox.setSelected(false); 
-        BerengenajCheckBox.setSelected(false);
-        AlcachofajCheckBox.setSelected(false); 
-        NopalesjCheckBox.setSelected(false); 
+        FrutosSecosjCheckBox.setSelected(false); 
+        SemillasjCheckBox.setSelected(false); 
+        AceitunasjCheckBox.setSelected(false); 
+        EdamamejCheckBox.setSelected(false); 
+        TahinijCheckBox.setSelected(false); 
+        AceiteCocojCheckBox.setSelected(false); 
+        HummusjCheckBox.setSelected(false); 
+        TofujCheckBox.setSelected(false); 
+        AceiteOlivajCheckBox.setSelected(false); 
+        SalmónjCheckBox.setSelected(false); 
+        SemillaChíajCheckBox.setSelected(false);
+        LecheEnterajCheckBox.setSelected(false); 
     }
                        
     /**

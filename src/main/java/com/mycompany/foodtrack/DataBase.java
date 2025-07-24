@@ -23,10 +23,10 @@ public class DataBase {
     public static Connection conectar() {
         try {
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Conexión exitosa a la base de datos");
+            System.out.println("Conexion exitosa a la base de datos");
             return conn;
         } catch (SQLException e) {
-            System.err.println("Error de conexión: " + e.getMessage());
+            System.err.println("Error de conexion: " + e.getMessage());
             return null;
         }
     }

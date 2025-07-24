@@ -5,10 +5,13 @@
 package com.mycompany.foodtrack;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.util.HashMap;
+import java.time.LocalDate;
 
 /**
  *
@@ -190,7 +193,7 @@ public class PeticionesDB {
                 return filasAfectadas > 0;
 
             } catch (SQLException e) {
-                System.err.println("Error al insertar el usuario: " + e.getMessage());
+                System.err.println("Error al agregar el alimento: " + e.getMessage());
             }
         }
 
@@ -274,5 +277,92 @@ public class PeticionesDB {
         }
 
         return false;
+    }
+    
+    public static int buscarConsumoCalorico (LocalDate fecha, int idUsuario) {
+        String query = "SELECT idConsumoCalorico FROM consumoCalorico WHERE fecha_consumo = ? AND idUsuarios = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setString(1, String.valueOf(fecha));
+            pstmt.setInt(2, idUsuario);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("idConsumoCalorico"); // Retorna el ID si encuentra el usuario
+                }
+                return -1; // -1 para indicar que no se encontró
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al id de Consumo Calorico: " + e.getMessage());
+            return -1; // Retorna -1 en caso de error
+        }
+    }
+    
+    public static boolean agregarConsumoCalorico (LocalDate fecha, int idUsuario) {
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "INSERT INTO consumoCalorico (idUsuarios, fecha_consumo) VALUES (?, ?)";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setInt(1, idUsuario);
+                stmt.setDate(2, Date.valueOf(fecha));
+
+                int filasAfectadas = stmt.executeUpdate();
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al agregar el campo: " + e.getMessage());
+            }
+        }
+
+        return false;
+    }
+    
+    public static boolean agregarRegistroConsumo (int idAlimento, int idConsumo) {
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "INSERT INTO consumoCalorico (idAlimentos, idConsumoCalorico) VALUES (?, ?)";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setInt(1, idAlimento);
+                stmt.setInt(2, idConsumo);
+
+                int filasAfectadas = stmt.executeUpdate();
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al agregar el campo: " + e.getMessage());
+            }
+        }
+
+        return false;
+    }
+    
+    public static HashMap<String, Integer> obtenerAlimentosConCalorias() {
+        HashMap<String, Integer> alimentosLista = new HashMap<>();
+        String query = "SELECT nombreAlimento, caloriasAlimento FROM alimentos";
+
+        try (Connection conn = DataBase.conectar(); 
+                Statement stmt = conn.createStatement(); 
+                ResultSet rs = stmt.executeQuery(query)) {
+            
+            
+            while (rs.next()) {
+                String nombre = rs.getString("nombreaAlimento");
+                int calorias = rs.getInt("caloriasAlimento");
+                alimentosLista.put(nombre, calorias);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener alimentos: " + e.getMessage());
+        }
+
+        return alimentosLista;
     }
 }
