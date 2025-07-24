@@ -29,16 +29,15 @@ public class PeticionesDB {
      * @param nom_usuario obtener de textField
      * @param correo obtener de textField
      * @param contrasena obtener de textField
-     * @param imc obtener de función calcularIMC
      * @return true o false para luego comparar con un if
      */
-    public static boolean registrarUsuario(int idSexo, String nombre, String apellido, int edad, double peso, double altura, String nom_usuario, String correo, String contrasena, double imc) {
+    public static boolean registrarUsuario(int idSexo, String nombre, String apellido, int edad, double peso, double altura, String nom_usuario, String correo, String contrasena) {
 
         Connection conn = DataBase.conectar();
 
         if (conn != null) {
 
-            String query = "INSERT INTO usuarios (idSexo, nombre, apellido, edad, peso, altura, nom_usuario, correo, contrasena, imc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO usuarios (idSexo, nombre, apellido, edad, peso, altura, nom_usuario, correo, contrasena) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setInt(1, idSexo);
@@ -50,7 +49,6 @@ public class PeticionesDB {
                 stmt.setString(7, nom_usuario);
                 stmt.setString(8, correo);
                 stmt.setString(9, contrasena);
-                stmt.setDouble(10, imc);
 
                 int filasAfectadas = stmt.executeUpdate();
 
