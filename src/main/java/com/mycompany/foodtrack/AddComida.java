@@ -4,6 +4,9 @@
  */
 package com.mycompany.foodtrack;
 
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -22,13 +25,9 @@ public class AddComida extends javax.swing.JFrame {
         initComponents();
         SwingUtilities.invokeLater(() -> {
             llenarTabla(); // Carga los datos después de mostrar la interfaz
-            botonBusqueda.addActionListener((java.awt.event.ActionEvent evt1) -> {
-                botonBusquedaActionPerformed(evt1);
-            });
-            //Listener para el botón de borrar y que elimine el contenido del jtextfield
-            borrarBusqueda.addActionListener((java.awt.event.ActionEvent evt) -> {
-                borrarBusquedaActionPerformed(evt);
-            });
+            verificarConsumoCalorico();
+            iniciarListeners();
+            
         });
         
     }
@@ -58,6 +57,7 @@ public class AddComida extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaAlimentos = new javax.swing.JTable();
         borrarBusqueda = new javax.swing.JButton();
+        borrarSeleccionBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(254, 244, 192));
@@ -219,6 +219,15 @@ public class AddComida extends javax.swing.JFrame {
             }
         });
 
+        borrarSeleccionBtn.setBackground(new java.awt.Color(253, 140, 13));
+        borrarSeleccionBtn.setText("Borrar Selecciones");
+        borrarSeleccionBtn.setPreferredSize(new java.awt.Dimension(124, 27));
+        borrarSeleccionBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarSeleccionBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -237,18 +246,17 @@ public class AddComida extends javax.swing.JFrame {
                         .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(borrarBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(borrarBusqueda)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonBusqueda)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
-                        .addComponent(AñadiralRegistroButton)
-                        .addGap(41, 41, 41))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(borrarSeleccionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(AñadiralRegistroButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,7 +269,8 @@ public class AddComida extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AñadirAlimentoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AñadiralRegistroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(AñadiralRegistroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(borrarSeleccionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,6 +314,49 @@ public class AddComida extends javax.swing.JFrame {
 
     private void AñadiralRegistroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadiralRegistroButtonActionPerformed
         // TODO add your handling code here:
+        try {
+            List<AlimentoTabla> alimentosSeleccionados = obtenerAlimentosSeleccionados();
+            if (alimentosSeleccionados.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Seleccione al menos un alimento",
+                        "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            int idConsumo = verificarConsumoCalorico();
+            if (idConsumo == -1) {
+                throw new Exception("No se pudo obtener o crear el registro de consumo");
+            }
+
+            int caloriasTotales = PeticionesDB.traerCaloriasConsumo(idConsumo);
+            int alimentosRegistrados = 0;
+
+            for (AlimentoTabla alimento : alimentosSeleccionados) {
+                int idAlimento = PeticionesDB.obtenerIdAlimento(alimento.getNombre());
+                if (idAlimento == -1) {
+                    throw new Exception("No se encontró el alimento: " + alimento.getNombre());
+                }
+
+                if (PeticionesDB.agregarRegistroConsumo(idAlimento, idConsumo)) {
+                    alimentosRegistrados++;
+                    caloriasTotales += alimento.getCalorias();
+                }
+            }
+
+            if (alimentosRegistrados > 0) {
+                if (PeticionesDB.actualizarCaloriasConsumidas(idConsumo, caloriasTotales)) {
+                    JOptionPane.showMessageDialog(this,
+                            alimentosRegistrados + " alimentos registrados exitosamente",
+                            "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    limpiarSelecciones();
+                } else {
+                    throw new Exception("Error al actualizar las calorías totales");
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_AñadiralRegistroButtonActionPerformed
 
     private void estadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadisticasActionPerformed
@@ -391,9 +443,33 @@ public class AddComida extends javax.swing.JFrame {
 
     private void borrarBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarBusquedaActionPerformed
         // TODO add your handling code here:
+        List<AlimentoTabla> seleccionesActuales = obtenerAlimentosSeleccionados();
+
+        // 2. Limpiar el campo y recargar la tabla
         busqueda.setText("");
         llenarTabla();
+
+        // 3. Restaurar las selecciones
+        if (!seleccionesActuales.isEmpty()) {
+            DefaultTableModel model = (DefaultTableModel) tablaAlimentos.getModel();
+
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String nombre = (String) model.getValueAt(i, 1);
+                // Verificar si este alimento estaba seleccionado
+                for (AlimentoTabla alimento : seleccionesActuales) {
+                    if (alimento.getNombre().equals(nombre)) {
+                        model.setValueAt(true, i, 0);
+                        break;
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_borrarBusquedaActionPerformed
+
+    private void borrarSeleccionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarSeleccionBtnActionPerformed
+        // TODO add your handling code here:
+        limpiarSelecciones();
+    }//GEN-LAST:event_borrarSeleccionBtnActionPerformed
 
     public void llenarTabla() {
         try {
@@ -438,6 +514,60 @@ public class AddComida extends javax.swing.JFrame {
             e.getMessage();
         }
     }
+    
+    public int verificarConsumoCalorico() {
+        try {
+            LocalDate fecha = LocalDate.now();
+            int idUsuario = UsuarioId.getInstance().getValor();
+            int consumoActivo = PeticionesDB.buscarConsumoCalorico(fecha, idUsuario);
+
+            if (consumoActivo == -1) {
+                if (!PeticionesDB.agregarConsumoCalorico(fecha, idUsuario)) {
+                    throw new RuntimeException("No se pudo crear el registro de consumo");
+                }
+                // Obtener el ID del nuevo registro creado
+                consumoActivo = PeticionesDB.buscarConsumoCalorico(fecha, idUsuario);
+                System.out.println("Nuevo registro de consumo creado. ID: " + consumoActivo);
+            } else {
+                System.out.println("Registro de consumo existente. ID: " + consumoActivo);
+            }
+            return consumoActivo;
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Error al verificar consumo calórico: " + e.getMessage());
+        }
+    }
+    
+    public void iniciarListeners() {
+        botonBusqueda.addActionListener((java.awt.event.ActionEvent evt1) -> {
+            botonBusquedaActionPerformed(evt1);
+        });
+        //Listener para el botón de borrar y que elimine el contenido del jtextfield
+        borrarBusqueda.addActionListener((java.awt.event.ActionEvent evt) -> {
+            borrarBusquedaActionPerformed(evt);
+        });
+    }
+    
+    private List<AlimentoTabla> obtenerAlimentosSeleccionados() {
+        List<AlimentoTabla> seleccionados = new ArrayList<>();
+        DefaultTableModel model = (DefaultTableModel) tablaAlimentos.getModel();
+
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Boolean seleccionado = (Boolean) model.getValueAt(i, 0);
+            if (seleccionado != null && seleccionado) {
+                String nombre = (String) model.getValueAt(i, 1);
+                Integer calorias = (Integer) model.getValueAt(i, 2);
+                seleccionados.add(new AlimentoTabla(nombre, calorias));
+            }
+        }
+        return seleccionados;
+    }
+
+    private void limpiarSelecciones() {
+        DefaultTableModel model = (DefaultTableModel) tablaAlimentos.getModel();
+        for (int i = 0; i < model.getRowCount(); i++) {
+            model.setValueAt(false, i, 0);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -448,6 +578,7 @@ public class AddComida extends javax.swing.JFrame {
     private javax.swing.JButton AñadiralRegistroButton;
     private javax.swing.JButton addComida;
     private javax.swing.JButton borrarBusqueda;
+    private javax.swing.JButton borrarSeleccionBtn;
     private javax.swing.JButton botonBusqueda;
     private javax.swing.JTextField busqueda;
     private javax.swing.JButton estadisticas;

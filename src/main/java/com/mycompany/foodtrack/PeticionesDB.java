@@ -112,6 +112,25 @@ public class PeticionesDB {
         }
     }
     
+    public static int obtenerIdAlimento (String nombreAlimento) {
+        String query = "SELECT idAlimentos FROM alimentos WHERE nombreAlimento = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setString(1, nombreAlimento);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("idAlimentos"); // Retorna el ID si encuentra el alimento
+                }
+                return -1; // Mejor usar -1 para indicar que no se encontró
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener ID del alimento: " + e.getMessage());
+            return -1; // Retorna -1 en caso de error
+        }
+    }
+    
     public static String obtenerContrasena (int idUsuario) {
         String query = "SELECT contrasena FROM usuarios WHERE idUsuarios = ?";
 
@@ -155,7 +174,7 @@ public class PeticionesDB {
         return null;
     }
     
-    public static double traerCaloriasAlimento(String nombreAlimento){
+    public static int traerCaloriasAlimento(String nombreAlimento){
         String query = "SELECT caloriasAlimento FROM alimentos WHERE nombreAlimento = ?";
 
         try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -164,7 +183,7 @@ public class PeticionesDB {
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    return rs.getDouble("caloriasAlimento"); // Retorna las calorias si encuentra el alimento
+                    return rs.getInt("caloriasAlimento"); // Retorna las calorias si encuentra el alimento
                 }
                 return -1; // Mejor usar -1 para indicar que no se encontró el alimento
             }
@@ -172,6 +191,49 @@ public class PeticionesDB {
             System.err.println("Error al obtener ID de usuario: " + e.getMessage());
             return -1; // Retorna -1 en caso de error
         }
+    }
+    
+    public static int traerCaloriasConsumo (int idConsumo){
+        String query = "SELECT total_calorias FROM consumoCalorico WHERE idConsumoCalorico = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, idConsumo);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("total_calorias"); // Retorna todas las calorias
+                }
+                return -1; // Mejor usar -1 para indicar que hay un error
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener ID de usuario: " + e.getMessage());
+            return -1; // Retorna -1 en caso de error
+        }
+    }
+    
+    public static boolean actualizarCaloriasConsumidas (int idConsumo, int calorias){
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "UPDATE consumoCalorico SET total_calorias = ? WHERE idConsumoCalorico = ?";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setInt(1, calorias);
+                stmt.setInt(2, idConsumo);
+
+                int filasAfectadas = stmt.executeUpdate();
+                System.out.println("Filas actualizadas: " + filasAfectadas);
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al insertar el usuario: " + e.getMessage());
+            }
+        }
+
+        return false;
     }
     
     public static List<AlimentoTabla> buscarAlimentos(String criterio) {
@@ -221,17 +283,18 @@ public class PeticionesDB {
         return false;
     }
     
-    public static boolean actualizarMeta (int idUsuario, String tipo, int metaActual) {
+    public static boolean actualizarMeta (int idUsuario, int idConsumo, String tipo, int metaActual) {
         Connection conn = DataBase.conectar();
 
         if (conn != null) {
 
-            String query = "UPDATE meta SET tipo_meta = ?, metaActual = ? WHERE idUsuarios = ?";
+            String query = "UPDATE meta SET tipo_meta = ?, metaActual = ?, idConsumoCalorico WHERE idUsuarios = ?";
 
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setString(1, tipo);
                 stmt.setInt(2, metaActual);
-                stmt.setInt(3, idUsuario);             
+                stmt.setInt(3, idConsumo);  
+                stmt.setInt(4, idUsuario);
 
                 int filasAfectadas = stmt.executeUpdate();
                 System.out.println("Filas actualizadas: " + filasAfectadas);
@@ -348,7 +411,7 @@ public class PeticionesDB {
 
         if (conn != null) {
 
-            String query = "INSERT INTO consumoCalorico (idAlimentos, idConsumoCalorico) VALUES (?, ?)";
+            String query = "INSERT INTO comidasRegistradas (idAlimentos, idConsumoCalorico) VALUES (?, ?)";
 
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setInt(1, idAlimento);
