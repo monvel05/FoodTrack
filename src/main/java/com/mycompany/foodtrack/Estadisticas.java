@@ -342,16 +342,27 @@ public class Estadisticas extends javax.swing.JFrame {
     private void graficaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficaBtnActionPerformed
         // TODO add your handling code here:
         
-        System.out.println("entro a estadisticas");  
+    System.out.println("entro a estadisticas");  
+    //System.out.println("marcooo"); //verificar si funciona el evento
         
-        System.out.println("marcooo"); //verificar si funciona el evento
-        
+     
+     int idUsuario = UsuarioId.getInstance().getValor();
+        String caloriasInput = consumo_caloricoInput.getText();
+        int calorias = Integer.parseInt(caloriasInput);
+      
+        boolean actualizacionCalorias = PeticionesDB.actualizarCaloriasConsumidas(idUsuario, calorias);
+        if (actualizacionCalorias) {
+            JOptionPane.showMessageDialog(null, "Informacion actualizada correctamente ", "Información", JOptionPane.INFORMATION_MESSAGE);
+            traerCaloriasConsumo();
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al actualizar la informacion", "Error", JOptionPane.ERROR_MESSAGE);
+        }      
+           
          
-        
    nuevaMetaBtn.setVisible(false); 
    
     // se elige la meta y el tipo de meta 
-    int idUsuario = UsuarioId.getInstance().getValor();
+    //int idUsuario = UsuarioId.getInstance().getValor();
     String tipoMeta = comboTipoMeta.getSelectedItem().toString();
     String metaInput = meta_actualInput.getText().trim();     
     String totalCaloriasInput = consumo_caloricoInput.getText().trim();
@@ -565,20 +576,7 @@ public class Estadisticas extends javax.swing.JFrame {
     private void nuevaMetaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevaMetaBtnActionPerformed
         // TODO add your handling code here:
     
-     int idUsuario = UsuarioId.getInstance().getValor();
-        String caloriasInput = consumo_caloricoInput.getText();
-        int calorias = Integer.parseInt(caloriasInput);
-      
-        boolean actualizacionCalorias = PeticionesDB.actualizarCaloriasConsumidas(idUsuario, calorias);
-        if (actualizacionCalorias) {
-            JOptionPane.showMessageDialog(null, "Informacion actualizada correctamente ", "Información", JOptionPane.INFORMATION_MESSAGE);
-            traerCaloriasConsumo();
-        } else {
-            JOptionPane.showMessageDialog(null, "Error al actualizar la informacion", "Error", JOptionPane.ERROR_MESSAGE);
-        }      
-        
     meta_actualInput.setText("");
-    progresoInput.setText("");
     consumo_caloricoInput.setText("");
     comboTipoMeta.setSelectedIndex(0); 
        
