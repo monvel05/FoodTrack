@@ -285,28 +285,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
     private void registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarseActionPerformed
 
-       //*OBtener datos del formulario*//
-       int idSexo=RadioHombre.isSelected()? 1:2;
-       String nombre=nombreInput.getText().trim();
-       String apellido=apellidoInput.getText().trim();
-       int edad =Integer.parseInt(edadInput.getText().trim());
-       double peso=Double.parseDouble(pesoInput.getText().trim());
-       double altura=Double.parseDouble(alturaInput.getText().trim());
-       String nom_usuario=usuarioInput.getText().trim();
-       String correo= correoInput.getText().trim();
-       String contrasena =new String(passwordInput.getPassword()).trim();
-       //*Lllamar a la BD*//
-       boolean registrado = PeticionesDB.registrarUsuario(idSexo, nombre, apellido, edad, peso, altura, nom_usuario, correo, contrasena);
-       //*verificar si se registro correctamente*//
-       if(registrado){
-           JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-           Login login=new Login();
-           login.setVisible(true);
-           dispose();          
-       } else{
-           JOptionPane.showMessageDialog(this, "Error al registar el usuario","Error", JOptionPane.ERROR_MESSAGE);
-       }
-        // TODO add your handling code here:
+        //validacion de campos
+         // TODO add your handling code here:
     if (nombreInput.getText().trim().isEmpty()) {
         JOptionPane.showMessageDialog(this, "️ El campo de nombre está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
         return;
@@ -344,6 +324,30 @@ public class RegistroUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "️ El campo de contraseña está vacío", "Advertencia", JOptionPane.WARNING_MESSAGE);
         return;
     }
+        
+        
+       //*OBtener datos del formulario*//
+       int idSexo=RadioHombre.isSelected()? 1:2;
+       String nombre=nombreInput.getText().trim();
+       String apellido=apellidoInput.getText().trim();
+       int edad =Integer.parseInt(edadInput.getText().trim());
+       double peso=Double.parseDouble(pesoInput.getText().trim());
+       double altura=Double.parseDouble(alturaInput.getText().trim());
+       String nom_usuario=usuarioInput.getText().trim();
+       String correo= correoInput.getText().trim();
+       String contrasena =new String(passwordInput.getPassword()).trim();
+       //*Lllamar a la BD*//
+       boolean registrado = PeticionesDB.registrarUsuario(idSexo, nombre, apellido, edad, peso, altura, nom_usuario, correo, contrasena);
+       //*verificar si se registro correctamente*//
+       if(registrado){
+           JOptionPane.showMessageDialog(this, "Usuario registrado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+           Login login=new Login();
+           login.setVisible(true);
+           dispose();          
+       } else{
+           JOptionPane.showMessageDialog(this, "Error al registar el usuario","Error", JOptionPane.ERROR_MESSAGE);
+       }
+       
     }//GEN-LAST:event_registrarseActionPerformed
 
     private void RegresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarBtnActionPerformed
