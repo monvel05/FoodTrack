@@ -62,7 +62,7 @@
                               <Group type="102" attributes="0">
                                   <Component id="eliminarBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="cancelarBtn1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cancelarBtn" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="passwordInput" min="-2" pref="188" max="-2" attributes="0"/>
                           </Group>
@@ -84,7 +84,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="eliminarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cancelarBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cancelarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
@@ -118,7 +118,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="cancelarBtn1">
+        <Component class="javax.swing.JButton" name="cancelarBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d" green="8c" red="fd" type="rgb"/>
@@ -126,7 +126,7 @@
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarBtn1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

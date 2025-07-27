@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -27,6 +28,9 @@ public class Estadisticas extends javax.swing.JFrame {
      */
     public Estadisticas() {
         initComponents();
+        SwingUtilities.invokeLater(() -> {
+            checarApariencia();
+        });
     }
 
     /**
@@ -64,7 +68,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel1.setText("Nivel de progreso");
 
-        comboTipoMeta.setBackground(new java.awt.Color(246, 226, 157));
+        comboTipoMeta.setBackground(new java.awt.Color(246, 226, 155));
         comboTipoMeta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de meta", "Ganar calorias", "Disminuir calorias", " " }));
         comboTipoMeta.setToolTipText("Elige la opcion de tu meta");
 
@@ -591,7 +595,65 @@ public class Estadisticas extends javax.swing.JFrame {
         
     }//GEN-LAST:event_nuevaMetaBtnActionPerformed
 
-    
+    private void checarApariencia() {
+        if (ModoOscuro.getInstance().isModoOscuroActivo()) {
+            //Cambiar menú
+            menu.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            addComida.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            addComida.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            listaCompras.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            listaCompras.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            estadisticas.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            estadisticas.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            perfil.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            perfil.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            salir.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            salir.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar panel
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoOscuro());
+            
+            //Cambiar labels
+            jLabel3.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            jLabel2.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar botones y combo box
+            graficaBtn.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            graficaBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            comboTipoMeta.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            comboTipoMeta.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            nuevaMetaBtn.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            nuevaMetaBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+        } else {
+            //Cambiar menú
+            menu.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            addComida.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            addComida.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            listaCompras.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            listaCompras.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            estadisticas.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            estadisticas.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            perfil.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            perfil.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            salir.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            salir.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+
+            //Cambiar panel
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoClaro());
+
+            //Cambiar labels
+            jLabel3.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            jLabel2.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+
+            //Cambiar botones y combo box
+            graficaBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            graficaBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            comboTipoMeta.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            comboTipoMeta.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            nuevaMetaBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            nuevaMetaBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+        }
+    }
        
     
     

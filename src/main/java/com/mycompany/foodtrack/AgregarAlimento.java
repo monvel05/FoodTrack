@@ -5,6 +5,7 @@
 package com.mycompany.foodtrack;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -17,6 +18,9 @@ public class AgregarAlimento extends javax.swing.JFrame {
      */
     public AgregarAlimento() {
         initComponents();
+        SwingUtilities.invokeLater(() -> {
+            checarApariencia();
+        });
     }
 
     /**
@@ -37,7 +41,7 @@ public class AgregarAlimento extends javax.swing.JFrame {
         caloriasInput = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         porcionInput = new javax.swing.JTextField();
-        unidadLabel = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         unidadInput = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         tipoInput = new javax.swing.JComboBox<>();
@@ -61,7 +65,7 @@ public class AgregarAlimento extends javax.swing.JFrame {
 
         jLabel5.setText("Porción:");
 
-        unidadLabel.setText("Unidad:");
+        jLabel6.setText("Unidad:");
 
         unidadInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "g", "ml", "unidad" }));
 
@@ -112,7 +116,7 @@ public class AgregarAlimento extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(porcionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(72, 72, 72)
-                                        .addComponent(unidadLabel)
+                                        .addComponent(jLabel6)
                                         .addGap(5, 5, 5))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel7)
@@ -156,7 +160,7 @@ public class AgregarAlimento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(porcionInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(unidadLabel)
+                    .addComponent(jLabel6)
                     .addComponent(unidadInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -201,10 +205,45 @@ public class AgregarAlimento extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Error al registar el alimento","Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
     }//GEN-LAST:event_agregarBtnActionPerformed
 
+    private void checarApariencia() {
+        if (ModoOscuro.getInstance().isModoOscuroActivo()) {
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoOscuro());
+            
+            //Labels
+            jLabel1.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            jLabel2.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            jLabel3.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            jLabel4.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            jLabel5.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            jLabel6.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            jLabel7.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Botones
+            agregarBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            agregarBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            cancelarBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            cancelarBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+        } else {
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoClaro());
+            
+            //Labels
+            jLabel1.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            jLabel2.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            jLabel3.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            jLabel4.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            jLabel5.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            jLabel6.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            jLabel7.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            
+            //Botones
+            agregarBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            agregarBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            cancelarBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            cancelarBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarBtn;
@@ -215,12 +254,12 @@ public class AgregarAlimento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nombreInput;
     private javax.swing.JTextField porcionInput;
     private javax.swing.JComboBox<String> tipoInput;
     private javax.swing.JComboBox<String> unidadInput;
-    private javax.swing.JLabel unidadLabel;
     // End of variables declaration//GEN-END:variables
 }

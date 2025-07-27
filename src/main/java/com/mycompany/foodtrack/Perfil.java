@@ -5,9 +5,7 @@
 package com.mycompany.foodtrack;
 
 import java.awt.Color;
-import java.awt.PopupMenu;
 import java.util.HashMap;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
@@ -17,14 +15,13 @@ import javax.swing.SwingUtilities;
  */
 public class Perfil extends javax.swing.JFrame {
 
-    private PopupMenu EliminarCuenta;
-
     /**
      * Creates new form Perfil
      */
     public Perfil() {
         initComponents();
         SwingUtilities.invokeLater(() -> {
+            checarApariencia();
             agregarInformacion(); // Carga los datos después de mostrar la interfaz
         });
         
@@ -42,13 +39,13 @@ public class Perfil extends javax.swing.JFrame {
         grupo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        nombreLabel = new javax.swing.JLabel();
         nombrePerfil = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        pesoLabel = new javax.swing.JLabel();
         pesoPerfil = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        alturalabel = new javax.swing.JLabel();
         alturaPerfil = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        imcLabel = new javax.swing.JLabel();
         imcPerfil = new javax.swing.JTextField();
         barraImc = new javax.swing.JProgressBar();
         actualizarDatosBtn = new javax.swing.JButton();
@@ -59,12 +56,12 @@ public class Perfil extends javax.swing.JFrame {
         perfilBtn = new javax.swing.JButton();
         salirBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        perfilLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         claroRadioBtn = new javax.swing.JRadioButton();
         oscuroRadioBtn = new javax.swing.JRadioButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        aparienciaLabel = new javax.swing.JLabel();
+        eliminarLabel = new javax.swing.JLabel();
         eliminarCuentaBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,19 +71,19 @@ public class Perfil extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("Nombre");
+        nombreLabel.setText("Nombre");
 
         nombrePerfil.setBackground(new java.awt.Color(253, 140, 13));
 
-        jLabel2.setText("Peso");
+        pesoLabel.setText("Peso");
 
         pesoPerfil.setBackground(new java.awt.Color(253, 140, 13));
 
-        jLabel3.setText("Altura");
+        alturalabel.setText("Altura");
 
         alturaPerfil.setBackground(new java.awt.Color(253, 140, 13));
 
-        jLabel4.setText("IMC");
+        imcLabel.setText("IMC");
 
         imcPerfil.setBackground(new java.awt.Color(253, 140, 13));
 
@@ -114,10 +111,10 @@ public class Perfil extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(barraImc, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel4)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel1)
+                        .addComponent(imcLabel)
+                        .addComponent(alturalabel)
+                        .addComponent(pesoLabel)
+                        .addComponent(nombreLabel)
                         .addComponent(nombrePerfil)
                         .addComponent(pesoPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                         .addComponent(alturaPerfil)
@@ -132,19 +129,19 @@ public class Perfil extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jLabel1)
+                .addComponent(nombreLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombrePerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(pesoLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pesoPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
-                .addComponent(jLabel3)
+                .addComponent(alturalabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alturaPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(imcLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(imcPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -256,16 +253,26 @@ public class Perfil extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        jLabel6.setText("Perfil");
+        perfilLabel.setText("Perfil");
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         grupo.add(claroRadioBtn);
         claroRadioBtn.setSelected(true);
         claroRadioBtn.setText("Claro");
+        claroRadioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                claroRadioBtnActionPerformed(evt);
+            }
+        });
 
         grupo.add(oscuroRadioBtn);
         oscuroRadioBtn.setText("Oscuro");
+        oscuroRadioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oscuroRadioBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -288,9 +295,9 @@ public class Perfil extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jLabel8.setText("Apariencia");
+        aparienciaLabel.setText("Apariencia");
 
-        jLabel10.setText("¿Eliminar cuenta?");
+        eliminarLabel.setText("¿Eliminar cuenta?");
 
         eliminarCuentaBtn.setBackground(new java.awt.Color(253, 140, 13));
         eliminarCuentaBtn.setText("Eliminar");
@@ -310,7 +317,7 @@ public class Perfil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(jLabel6)
+                        .addComponent(perfilLabel)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -323,12 +330,12 @@ public class Perfil extends javax.swing.JFrame {
                                         .addComponent(eliminarCuentaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(64, 64, 64))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
+                                        .addComponent(eliminarLabel)
                                         .addGap(80, 80, 80))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(51, 51, 51)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
+                                    .addComponent(aparienciaLabel)
                                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))))
         );
@@ -336,16 +343,16 @@ public class Perfil extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jLabel6)
+                .addComponent(perfilLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
-                        .addComponent(jLabel8)
+                        .addComponent(aparienciaLabel)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
+                        .addComponent(eliminarLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(eliminarCuentaBtn)
                         .addGap(38, 38, 38))
@@ -429,6 +436,18 @@ public class Perfil extends javax.swing.JFrame {
         eliminar.setVisible(true);
         dispose();
     }//GEN-LAST:event_eliminarCuentaBtnActionPerformed
+
+    private void claroRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claroRadioBtnActionPerformed
+        // TODO add your handling code here:
+        ModoOscuro.getInstance().setModoOscuroActivo(false);
+        checarApariencia();
+    }//GEN-LAST:event_claroRadioBtnActionPerformed
+
+    private void oscuroRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oscuroRadioBtnActionPerformed
+        // TODO add your handling code here:
+        ModoOscuro.getInstance().setModoOscuroActivo(true);
+        checarApariencia();
+    }//GEN-LAST:event_oscuroRadioBtnActionPerformed
     
     private void agregarInformacion (){
         int idUsuario = UsuarioId.getInstance().getValor();
@@ -470,33 +489,122 @@ public class Perfil extends javax.swing.JFrame {
         imcPerfil.setText(String.valueOf(imc));
         tablaImc (imc);
     }
+    
+    private void checarApariencia() {
+        if (ModoOscuro.getInstance().isModoOscuroActivo()) {
+            //Cambiar menú
+            menu.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            
+            addComidaBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            addComidaBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            listaComprasBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            listaComprasBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            estadisticasBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            estadisticasBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            perfilBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            perfilBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            salirBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            salirBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Fondo panel
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoOscuro());
+            
+            //Cambiar textFields
+            nombrePerfil.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            nombrePerfil.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            pesoPerfil.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            pesoPerfil.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            alturaPerfil.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            alturaPerfil.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            imcPerfil.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            imcPerfil.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            actualizarDatosBtn.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            actualizarDatosBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            eliminarCuentaBtn.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            eliminarCuentaBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar Labels
+            perfilLabel.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            aparienciaLabel.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            eliminarLabel.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar botones
+            actualizarDatosBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            actualizarDatosBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            eliminarCuentaBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            eliminarCuentaBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            
+        } else {
+            //Cambiar menú
+            menu.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            
+            addComidaBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            addComidaBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            listaComprasBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            listaComprasBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            estadisticasBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            estadisticasBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            perfilBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            perfilBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            salirBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            salirBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            
+            //Fondo panel
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoClaro());
+            
+            //Cambiar textFields
+            nombrePerfil.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            nombrePerfil.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            pesoPerfil.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            pesoPerfil.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            alturaPerfil.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            alturaPerfil.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            imcPerfil.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            imcPerfil.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            actualizarDatosBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            actualizarDatosBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            eliminarCuentaBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            eliminarCuentaBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            
+            //Cambiar Labels
+            perfilLabel.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            aparienciaLabel.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            eliminarLabel.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            
+            //Cambiar botones
+            actualizarDatosBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            actualizarDatosBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            eliminarCuentaBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            eliminarCuentaBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+        }
+    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizarDatosBtn;
     private javax.swing.JButton addComidaBtn;
     private javax.swing.JTextField alturaPerfil;
+    private javax.swing.JLabel alturalabel;
+    private javax.swing.JLabel aparienciaLabel;
     private javax.swing.JProgressBar barraImc;
     private javax.swing.JRadioButton claroRadioBtn;
     private javax.swing.JButton eliminarCuentaBtn;
+    private javax.swing.JLabel eliminarLabel;
     private javax.swing.JButton estadisticasBtn;
     private javax.swing.ButtonGroup grupo;
+    private javax.swing.JLabel imcLabel;
     private javax.swing.JTextField imcPerfil;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton listaComprasBtn;
     private javax.swing.JPanel menu;
+    private javax.swing.JLabel nombreLabel;
     private javax.swing.JTextField nombrePerfil;
     private javax.swing.JRadioButton oscuroRadioBtn;
     private javax.swing.JButton perfilBtn;
+    private javax.swing.JLabel perfilLabel;
+    private javax.swing.JLabel pesoLabel;
     private javax.swing.JTextField pesoPerfil;
     private javax.swing.JButton salirBtn;
     // End of variables declaration//GEN-END:variables

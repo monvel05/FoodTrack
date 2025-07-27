@@ -5,6 +5,7 @@
 package com.mycompany.foodtrack;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -17,6 +18,9 @@ public class EliminarCuenta extends javax.swing.JFrame {
      */
     public EliminarCuenta() {
         initComponents();
+        SwingUtilities.invokeLater(() -> {
+            checarApariencia();
+        });
     }
 
     /**
@@ -33,7 +37,7 @@ public class EliminarCuenta extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         passwordInput = new javax.swing.JPasswordField();
         eliminarBtn = new javax.swing.JButton();
-        cancelarBtn1 = new javax.swing.JButton();
+        cancelarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,11 +57,11 @@ public class EliminarCuenta extends javax.swing.JFrame {
             }
         });
 
-        cancelarBtn1.setBackground(new java.awt.Color(253, 140, 13));
-        cancelarBtn1.setText("Cancelar");
-        cancelarBtn1.addActionListener(new java.awt.event.ActionListener() {
+        cancelarBtn.setBackground(new java.awt.Color(253, 140, 13));
+        cancelarBtn.setText("Cancelar");
+        cancelarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarBtn1ActionPerformed(evt);
+                cancelarBtnActionPerformed(evt);
             }
         });
 
@@ -79,7 +83,7 @@ public class EliminarCuenta extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(eliminarBtn)
                                 .addGap(18, 18, 18)
-                                .addComponent(cancelarBtn1))
+                                .addComponent(cancelarBtn))
                             .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
@@ -95,7 +99,7 @@ public class EliminarCuenta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eliminarBtn)
-                    .addComponent(cancelarBtn1))
+                    .addComponent(cancelarBtn))
                 .addGap(33, 33, 33))
         );
 
@@ -135,18 +139,49 @@ public class EliminarCuenta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_eliminarBtnActionPerformed
 
-    private void cancelarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBtn1ActionPerformed
+    private void cancelarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBtnActionPerformed
         // TODO add your handling code here:
+        Perfil miPerfil = new Perfil();
+        miPerfil.setVisible(true);
         dispose();
-    }//GEN-LAST:event_cancelarBtn1ActionPerformed
+    }//GEN-LAST:event_cancelarBtnActionPerformed
 
+    private void checarApariencia() {
+        if (ModoOscuro.getInstance().isModoOscuroActivo()) {
+            //Cambiar panel
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoOscuro());
+            
+            //Cambiar Labels
+            jLabel1.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            jLabel2.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar botones
+            eliminarBtn.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            eliminarBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            cancelarBtn.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            cancelarBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+        } else {
+            //Cambiar panel
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoClaro());
+            
+            //Cambiar Labels
+            jLabel1.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            jLabel2.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            
+            //Cambiar botones
+            eliminarBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            eliminarBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            cancelarBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            cancelarBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+        }
+    }
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cancelarBtn1;
+    private javax.swing.JButton cancelarBtn;
     private javax.swing.JButton eliminarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

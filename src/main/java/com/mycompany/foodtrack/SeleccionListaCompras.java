@@ -5,6 +5,7 @@
 package com.mycompany.foodtrack;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -19,8 +20,21 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
     /**
      * Creates new form SeleccionListaCompras
      */
-    public SeleccionListaCompras() {
+    public SeleccionListaCompras(List<String> alimentosSeleccionados) {
         initComponents();
+        SwingUtilities.invokeLater(() -> {
+            checarApariencia();
+            seleccionadosTextArea.setLineWrap(true);
+            seleccionadosTextArea.setWrapStyleWord(true);
+
+            //Mostrar los alimentos en el JTextArea
+            StringBuilder texto = new StringBuilder();
+            for (String alimento : alimentosSeleccionados) {
+                texto.append("- ").append(alimento).append("\n");
+            }
+            seleccionadosTextArea.setText(texto.toString());
+        });
+
     }
     private void guardarListaEnArchivo(){
         try{
@@ -38,6 +52,55 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
         }
     }
     
+    private void checarApariencia() {
+        if (ModoOscuro.getInstance().isModoOscuroActivo()) {
+            //Cambiar menu
+            jPanel2.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            AñadirComidaButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            AñadirComidaButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            ListaDeComprasButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            ListaDeComprasButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            EstadísticasButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            EstadísticasButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            PerfilButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            PerfilButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            SalirButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            SalirButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar panel
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoOscuro());
+            
+            //Cambiar labels
+            jLabel2.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar botones
+            GuardarListaButton.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            GuardarListaButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+        } else {
+            //Cambiar menu
+            jPanel2.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            AñadirComidaButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            AñadirComidaButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            ListaDeComprasButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            ListaDeComprasButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            EstadísticasButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            EstadísticasButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            PerfilButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            PerfilButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            SalirButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            SalirButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+
+            //Cambiar panel
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoClaro());
+
+            //Cambiar labels
+            jLabel2.setForeground(ModoOscuro.getInstance().getColorFuerteClaro());
+
+            //Cambiar botones
+            GuardarListaButton.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            GuardarListaButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -257,24 +320,6 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
 
     }//GEN-LAST:event_GuardarListaButtonActionPerformed
 
-    /**
-     * @param alimentosSeleccionados
-     * @param args the command line arguments
-     */
-
-    public SeleccionListaCompras(List<String> alimentosSeleccionados){
-        initComponents();
-        seleccionadosTextArea.setLineWrap(true);
-        seleccionadosTextArea.setWrapStyleWord(true);
-        
-        //Mostrar los alimentos en el JTextArea
-        StringBuilder texto = new StringBuilder();
-        for (String alimento : alimentosSeleccionados){
-            texto.append("- ").append(alimento).append("\n");
-        }
-        seleccionadosTextArea.setText(texto.toString());
-        
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AñadirComidaButton;

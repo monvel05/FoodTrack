@@ -5,6 +5,7 @@
 package com.mycompany.foodtrack;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,11 +21,13 @@ public class ListaCompras extends javax.swing.JFrame {
      */
     public ListaCompras() {
         initComponents();
-        proteinaAleatoria();
-        carbohidratoAleatoria();
-        verduraAleatoria();
-        grasaAleatoria();
-        
+        SwingUtilities.invokeLater(() -> {
+            checarApariencia();
+            proteinaAleatoria();
+            carbohidratoAleatoria();
+            verduraAleatoria();
+            grasaAleatoria();
+        });   
     }
     private List<String> obtenerAlimentosSeleccionados() {
     List<String> seleccionados = new ArrayList<>();
@@ -86,7 +89,7 @@ public class ListaCompras extends javax.swing.JFrame {
     if (HabaFrescajCheckBox.isSelected()) seleccionados.add("Haba fresca");
     if (PapasjCheckBox.isSelected()) seleccionados.add("Papas");
     if (AcelgasjCheckBox.isSelected()) seleccionados.add("Acelgas");
-    if (BerengenajCheckBox.isSelected()) seleccionados.add("Berengena");
+    if (BerenjenajCheckBox.isSelected()) seleccionados.add("Berengena");
     
 
     return seleccionados;
@@ -151,7 +154,7 @@ public class ListaCompras extends javax.swing.JFrame {
             case 8 -> HabaFrescajCheckBox.setSelected(true);
             case 9 -> PapasjCheckBox.setSelected(true);
             case 10 -> AcelgasjCheckBox.setSelected(true);
-            case 11 -> BerengenajCheckBox.setSelected(true);
+            case 11 -> BerenjenajCheckBox.setSelected(true);
             case 12 -> AlcachofajCheckBox.setSelected(true);
             case 13 -> NopalesjCheckBox.setSelected(true);
             default -> System.out.println("Numero invalido:"+ num);
@@ -218,7 +221,7 @@ public class ListaCompras extends javax.swing.JFrame {
         HabaFrescajCheckBox.setSelected(false); 
         PapasjCheckBox.setSelected(false); 
         AcelgasjCheckBox.setSelected(false); 
-        BerengenajCheckBox.setSelected(false);
+        BerenjenajCheckBox.setSelected(false);
         AlcachofajCheckBox.setSelected(false); 
         NopalesjCheckBox.setSelected(false); 
     }
@@ -295,7 +298,7 @@ public class ListaCompras extends javax.swing.JFrame {
         HabaFrescajCheckBox = new javax.swing.JCheckBox();
         PapasjCheckBox = new javax.swing.JCheckBox();
         AcelgasjCheckBox = new javax.swing.JCheckBox();
-        BerengenajCheckBox = new javax.swing.JCheckBox();
+        BerenjenajCheckBox = new javax.swing.JCheckBox();
         AlcachofajCheckBox = new javax.swing.JCheckBox();
         NopalesjCheckBox = new javax.swing.JCheckBox();
         FrutosSecosjCheckBox = new javax.swing.JCheckBox();
@@ -499,7 +502,7 @@ public class ListaCompras extends javax.swing.JFrame {
 
         AcelgasjCheckBox.setText("ACELGAS");
 
-        BerengenajCheckBox.setText("BERENGENA");
+        BerenjenajCheckBox.setText("BERENJENA");
 
         AlcachofajCheckBox.setText("ALCACHOFA");
 
@@ -560,7 +563,7 @@ public class ListaCompras extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(TortillaTrigojCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(BerengenajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(BerenjenajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(24, 24, 24))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -714,7 +717,7 @@ public class ListaCompras extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(QuesoPanelajCheckBox)
                     .addComponent(TortillaTrigojCheckBox)
-                    .addComponent(BerengenajCheckBox)
+                    .addComponent(BerenjenajCheckBox)
                     .addComponent(SemillaChíajCheckBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -814,6 +817,59 @@ public class ListaCompras extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ManzanajCheckBoxActionPerformed
 
+    private void checarApariencia() {
+        if (ModoOscuro.getInstance().isModoOscuroActivo()) {
+            //Cambiar menu
+            jPanel2.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            AñadirComidajButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            AñadirComidajButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            ListaDeComprasjButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            ListaDeComprasjButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            EstadisticasjButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            EstadisticasjButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            PerfiljButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            PerfiljButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            SalirjButton.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
+            SalirjButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar Panel y Botón
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoOscuro());
+            SiguientejButton.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            SiguientejButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+            //Cambiar labels
+            PROTEINASjLabel.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            CARBOHIDRATOSjLabel.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            VERDURASjLabel.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            GRASASjLabel.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            
+        } else {
+            //Cambiar menu
+            jPanel2.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            AñadirComidajButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            AñadirComidajButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            ListaDeComprasjButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            ListaDeComprasjButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            EstadisticasjButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            EstadisticasjButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            PerfiljButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            PerfiljButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            SalirjButton.setBackground(ModoOscuro.getInstance().getBotonesClaro());
+            SalirjButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+
+            //Cambiar Panel y Botón
+            jPanel1.setBackground(ModoOscuro.getInstance().getFondoClaro());
+            SiguientejButton.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            SiguientejButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+
+            //Cambiar labels
+            PROTEINASjLabel.setForeground(ModoOscuro.getInstance().getColorFuerteClaro());
+            CARBOHIDRATOSjLabel.setForeground(ModoOscuro.getInstance().getColorFuerteClaro());
+            VERDURASjLabel.setForeground(ModoOscuro.getInstance().getColorFuerteClaro());
+            GRASASjLabel.setForeground(ModoOscuro.getInstance().getColorFuerteClaro());
+
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -830,7 +886,7 @@ public class ListaCompras extends javax.swing.JFrame {
     private javax.swing.JCheckBox AtúnjCheckBox;
     private javax.swing.JCheckBox AvenajCheckBox;
     private javax.swing.JButton AñadirComidajButton;
-    private javax.swing.JCheckBox BerengenajCheckBox;
+    private javax.swing.JCheckBox BerenjenajCheckBox;
     private javax.swing.JCheckBox BrócolijCheckBox;
     private javax.swing.JLabel CARBOHIDRATOSjLabel;
     private javax.swing.JCheckBox CamaronesjCheckBox;
