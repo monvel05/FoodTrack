@@ -63,7 +63,7 @@ public class Login extends javax.swing.JFrame {
         nombreUsuario1.setText("Usuario:");
 
         logInBtn.setBackground(new java.awt.Color(253, 140, 13));
-        logInBtn.setLabel("Entrar");
+        logInBtn.setText("🍽 Entrar 🍽");
         logInBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logInBtnActionPerformed(evt);
@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setText("¿Aún no tienes cuenta?");
 
         registrarse.setBackground(new java.awt.Color(253, 140, 13));
-        registrarse.setText("Registrarse");
+        registrarse.setText("🍽 Registrarse 🍽");
         registrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarseActionPerformed(evt);
@@ -109,7 +109,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(274, 274, 274)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(registrarse)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

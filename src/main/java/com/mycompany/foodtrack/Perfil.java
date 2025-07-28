@@ -49,13 +49,6 @@ public class Perfil extends javax.swing.JFrame {
         imcPerfil = new javax.swing.JTextField();
         barraImc = new javax.swing.JProgressBar();
         actualizarDatosBtn = new javax.swing.JButton();
-        menu = new javax.swing.JPanel();
-        addComidaBtn = new javax.swing.JButton();
-        listaComprasBtn = new javax.swing.JButton();
-        estadisticasBtn = new javax.swing.JButton();
-        perfilBtn = new javax.swing.JButton();
-        salirBtn = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         perfilLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         claroRadioBtn = new javax.swing.JRadioButton();
@@ -63,6 +56,13 @@ public class Perfil extends javax.swing.JFrame {
         aparienciaLabel = new javax.swing.JLabel();
         eliminarLabel = new javax.swing.JLabel();
         eliminarCuentaBtn = new javax.swing.JButton();
+        menuPanel = new javax.swing.JPanel();
+        addComidaBtn = new javax.swing.JButton();
+        listaComprasBtn = new javax.swing.JButton();
+        estadisticasBtn = new javax.swing.JButton();
+        perfilBtn = new javax.swing.JButton();
+        salirBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,7 +92,7 @@ public class Perfil extends javax.swing.JFrame {
         barraImc.setValue(40);
 
         actualizarDatosBtn.setBackground(new java.awt.Color(253, 140, 13));
-        actualizarDatosBtn.setText("Actualizar Datos");
+        actualizarDatosBtn.setText("Actualizar Datos ⭮");
         actualizarDatosBtn.setToolTipText("Actualizar datos");
         actualizarDatosBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,108 +151,6 @@ public class Perfil extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        menu.setBackground(new java.awt.Color(253, 140, 13));
-        menu.setMaximumSize(new java.awt.Dimension(4, 4));
-        menu.setMinimumSize(new java.awt.Dimension(4, 4));
-        menu.setPreferredSize(new java.awt.Dimension(130, 25));
-
-        addComidaBtn.setBackground(new java.awt.Color(246, 226, 155));
-        addComidaBtn.setText("Añadir comida");
-        addComidaBtn.setToolTipText("Añadir comida");
-        addComidaBtn.setPreferredSize(new java.awt.Dimension(80, 30));
-        addComidaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addComidaBtnMouseClicked(evt);
-            }
-        });
-        addComidaBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addComidaBtnActionPerformed(evt);
-            }
-        });
-
-        listaComprasBtn.setBackground(new java.awt.Color(246, 226, 155));
-        listaComprasBtn.setText("Lista de Compras");
-        listaComprasBtn.setToolTipText("Lista de compras");
-        listaComprasBtn.setPreferredSize(new java.awt.Dimension(80, 30));
-        listaComprasBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaComprasBtnActionPerformed(evt);
-            }
-        });
-
-        estadisticasBtn.setBackground(new java.awt.Color(246, 226, 155));
-        estadisticasBtn.setText("Estadísiticas");
-        estadisticasBtn.setToolTipText("Estadísticas");
-        estadisticasBtn.setPreferredSize(new java.awt.Dimension(80, 30));
-        estadisticasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                estadisticasBtnMouseClicked(evt);
-            }
-        });
-
-        perfilBtn.setBackground(new java.awt.Color(246, 226, 155));
-        perfilBtn.setText("Perfil");
-        perfilBtn.setToolTipText("Perfil");
-        perfilBtn.setPreferredSize(new java.awt.Dimension(80, 30));
-        perfilBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilBtnActionPerformed(evt);
-            }
-        });
-
-        salirBtn.setBackground(new java.awt.Color(246, 226, 155));
-        salirBtn.setText("Salir");
-        salirBtn.setToolTipText("Salir");
-        salirBtn.setMaximumSize(new java.awt.Dimension(50, 30));
-        salirBtn.setPreferredSize(new java.awt.Dimension(50, 30));
-        salirBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salirBtnActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/logo_blanco.png"))); // NOI18N
-        jLabel5.setText("jLabel1");
-
-        javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
-        menu.setLayout(menuLayout);
-        menuLayout.setHorizontalGroup(
-            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(perfilBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(estadisticasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(salirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(listaComprasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addComidaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(menuLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        menuLayout.setVerticalGroup(
-            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(addComidaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listaComprasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(estadisticasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-        );
-
         perfilLabel.setText("Perfil");
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -300,7 +198,7 @@ public class Perfil extends javax.swing.JFrame {
         eliminarLabel.setText("¿Eliminar cuenta?");
 
         eliminarCuentaBtn.setBackground(new java.awt.Color(253, 140, 13));
-        eliminarCuentaBtn.setText("Eliminar");
+        eliminarCuentaBtn.setText("Eliminar 🗑 ");
         eliminarCuentaBtn.setToolTipText("Eliminar cuenta");
         eliminarCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,23 +206,120 @@ public class Perfil extends javax.swing.JFrame {
             }
         });
 
+        menuPanel.setBackground(new java.awt.Color(253, 140, 13));
+        menuPanel.setMaximumSize(new java.awt.Dimension(4, 4));
+        menuPanel.setMinimumSize(new java.awt.Dimension(4, 4));
+        menuPanel.setPreferredSize(new java.awt.Dimension(130, 25));
+
+        addComidaBtn.setBackground(new java.awt.Color(246, 226, 155));
+        addComidaBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/addComidaIcon.png"))); // NOI18N
+        addComidaBtn.setToolTipText("Añadir comida");
+        addComidaBtn.setPreferredSize(new java.awt.Dimension(80, 60));
+        addComidaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addComidaBtnActionPerformed(evt);
+            }
+        });
+
+        listaComprasBtn.setBackground(new java.awt.Color(246, 226, 155));
+        listaComprasBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/listaComprasIcon.png"))); // NOI18N
+        listaComprasBtn.setToolTipText("Lista de Compras");
+        listaComprasBtn.setPreferredSize(new java.awt.Dimension(80, 60));
+        listaComprasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaComprasBtnActionPerformed(evt);
+            }
+        });
+
+        estadisticasBtn.setBackground(new java.awt.Color(246, 226, 155));
+        estadisticasBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/estadisticasIcon.png"))); // NOI18N
+        estadisticasBtn.setToolTipText("Estadísiticas");
+        estadisticasBtn.setPreferredSize(new java.awt.Dimension(80, 60));
+        estadisticasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estadisticasBtnActionPerformed(evt);
+            }
+        });
+
+        perfilBtn.setBackground(new java.awt.Color(246, 226, 155));
+        perfilBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/perfilIcon.png"))); // NOI18N
+        perfilBtn.setToolTipText("Perfil");
+        perfilBtn.setPreferredSize(new java.awt.Dimension(80, 60));
+        perfilBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfilBtnActionPerformed(evt);
+            }
+        });
+
+        salirBtn.setBackground(new java.awt.Color(246, 226, 155));
+        salirBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/salirIcon.png"))); // NOI18N
+        salirBtn.setToolTipText("Salir");
+        salirBtn.setMaximumSize(new java.awt.Dimension(50, 30));
+        salirBtn.setPreferredSize(new java.awt.Dimension(50, 40));
+        salirBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/logo_blanco.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(perfilBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                    .addComponent(estadisticasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(salirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(listaComprasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addComidaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addComidaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(listaComprasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(estadisticasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(perfilBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(salirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
+                        .addGap(82, 82, 82)
                         .addComponent(perfilLabel)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(eliminarCuentaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,7 +354,7 @@ public class Perfil extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(78, Short.MAX_VALUE))))
-            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -375,44 +370,6 @@ public class Perfil extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void addComidaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComidaBtnActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_addComidaBtnActionPerformed
-
-    private void addComidaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addComidaBtnMouseClicked
-        // TODO add your handling code here:
-        AddComida miaddcomida= new AddComida();
-        miaddcomida.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_addComidaBtnMouseClicked
-
-    private void estadisticasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estadisticasBtnMouseClicked
-        // TODO add your handling code here:
-        Estadisticas miEstadisticas= new Estadisticas();
-        miEstadisticas.setVisible(true);
-        dispose(); 
-    }//GEN-LAST:event_estadisticasBtnMouseClicked
-
-    private void listaComprasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaComprasBtnActionPerformed
-        // TODO add your handling code here:
-        ListaCompras miListaCompras = new ListaCompras();
-        miListaCompras.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_listaComprasBtnActionPerformed
-
-    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
-        // TODO add your handling code here:
-        Perfil miPerfil = new Perfil();
-        miPerfil.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_perfilBtnActionPerformed
-
-    private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_salirBtnActionPerformed
 
     private void actualizarDatosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosBtnActionPerformed
         // TODO add your handling code here:
@@ -448,6 +405,41 @@ public class Perfil extends javax.swing.JFrame {
         ModoOscuro.getInstance().setModoOscuroActivo(true);
         checarApariencia();
     }//GEN-LAST:event_oscuroRadioBtnActionPerformed
+
+    private void addComidaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComidaBtnActionPerformed
+        AddComida miAddComida = new AddComida();
+        miAddComida.setVisible(true);
+        dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addComidaBtnActionPerformed
+
+    private void listaComprasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaComprasBtnActionPerformed
+        // TODO add your handling code here:
+        ListaCompras miListaCompras = new ListaCompras();
+        miListaCompras.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_listaComprasBtnActionPerformed
+
+    private void estadisticasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadisticasBtnActionPerformed
+        // TODO add your handling code here:
+        Estadisticas miEstadisticas= new Estadisticas();
+        miEstadisticas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_estadisticasBtnActionPerformed
+
+    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
+        // TODO add your handling code here:
+        Perfil miPerfil = new Perfil();
+        miPerfil.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_perfilBtnActionPerformed
+
+    private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        DataBase.desconectar();
+    }//GEN-LAST:event_salirBtnActionPerformed
     
     private void agregarInformacion (){
         int idUsuario = UsuarioId.getInstance().getValor();
@@ -493,8 +485,7 @@ public class Perfil extends javax.swing.JFrame {
     private void checarApariencia() {
         if (ModoOscuro.getInstance().isModoOscuroActivo()) {
             //Cambiar menú
-            menu.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
-            
+            menuPanel.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
             addComidaBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
             addComidaBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
             listaComprasBtn.setBackground(ModoOscuro.getInstance().getBotonesOscuro());
@@ -536,8 +527,7 @@ public class Perfil extends javax.swing.JFrame {
             
         } else {
             //Cambiar menú
-            menu.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
-            
+            menuPanel.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
             addComidaBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
             addComidaBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
             listaComprasBtn.setBackground(ModoOscuro.getInstance().getBotonesClaro());
@@ -593,12 +583,12 @@ public class Perfil extends javax.swing.JFrame {
     private javax.swing.ButtonGroup grupo;
     private javax.swing.JLabel imcLabel;
     private javax.swing.JTextField imcPerfil;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton listaComprasBtn;
-    private javax.swing.JPanel menu;
+    private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JTextField nombrePerfil;
     private javax.swing.JRadioButton oscuroRadioBtn;

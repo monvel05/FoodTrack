@@ -74,7 +74,7 @@ public class AgregarAlimento extends javax.swing.JFrame {
         tipoInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "proteinas", "verduras", "carbohidratos", "grasas saludables" }));
 
         cancelarBtn.setBackground(new java.awt.Color(253, 140, 13));
-        cancelarBtn.setText("Cancelar");
+        cancelarBtn.setText("Cancelar ✘");
         cancelarBtn.setPreferredSize(new java.awt.Dimension(100, 50));
         cancelarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +83,7 @@ public class AgregarAlimento extends javax.swing.JFrame {
         });
 
         agregarBtn.setBackground(new java.awt.Color(253, 140, 13));
-        agregarBtn.setText("Agregar");
+        agregarBtn.setText("Agregar ✔");
         agregarBtn.setPreferredSize(new java.awt.Dimension(100, 50));
         agregarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -283,12 +283,97 @@ public class PeticionesDB {
         return false;
     }
     
+    public static boolean crearMeta (int idUsuario, int idConsumo, String tipo, int metaActual) {
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "INSERT INTO meta (idUsuarios, idConsumoCalorico, tipo_meta, metaActual) VALUES (?, ?, ?, ?)";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setInt(1, idUsuario);
+                stmt.setInt(2, idConsumo);
+                stmt.setString(3, tipo);
+                stmt.setInt(4, metaActual);
+
+                int filasAfectadas = stmt.executeUpdate();
+                System.out.println("Filas actualizadas: " + filasAfectadas);
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al insertar el usuario: " + e.getMessage());
+            }
+        }
+
+        return false;
+    }
+    
+    public static int buscarIdMeta (int idUsuario) {
+        String query = "SELECT idMeta FROM meta WHERE idUsuarios = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, idUsuario);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("idMeta"); // Retorna el ID si encuentra el alimento
+                }
+                return -1; // Mejor usar -1 para indicar que no se encontró
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener ID del alimento: " + e.getMessage());
+            return -1; // Retorna -1 en caso de error
+        }
+    }
+    
+    public static int borrarMeta(int idMeta) {
+        String query = "DELETE FROM meta WHERE idMeta = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, idMeta);
+
+            // Usar executeUpdate() para operaciones DELETE
+            int filasAfectadas = pstmt.executeUpdate();
+
+            // Retorna el número de filas eliminadas (0 si no encontró el ID)
+            return filasAfectadas;
+
+        } catch (SQLException e) {
+            System.err.println("Error al borrar la meta: " + e.getMessage());
+            return -1; // Retorna -1 en caso de error
+        }
+    }
+    
+    public static HashMap<String, Object> traerDatosMeta (int idMeta) {
+        HashMap<String, Object> datosMeta = new HashMap<>();
+        String query = "SELECT metaActual, tipo_meta FROM meta WHERE idMeta = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, idMeta);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    datosMeta.put("metaActual", rs.getObject("metaActual"));
+                    datosMeta.put("tipo_meta", rs.getObject("tipo_meta"));
+                    return datosMeta;
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener la informacion del usuario: " + e.getMessage());
+        }
+        return null;
+    }
+    
     public static boolean actualizarMeta (int idUsuario, int idConsumo, String tipo, int metaActual) {
         Connection conn = DataBase.conectar();
 
         if (conn != null) {
 
-            String query = "UPDATE meta SET tipo_meta = ?, metaActual = ?, idConsumoCalorico WHERE idUsuarios = ?";
+            String query = "UPDATE meta SET tipo_meta = ?, metaActual = ?, idConsumoCalorico = ? WHERE idUsuarios = ?";
 
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setString(1, tipo);

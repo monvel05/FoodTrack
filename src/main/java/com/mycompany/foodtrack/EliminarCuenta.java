@@ -50,7 +50,7 @@ public class EliminarCuenta extends javax.swing.JFrame {
         jLabel2.setText("Ingrese su contraseña");
 
         eliminarBtn.setBackground(new java.awt.Color(253, 140, 13));
-        eliminarBtn.setText("Eliminar");
+        eliminarBtn.setText("Eliminar ☹");
         eliminarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarBtnActionPerformed(evt);
@@ -58,7 +58,7 @@ public class EliminarCuenta extends javax.swing.JFrame {
         });
 
         cancelarBtn.setBackground(new java.awt.Color(253, 140, 13));
-        cancelarBtn.setText("Cancelar");
+        cancelarBtn.setText("Cancelar ✗");
         cancelarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBtnActionPerformed(evt);
@@ -85,7 +85,7 @@ public class EliminarCuenta extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(cancelarBtn))
                             .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
