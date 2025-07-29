@@ -3,24 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.foodtrack;
+
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import java.io.IOException;
-import java.io.FileWriter;
-import java.util.ArrayList;
-import java.io.BufferedWriter;
 /**
  *
  * @author hilar
  */
 public class SeleccionListaCompras extends javax.swing.JFrame {
-    ArrayList<String> alimentosSeleccionados = new ArrayList<>();
-
+    private List<String> alimentosSeleccionados;
     /**
      * Creates new form SeleccionListaCompras
+     * @param alimentosSeleccionados es la lista que se da en ListaCompras
      */
     public SeleccionListaCompras(List<String> alimentosSeleccionados) {
+        this.alimentosSeleccionados = alimentosSeleccionados;
         initComponents();
         SwingUtilities.invokeLater(() -> {
             checarApariencia();
@@ -29,28 +27,17 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
 
             //Mostrar los alimentos en el JTextArea
             StringBuilder texto = new StringBuilder();
+            var listaAlimentos = new StringBuilder();
+            
             for (String alimento : alimentosSeleccionados) {
                 texto.append("- ").append(alimento).append("\n");
+                listaAlimentos.append(alimento).append(" ");
             }
             seleccionadosTextArea.setText(texto.toString());
         });
 
     }
-    private void guardarListaEnArchivo(){
-        try{
-            BufferedWriter escritor = new BufferedWriter(new FileWriter("Seleccion_Lista_compras.txt"));
-            for(String alimento : alimentosSeleccionados){
-                escritor.write(alimento + "\n");
-                escritor.newLine();
-                
-            }
-            escritor.close();
-            JOptionPane.showMessageDialog(null,"Lista guardada exitosamente");
-            
-        }catch (IOException ex){
-            JOptionPane.showMessageDialog(null, "Error al guardar la lista :" + ex.getMessage());
-        }
-    }
+    
     
     private void checarApariencia() {
         if (ModoOscuro.getInstance().isModoOscuroActivo()) {
@@ -72,10 +59,15 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
             
             //Cambiar labels
             jLabel2.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            listaLabel.setForeground(ModoOscuro.getInstance().getColorFuerteOscuro());
             
             //Cambiar botones
             GuardarListaButton.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
             GuardarListaButton.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            ListasGuardadasBtn.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            ListasGuardadasBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
+            atrasBtn.setBackground(ModoOscuro.getInstance().getColorFuerteOscuro());
+            atrasBtn.setForeground(ModoOscuro.getInstance().getFuenteOscuro());
         } else {
             //Cambiar menu
             menuPanel.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
@@ -95,10 +87,15 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
 
             //Cambiar labels
             jLabel2.setForeground(ModoOscuro.getInstance().getColorFuerteClaro());
+            listaLabel.setForeground(ModoOscuro.getInstance().getColorFuerteClaro());
 
             //Cambiar botones
             GuardarListaButton.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
             GuardarListaButton.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            ListasGuardadasBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            ListasGuardadasBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
+            atrasBtn.setBackground(ModoOscuro.getInstance().getColorFuerteClaro());
+            atrasBtn.setForeground(ModoOscuro.getInstance().getFuenteClaro());
         }
     }
 
@@ -124,10 +121,13 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
         perfilBtn = new javax.swing.JButton();
         salirBtn = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        listaLabel = new javax.swing.JLabel();
+        nombreLista = new javax.swing.JTextField();
+        ListasGuardadasBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 222, 175));
+        jPanel1.setBackground(new java.awt.Color(254, 244, 192));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 51, 0));
@@ -138,15 +138,16 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
         seleccionadosTextArea.setRows(5);
         jScrollPane1.setViewportView(seleccionadosTextArea);
 
-        GuardarListaButton.setBackground(new java.awt.Color(255, 102, 0));
-        GuardarListaButton.setText("Guardar lista ✔");
+        GuardarListaButton.setBackground(new java.awt.Color(253, 140, 13));
+        GuardarListaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/añadirListaIcon.png"))); // NOI18N
+        GuardarListaButton.setToolTipText("Guardar lista ");
         GuardarListaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarListaButtonActionPerformed(evt);
             }
         });
 
-        atrasBtn.setBackground(new java.awt.Color(255, 102, 0));
+        atrasBtn.setBackground(new java.awt.Color(253, 140, 13));
         atrasBtn.setText("Atrás ￩");
         atrasBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,6 +252,18 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
+        listaLabel.setText("Nombre de la lista:");
+
+        ListasGuardadasBtn.setBackground(new java.awt.Color(253, 140, 13));
+        ListasGuardadasBtn.setForeground(new java.awt.Color(0, 0, 0));
+        ListasGuardadasBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/actualizarIcon.png"))); // NOI18N
+        ListasGuardadasBtn.setToolTipText("Mostrar Listas Guardadas");
+        ListasGuardadasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListasGuardadasBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -264,11 +277,19 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
                         .addGap(71, 71, 71))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(atrasBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(GuardarListaButton))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ListasGuardadasBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(GuardarListaButton)
+                                .addGap(23, 23, 23))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(listaLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nombreLista)))
                         .addGap(51, 51, 51))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -277,12 +298,19 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nombreLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(listaLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ListasGuardadasBtn)
                     .addComponent(GuardarListaButton)
-                    .addComponent(atrasBtn))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(atrasBtn)
+                        .addGap(20, 20, 20)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
@@ -300,19 +328,39 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void GuardarListaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarListaButtonActionPerformed
- 
-        guardarListaEnArchivo();
-// TODO add your handling code here:
-
-    }//GEN-LAST:event_GuardarListaButtonActionPerformed
-
-    private void atrasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasBtnActionPerformed
+    private void ListasGuardadasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListasGuardadasBtnActionPerformed
         // TODO add your handling code here:
-        ListaCompras listaPantalla = new ListaCompras();
-        listaPantalla.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_atrasBtnActionPerformed
+        ListasGuardadas lista = new ListasGuardadas();
+        lista.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ListasGuardadasBtnActionPerformed
+
+    private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        DataBase.desconectar();
+    }//GEN-LAST:event_salirBtnActionPerformed
+
+    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
+        // TODO add your handling code here:
+        Perfil miPerfil = new Perfil();
+        miPerfil.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_perfilBtnActionPerformed
+
+    private void estadisticasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadisticasBtnActionPerformed
+        // TODO add your handling code here:
+        Estadisticas miEstadisticas= new Estadisticas();
+        miEstadisticas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_estadisticasBtnActionPerformed
+
+    private void listaComprasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaComprasBtnActionPerformed
+        // TODO add your handling code here:
+        ListaCompras miListaCompras = new ListaCompras();
+        miListaCompras.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_listaComprasBtnActionPerformed
 
     private void addComidaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComidaBtnActionPerformed
         AddComida miAddComida = new AddComida();
@@ -322,36 +370,53 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_addComidaBtnActionPerformed
 
-    private void listaComprasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaComprasBtnActionPerformed
+    private void atrasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasBtnActionPerformed
         // TODO add your handling code here:
-        ListaCompras miListaCompras = new ListaCompras();
-        miListaCompras.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_listaComprasBtnActionPerformed
+        ListaCompras listaPantalla = new ListaCompras();
+        listaPantalla.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_atrasBtnActionPerformed
 
-    private void estadisticasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadisticasBtnActionPerformed
+    private void GuardarListaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarListaButtonActionPerformed
         // TODO add your handling code here:
-        Estadisticas miEstadisticas= new Estadisticas();
-        miEstadisticas.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_estadisticasBtnActionPerformed
+        int idUsuario = UsuarioId.getInstance().getValor();
+        String lista = nombreLista.getText().trim();
 
-    private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
-        // TODO add your handling code here:
-        Perfil miPerfil = new Perfil();
-        miPerfil.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_perfilBtnActionPerformed
+        if (lista.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor ingresa un nombre para la lista",
+                "Nombre requerido", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-    private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        DataBase.desconectar();
-    }//GEN-LAST:event_salirBtnActionPerformed
+        if (alimentosSeleccionados == null || alimentosSeleccionados.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "La lista de alimentos está vacía",
+                "Lista vacía", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        StringBuilder listaAlimentos = new StringBuilder();
+        for (String alimento : alimentosSeleccionados) {
+            listaAlimentos.append(alimento).append(" ");
+        }
+        String listaFinal = listaAlimentos.toString().trim();
+
+        boolean guardarLista = PeticionesDB.guardarListaAlimentos(idUsuario, lista, listaFinal);
+        if (guardarLista) {
+            JOptionPane.showMessageDialog(this,
+                "Lista guardada",
+                "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this,
+                "La lista no se guardó",
+                "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_GuardarListaButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton GuardarListaButton;
+    private javax.swing.JButton ListasGuardadasBtn;
     private javax.swing.JButton addComidaBtn;
     private javax.swing.JButton atrasBtn;
     private javax.swing.JButton estadisticasBtn;
@@ -360,7 +425,9 @@ public class SeleccionListaCompras extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton listaComprasBtn;
+    private javax.swing.JLabel listaLabel;
     private javax.swing.JPanel menuPanel;
+    private javax.swing.JTextField nombreLista;
     private javax.swing.JButton perfilBtn;
     private javax.swing.JButton salirBtn;
     private javax.swing.JTextArea seleccionadosTextArea;

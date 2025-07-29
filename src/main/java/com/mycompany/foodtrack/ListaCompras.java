@@ -316,7 +316,7 @@ public class ListaCompras extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 222, 175));
+        jPanel1.setBackground(new java.awt.Color(254, 244, 192));
 
         PROTEINASjLabel.setForeground(new java.awt.Color(255, 51, 0));
         PROTEINASjLabel.setText("PROTEÍNAS");
@@ -330,7 +330,7 @@ public class ListaCompras extends javax.swing.JFrame {
         GRASASjLabel.setForeground(new java.awt.Color(255, 51, 0));
         GRASASjLabel.setText("GRASAS SALUDABLES");
 
-        SiguientejButton.setBackground(new java.awt.Color(255, 102, 0));
+        SiguientejButton.setBackground(new java.awt.Color(253, 140, 13));
         SiguientejButton.setText("SIGUIENTE ⮡");
         SiguientejButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -572,9 +572,8 @@ public class ListaCompras extends javax.swing.JFrame {
                                     .addComponent(CamaronesjCheckBox))
                                 .addGap(23, 23, 23))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(QuesoPanelajCheckBox)
-                                .addGap(18, 18, 18)))
+                                .addGap(18, 18, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ManzanajCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(HarinaTrigojCheckBox)
@@ -954,90 +953,13 @@ public class ListaCompras extends javax.swing.JFrame {
     private javax.swing.JLabel VERDURASjLabel;
     private javax.swing.JCheckBox YucaCocidajCheckBox;
     private javax.swing.JCheckBox ZanahoriajCheckBox;
-    private javax.swing.JButton addComida;
-    private javax.swing.JButton addComida1;
-    private javax.swing.JButton addComida10;
-    private javax.swing.JButton addComida2;
-    private javax.swing.JButton addComida3;
-    private javax.swing.JButton addComida4;
-    private javax.swing.JButton addComida5;
-    private javax.swing.JButton addComida6;
-    private javax.swing.JButton addComida7;
-    private javax.swing.JButton addComida8;
-    private javax.swing.JButton addComida9;
     private javax.swing.JButton addComidaBtn;
-    private javax.swing.JButton estadisticas;
-    private javax.swing.JButton estadisticas1;
-    private javax.swing.JButton estadisticas10;
-    private javax.swing.JButton estadisticas2;
-    private javax.swing.JButton estadisticas3;
-    private javax.swing.JButton estadisticas4;
-    private javax.swing.JButton estadisticas5;
-    private javax.swing.JButton estadisticas6;
-    private javax.swing.JButton estadisticas7;
-    private javax.swing.JButton estadisticas8;
-    private javax.swing.JButton estadisticas9;
     private javax.swing.JButton estadisticasBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton listaCompras;
-    private javax.swing.JButton listaCompras1;
-    private javax.swing.JButton listaCompras10;
-    private javax.swing.JButton listaCompras2;
-    private javax.swing.JButton listaCompras3;
-    private javax.swing.JButton listaCompras4;
-    private javax.swing.JButton listaCompras5;
-    private javax.swing.JButton listaCompras6;
-    private javax.swing.JButton listaCompras7;
-    private javax.swing.JButton listaCompras8;
-    private javax.swing.JButton listaCompras9;
     private javax.swing.JButton listaComprasBtn;
-    private javax.swing.JPanel menu;
-    private javax.swing.JPanel menu1;
-    private javax.swing.JPanel menu10;
-    private javax.swing.JPanel menu2;
-    private javax.swing.JPanel menu3;
-    private javax.swing.JPanel menu4;
-    private javax.swing.JPanel menu5;
-    private javax.swing.JPanel menu6;
-    private javax.swing.JPanel menu7;
-    private javax.swing.JPanel menu8;
-    private javax.swing.JPanel menu9;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JButton perfil;
-    private javax.swing.JButton perfil1;
-    private javax.swing.JButton perfil10;
-    private javax.swing.JButton perfil2;
-    private javax.swing.JButton perfil3;
-    private javax.swing.JButton perfil4;
-    private javax.swing.JButton perfil5;
-    private javax.swing.JButton perfil6;
-    private javax.swing.JButton perfil7;
-    private javax.swing.JButton perfil8;
-    private javax.swing.JButton perfil9;
     private javax.swing.JButton perfilBtn;
-    private javax.swing.JButton salir;
-    private javax.swing.JButton salir1;
-    private javax.swing.JButton salir10;
-    private javax.swing.JButton salir2;
-    private javax.swing.JButton salir3;
-    private javax.swing.JButton salir4;
-    private javax.swing.JButton salir5;
-    private javax.swing.JButton salir6;
-    private javax.swing.JButton salir7;
-    private javax.swing.JButton salir8;
-    private javax.swing.JButton salir9;
     private javax.swing.JButton salirBtn;
     // End of variables declaration//GEN-END:variables
 }

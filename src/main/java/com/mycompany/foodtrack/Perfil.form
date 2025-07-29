@@ -94,7 +94,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="perfilLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
@@ -109,7 +109,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="78" max="32767" attributes="0"/>
+                          <EmptySpace pref="51" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -246,7 +246,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="d" green="8c" red="fd" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Actualizar Datos &#x2b6e;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/foodtrack/Resources/actualizarIcon.png"/>
+                </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Actualizar datos"/>
               </Properties>
               <Events>
@@ -333,7 +335,9 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d" green="8c" red="fd" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Eliminar \ud83d\uddd1 " containsInvalidXMLChars="true"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/mycompany/foodtrack/Resources/borrarSeleccionIcon.png"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Eliminar cuenta"/>
           </Properties>
           <Events>

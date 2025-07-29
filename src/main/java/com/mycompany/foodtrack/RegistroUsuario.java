@@ -117,7 +117,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
         apellidoLabel.setText("Apellido:");
 
         registrarse.setBackground(new java.awt.Color(253, 140, 13));
-        registrarse.setText("Registrarse ⮣");
+        registrarse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/registrarseIcon.png"))); // NOI18N
         registrarse.setToolTipText("Rexgistrarse");
         registrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +126,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
         });
 
         RegresarBtn.setBackground(new java.awt.Color(253, 140, 13));
-        RegresarBtn.setText("Regresar ⮢");
+        RegresarBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/salirIcon.png"))); // NOI18N
         RegresarBtn.setToolTipText("Regresar");
         RegresarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,7 +215,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
                         .addComponent(RegresarBtn)))
                 .addGap(33, 33, 33)
                 .addComponent(imgSiluetas)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

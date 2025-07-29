@@ -174,7 +174,8 @@ public class AddComida extends javax.swing.JFrame {
         });
 
         añadirAlimentoBtn.setBackground(new java.awt.Color(253, 140, 13));
-        añadirAlimentoBtn.setText("Añadir nuevo alimento ♨");
+        añadirAlimentoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/añadirNuevoAlimIcon.png"))); // NOI18N
+        añadirAlimentoBtn.setToolTipText("Añadir nuevo alimento");
         añadirAlimentoBtn.setActionCommand("Añadir nuevo alimento 🞥");
         añadirAlimentoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +184,8 @@ public class AddComida extends javax.swing.JFrame {
         });
 
         añadirAlRegistroBtn.setBackground(new java.awt.Color(253, 140, 13));
-        añadirAlRegistroBtn.setText("Añadir al registro ☑");
+        añadirAlRegistroBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/agregarRegistroIcon.png"))); // NOI18N
+        añadirAlRegistroBtn.setToolTipText("Añadir al registro ");
         añadirAlRegistroBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 añadirAlRegistroBtnActionPerformed(evt);
@@ -226,7 +228,9 @@ public class AddComida extends javax.swing.JFrame {
         });
 
         borrarSeleccionBtn.setBackground(new java.awt.Color(253, 140, 13));
-        borrarSeleccionBtn.setText("Borrar Selecciones 🗑 ");
+        borrarSeleccionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/borrarSeleccionIcon.png"))); // NOI18N
+        borrarSeleccionBtn.setToolTipText("Borrar Selecciones");
+        borrarSeleccionBtn.setAutoscrolls(true);
         borrarSeleccionBtn.setPreferredSize(new java.awt.Dimension(124, 27));
         borrarSeleccionBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,24 +249,23 @@ public class AddComida extends javax.swing.JFrame {
                         .addGap(54, 54, 54)
                         .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(añadirAlimentoBtn))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(borrarBusqueda)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(añadirAlimentoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(borrarBusqueda))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonBusqueda)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(borrarSeleccionBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
                         .addComponent(añadirAlRegistroBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

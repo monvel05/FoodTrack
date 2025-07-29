@@ -92,7 +92,7 @@ public class Perfil extends javax.swing.JFrame {
         barraImc.setValue(40);
 
         actualizarDatosBtn.setBackground(new java.awt.Color(253, 140, 13));
-        actualizarDatosBtn.setText("Actualizar Datos ⭮");
+        actualizarDatosBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/actualizarIcon.png"))); // NOI18N
         actualizarDatosBtn.setToolTipText("Actualizar datos");
         actualizarDatosBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +198,7 @@ public class Perfil extends javax.swing.JFrame {
         eliminarLabel.setText("¿Eliminar cuenta?");
 
         eliminarCuentaBtn.setBackground(new java.awt.Color(253, 140, 13));
-        eliminarCuentaBtn.setText("Eliminar 🗑 ");
+        eliminarCuentaBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/foodtrack/Resources/borrarSeleccionIcon.png"))); // NOI18N
         eliminarCuentaBtn.setToolTipText("Eliminar cuenta");
         eliminarCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,7 +339,7 @@ public class Perfil extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(perfilLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
@@ -353,7 +353,7 @@ public class Perfil extends javax.swing.JFrame {
                         .addGap(38, 38, 38))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(78, Short.MAX_VALUE))))
+                        .addContainerGap(51, Short.MAX_VALUE))))
             .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 

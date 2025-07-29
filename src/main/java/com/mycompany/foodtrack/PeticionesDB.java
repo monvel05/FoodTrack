@@ -531,4 +531,74 @@ public class PeticionesDB {
 
         return alimentos;
     }
+    
+    public static boolean guardarListaAlimentos (int idUsuario, String nombre, String lista){
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "INSERT INTO listaCompras (nombre, alimentos, idUsuarios) VALUES (?, ?, ?)";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setString(1, nombre);
+                stmt.setString(2, lista);
+                stmt.setInt(3, idUsuario);
+
+                int filasAfectadas = stmt.executeUpdate();
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al agregar el campo: " + e.getMessage());
+            }
+        }
+
+        return false;
+    }
+    
+    public static ArrayList<HashMap<String, String>> traerListasAlimentos(int idUsuario) {
+        ArrayList<HashMap<String, String>> listasAlimentos = new ArrayList<>();
+        String query = "SELECT nombre, alimentos FROM listaCompras WHERE idUsuarios = ?";
+
+        try (Connection conn = DataBase.conectar(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, idUsuario);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    HashMap<String, String> lista = new HashMap<>();
+                    lista.put(rs.getString("nombre"), rs.getString("alimentos"));
+                    listasAlimentos.add(lista);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener las listas: " + e.getMessage());
+            return null;
+        }
+
+        return listasAlimentos;
+    }
+    
+    public static boolean eliminarListaCompras (String nombreLista) {
+        Connection conn = DataBase.conectar();
+
+        if (conn != null) {
+
+            String query = "DELETE FROM listaCompras WHERE nombre = ?";
+
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setString(1, nombreLista);
+
+                int filasAfectadas = stmt.executeUpdate();
+                System.out.println("Filas borradas: " + filasAfectadas);
+
+                return filasAfectadas > 0;
+
+            } catch (SQLException e) {
+                System.err.println("Error al borrar la lista: " + e.getMessage());
+            }
+        }
+
+        return false;
+    }
 }

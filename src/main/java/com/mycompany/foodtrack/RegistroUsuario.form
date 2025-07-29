@@ -153,7 +153,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="imgSiluetas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="99" max="32767" attributes="0"/>
+                  <EmptySpace pref="84" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
@@ -358,7 +358,9 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d" green="8c" red="fd" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Registrarse &#x2ba3;"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/mycompany/foodtrack/Resources/registrarseIcon.png"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Rexgistrarse"/>
           </Properties>
           <Events>
@@ -370,7 +372,9 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d" green="8c" red="fd" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Regresar &#x2ba2;"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/mycompany/foodtrack/Resources/salirIcon.png"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Regresar"/>
           </Properties>
           <Events>
